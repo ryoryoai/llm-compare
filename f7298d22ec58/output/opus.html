@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特許侵害製品発見サービス | 株式会社IPリッチ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1a3a6b;--primary-light:#2d5aa0;--accent:#c8a04e;--accent-light:#e0c06e;
+  --bg:#fafbfd;--surface:#fff;--text:#1a1a2e;--muted:#5a6378;--border:#e2e6ef;
+  --radius:12px;--shadow:0 2px 12px rgba(26,58,107,.08);
+  --max-w:1120px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.8;font-size:15px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-area{display:flex;align-items:center;gap:10px}
+.logo-mark{width:36px;height:36px;background:var(--primary);border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:14px}
+.logo-text{font-size:13px;line-height:1.3}
+.logo-text strong{display:block;font-size:14px;color:var(--primary)}
+nav{display:flex;align-items:center;gap:6px}
+nav a{padding:6px 12px;font-size:13px;color:var(--muted);font-weight:500;border-radius:8px;transition:all .2s}
+nav a:hover{color:var(--primary);background:rgba(26,58,107,.05)}
+.nav-cta{padding:8px 20px;background:var(--primary);color:#fff;border-radius:8px;font-size:13px;font-weight:700;transition:background .2s}
+.nav-cta:hover{background:var(--primary-light)}
+
+/* ===== Hero ===== */
+.hero{padding:72px 0 56px;background:linear-gradient(135deg,#f0f4fa 0%,#e8edf7 50%,#faf8f0 100%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(26,58,107,.08);padding:6px 16px;border-radius:20px;font-size:13px;color:var(--primary);font-weight:700;margin-bottom:20px}
+.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.35;font-weight:900;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--accent);border-bottom:3px solid var(--accent)}
+.hero-sub{font-size:16px;color:var(--muted);margin-bottom:24px;line-height:1.85}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600}
+.badge i{color:var(--primary)}
+.badge-price{background:var(--primary);color:#fff;border-color:var(--primary)}
+.badge-price i{color:var(--accent-light)}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--primary);color:#fff;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,107,.25)}
+.btn-primary:hover{background:var(--primary-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,58,107,.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--surface);color:var(--primary);border:2px solid var(--primary);border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn-secondary:hover{background:rgba(26,58,107,.04)}
+.hero-right{position:relative}
+.preview-card{background:var(--surface);border-radius:16px;border:1px solid var(--border);padding:28px;box-shadow:var(--shadow)}
+.preview-card h3{font-size:15px;color:var(--primary);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.deliverable-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.deliverable{padding:14px;border-radius:10px;border:1px solid var(--border);background:#f8fafc}
+.deliverable .num{font-size:11px;color:var(--accent);font-weight:700;margin-bottom:4px}
+.deliverable .name{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+.deliverable .name i{color:var(--primary);font-size:12px}
+.trust-bar{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.trust-item{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.trust-item i{color:var(--primary)}
+
+/* ===== Sections ===== */
+section{padding:72px 0}
+section:nth-child(even){background:#f5f7fb}
+.section-header{text-align:center;max-width:720px;margin:0 auto 48px}
+.section-header h2{font-size:clamp(22px,3vw,30px);font-weight:900;margin-bottom:12px;line-height:1.4}
+.section-header p{color:var(--muted);font-size:15px}
+
+/* Problem */
+.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.problem-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow .2s}
+.problem-card:hover{box-shadow:var(--shadow)}
+.problem-icon{width:44px;height:44px;border-radius:10px;background:rgba(26,58,107,.06);display:grid;place-items:center;flex-shrink:0}
+.problem-icon i{color:var(--primary);font-size:18px}
+.problem-card h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.problem-card p{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* Solution */
+.solution-deliverables{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.sol-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:transform .2s,box-shadow .2s}
+.sol-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(26,58,107,.1)}
+.sol-num{font-size:11px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.sol-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:grid;place-items:center;margin:0 auto 12px;color:#fff;font-size:20px}
+.sol-card h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.sol-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.sol-note{background:rgba(200,160,78,.08);border:1px solid rgba(200,160,78,.2);border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:12px;font-size:14px}
+.sol-note i{color:var(--accent);font-size:18px}
+
+/* Reasons */
+.reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.reason-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden}
+.reason-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent))}
+.reason-num{font-size:48px;font-weight:900;color:rgba(26,58,107,.06);line-height:1;margin-bottom:8px}
+.reason-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.reason-card p{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* Flow */
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.flow-steps::before{content:'';position:absolute;top:40px;left:60px;right:60px;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));z-index:0}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;position:relative;z-index:1}
+.step-num{width:36px;height:36px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:900;margin:0 auto 14px}
+.step h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.step p{font-size:13px;color:var(--muted);line-height:1.65}
+.step-chips{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.chip{padding:4px 10px;border-radius:6px;background:rgba(26,58,107,.05);font-size:11px;color:var(--primary);font-weight:600}
+
+/* Domains */
+.domain-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.domain-card{border-radius:var(--radius);padding:28px;border:1px solid var(--border)}
+.domain-card.good{background:rgba(34,139,34,.03);border-color:rgba(34,139,34,.15)}
+.domain-card.bad{background:rgba(220,53,69,.03);border-color:rgba(220,53,69,.15)}
+.domain-card h3{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.domain-card.good h3 i{color:#228b22}
+.domain-card.bad h3 i{color:#dc3545}
+.domain-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.domain-list li{display:flex;align-items:center;gap:10px;font-size:14px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.6)}
+.domain-list li i{font-size:13px}
+
+/* Pricing */
+.pricing-box{max-width:640px;margin:0 auto;background:var(--surface);border:2px solid var(--primary);border-radius:16px;padding:40px;text-align:center;box-shadow:0 8px 32px rgba(26,58,107,.1)}
+.pricing-box .label{font-size:13px;color:var(--muted);margin-bottom:4px}
+.pricing-box .price{font-size:clamp(28px,5vw,42px);font-weight:900;color:var(--primary);margin-bottom:4px}
+.pricing-box .price span{font-size:16px;font-weight:500;color:var(--muted)}
+.pricing-box .note{font-size:13px;color:var(--muted);margin-bottom:24px}
+.price-details{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:24px}
+.price-detail{padding:8px 16px;border-radius:8px;background:rgba(26,58,107,.04);font-size:13px;display:flex;align-items:center;gap:6px}
+.price-detail i{color:var(--primary)}
+
+/* Notice */
+.notice-box{max-width:720px;margin:0 auto;background:rgba(220,53,69,.03);border:1px solid rgba(220,53,69,.15);border-radius:var(--radius);padding:24px}
+.notice-box h3{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;color:#b22234}
+.notice-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.notice-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--muted);line-height:1.7}
+.notice-list li i{color:#dc3545;margin-top:4px;flex-shrink:0}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s}
+details:hover{box-shadow:var(--shadow)}
+details[open]{border-color:var(--primary)}
+summary{padding:18px 24px;font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary i{color:var(--primary);transition:transform .2s}
+details[open] summary i{transform:rotate(180deg)}
+.faq-answer{padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.85}
+
+/* Final CTA / Form */
+.final-cta{background:linear-gradient(135deg,var(--primary) 0%,#2d5aa0 50%,#1a3a6b 100%);color:#fff;padding:72px 0}
+.final-cta .section-header h2{color:#fff}
+.final-cta .section-header p{color:rgba(255,255,255,.7)}
+.form-wrapper{max-width:600px;margin:0 auto;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:36px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+.field label .req{font-size:11px;padding:2px 8px;border-radius:4px;background:rgba(200,160,78,.3);color:var(--accent-light)}
+.field input,.field select,.field textarea{padding:12px 14px;border:1px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.4)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+.field textarea{min-height:100px;resize:vertical}
+.field select{cursor:pointer}
+.field select option{color:var(--text);background:#fff}
+.form-note{font-size:12px;color:rgba(255,255,255,.5);margin-top:12px;text-align:center}
+.form-submit{margin-top:20px;display:flex;justify-content:center}
+.form-submit button{padding:16px 48px;background:var(--accent);color:var(--primary);border:none;border-radius:10px;font-size:16px;font-weight:900;cursor:pointer;transition:all .2s;font-family:inherit;box-shadow:0 4px 16px rgba(200,160,78,.4)}
+.form-submit button:hover{background:var(--accent-light);transform:translateY(-2px)}
+.form-success{display:none;text-align:center;padding:24px;font-size:15px;font-weight:700}
+
+/* Footer */
+footer{background:#1a1a2e;color:rgba(255,255,255,.6);padding:40px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-brand{font-size:14px;color:#fff;font-weight:700}
+.footer-brand span{display:block;font-size:12px;color:rgba(255,255,255,.4);font-weight:400;margin-top:2px}
+.footer-links{display:flex;gap:20px;font-size:13px}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:12px}
+
+/* Sticky Mobile CTA */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 16px}
+.sticky-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;gap:12px}
+.sticky-info{font-size:12px;line-height:1.4}
+.sticky-info strong{display:block;font-size:13px}
+.sticky-btn{padding:10px 20px;background:var(--primary);color:#fff;border-radius:8px;font-size:13px;font-weight:700;white-space:nowrap}
+
+/* Responsive */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .solution-deliverables{grid-template-columns:repeat(2,1fr)}
+  .reasons-grid{grid-template-columns:1fr}
+  .flow-steps{grid-template-columns:repeat(2,1fr)}
+  .flow-steps::before{display:none}
+  nav a{display:none}
+}
+@media(max-width:640px){
+  .hero{padding:48px 0 40px}
+  section{padding:48px 0}
+  .problem-grid{grid-template-columns:1fr}
+  .solution-deliverables{grid-template-columns:1fr}
+  .flow-steps{grid-template-columns:1fr}
+  .domain-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .deliverable-grid{grid-template-columns:1fr}
+  .sticky-cta{display:block}
+  .hero-badges{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+<div class="wrap">
+<div class="header-inner">
+  <a href="#" class="logo-area">
+    <div class="logo-mark">IP</div>
+    <div class="logo-text"><strong>株式会社IPリッチ</strong>IPリッチ国際特許事務所</div>
+  </a>
+  <nav>
+    <a href="#problem">課題</a>
+    <a href="#solution">解決策</a>
+    <a href="#reasons">選ばれる理由</a>
+    <a href="#flow">流れ</a>
+    <a href="#domains">対象領域</a>
+    <a href="#pricing">料金</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta" data-cta="header" data-pos="header"><i class="fa-solid fa-paper-plane"></i> 相談・見積依頼</a>
+  </nav>
+</div>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+<div class="wrap">
+<div class="hero-grid">
+  <div>
+    <div class="hero-kicker"><i class="fa-solid fa-magnifying-glass-chart"></i> 特許侵害（被疑侵害製品）発見サービス</div>
+    <h1>眠る特許を、<br><em>収益化・交渉の初動情報</em>へ</h1>
+    <p class="hero-sub">技術者 × 知財専門家（弁理士等） × 複数の高性能AIツールが、保有特許を<strong>一件ずつ</strong>調査。被疑侵害製品の特定から累計売上の推定まで、次のアクションに必要な材料をレポートで可視化します。</p>
+    <div class="hero-badges">
+      <span class="badge badge-price"><i class="fa-solid fa-tag"></i> 100件あたり 30万〜50万円（税別）</span>
+      <span class="badge"><i class="fa-solid fa-file-lines"></i> 4項目レポート納品</span>
+      <span class="badge"><i class="fa-solid fa-users-gear"></i> 技術者×弁理士×AI</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary" data-cta="hero_primary" data-pos="hero"><i class="fa-solid fa-paper-plane"></i> 相談・見積依頼</a>
+      <a href="#solution" class="btn-secondary" data-cta="hero_secondary" data-pos="hero"><i class="fa-solid fa-eye"></i> 成果物を見る</a>
+    </div>
+    <div class="trust-bar">
+      <span class="trust-item"><i class="fa-solid fa-user-shield"></i> 知財専門家がレビュー</span>
+      <span class="trust-item"><i class="fa-solid fa-robot"></i> 複数AIで網羅的調査</span>
+      <span class="trust-item"><i class="fa-solid fa-shield-halved"></i> 非保証・推定値あり</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="preview-card">
+      <h3><i class="fa-solid fa-file-lines"></i> 納品レポート（4点セット）</h3>
+      <div class="deliverable-grid">
+        <div class="deliverable"><div class="num">01</div><div class="name"><i class="fa-solid fa-gauge-high"></i> 侵害可能性</div></div>
+        <div class="deliverable"><div class="num">02</div><div class="name"><i class="fa-solid fa-building"></i> 被疑侵害製品・企業</div></div>
+        <div class="deliverable"><div class="num">03</div><div class="name"><i class="fa-solid fa-diagram-project"></i> 簡易クレームチャート</div></div>
+        <div class="deliverable"><div class="num">04</div><div class="name"><i class="fa-solid fa-chart-line"></i> 累計売上（推定）</div></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center">※侵害の成否は保証しません。売上は推定値を含みます。</p>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Problem -->
+<section id="problem">
+<div class="wrap">
+<div class="section-header">
+  <h2>特許が「眠ったまま」になっていませんか？</h2>
+  <p>侵害の可能性を感じても、調査リソースやノウハウ不足で放置してしまう ── その間にも機会損失は静かに積み上がっています。</p>
+</div>
+<div class="problem-grid">
+  <div class="problem-card">
+    <div class="problem-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+    <div><h3>社内の調査体制が不足</h3><p>知財・法務・開発それぞれ多忙で、継続的な侵害監視に手が回らない。</p></div>
+  </div>
+  <div class="problem-card">
+    <div class="problem-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+    <div><h3>情報が散在し判断材料にならない</h3><p>候補はあっても根拠の整理や優先順位付けができず、意思決定に至らない。</p></div>
+  </div>
+  <div class="problem-card">
+    <div class="problem-icon"><i class="fa-solid fa-globe"></i></div>
+    <div><h3>網羅性に不安がある</h3><p>特定キーワードや地域に偏り、見落としや取りこぼしのリスクが残る。</p></div>
+  </div>
+  <div class="problem-card">
+    <div class="problem-icon"><i class="fa-solid fa-calculator"></i></div>
+    <div><h3>ROIが見えず着手できない</h3><p>売上規模が分からず、どの特許から動くべきかの判断ができない。</p></div>
+  </div>
+</div>
+<div style="text-align:center;margin-top:32px">
+  <a href="#contact" class="btn-primary" data-cta="problem_cta" data-pos="problem"><i class="fa-solid fa-paper-plane"></i> まずは相談する</a>
+</div>
+</div>
+</section>
+
+<!-- Solution -->
+<section id="solution">
+<div class="wrap">
+<div class="section-header">
+  <h2>被疑侵害製品の発見から判断材料まで、一気通貫で可視化</h2>
+  <p>技術者と知財専門家が協働し、複数の高性能AIツールを活用。各特許を一件ずつ調査し、次のアクションに繋がる4点セットを納品します。</p>
+</div>
+<div class="solution-deliverables">
+  <div class="sol-card">
+    <div class="sol-num">01</div>
+    <div class="sol-icon"><i class="fa-solid fa-gauge-high"></i></div>
+    <h3>侵害可能性</h3>
+    <p>公表情報の範囲で可能性を段階的に整理。追加調査の要否も明確化。</p>
+  </div>
+  <div class="sol-card">
+    <div class="sol-num">02</div>
+    <div class="sol-icon"><i class="fa-solid fa-building"></i></div>
+    <h3>被疑侵害製品・提供企業</h3>
+    <p>対象製品/サービスと提供企業を候補としてリスト化。</p>
+  </div>
+  <div class="sol-card">
+    <div class="sol-num">03</div>
+    <div class="sol-icon"><i class="fa-solid fa-diagram-project"></i></div>
+    <h3>簡易クレームチャート</h3>
+    <p>主要クレーム要素と公表情報の対応関係を整理。検討の土台に。</p>
+  </div>
+  <div class="sol-card">
+    <div class="sol-num">04</div>
+    <div class="sol-icon"><i class="fa-solid fa-chart-line"></i></div>
+    <h3>累計売上（推定）</h3>
+    <p>権利期間における累計売上を推定。優先順位付けとROI判断の材料に。</p>
+  </div>
+</div>
+<div class="sol-note">
+  <i class="fa-solid fa-lightbulb"></i>
+  <div>断定ではなく、収益化・交渉に進むための<strong>「初動情報」</strong>を整えるサービスです。</div>
+</div>
+</div>
+</section>
+
+<!-- Reasons -->
+<section id="reasons">
+<div class="wrap">
+<div class="section-header">
+  <h2>選ばれる3つの理由</h2>
+  <p>調査の網羅性と「価値ある特許の見極め」を両立し、次のアクションに繋がるアウトプットを提供します。</p>
+</div>
+<div class="reasons-grid">
+  <div class="reason-card">
+    <div class="reason-num">01</div>
+    <h3><i class="fa-solid fa-users-gear" style="color:var(--primary)"></i> 技術者×知財専門家の高度分析</h3>
+    <p>その分野の知見を有する技術者と弁理士等の知財専門家がチームで調査。技術的整合性と知財観点の妥当性を両立した分析を行います。</p>
+  </div>
+  <div class="reason-card">
+    <div class="reason-num">02</div>
+    <h3><i class="fa-solid fa-robot" style="color:var(--primary)"></i> AI活用による網羅的グローバル調査</h3>
+    <p>複数の高性能AIツールと独自プロンプト等で探索範囲を拡張。偏りや取りこぼしを抑え、候補を広く拾い上げます。</p>
+  </div>
+  <div class="reason-card">
+    <div class="reason-num">03</div>
+    <h3><i class="fa-solid fa-handshake" style="color:var(--primary)"></i> ライセンス事業者としての視点</h3>
+    <p>自らライセンシング等を行う主体だからこそ、「見つける」だけでなく、収益化・交渉に繋がる価値ある特許を見極めます。</p>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Flow -->
+<section id="flow">
+<div class="wrap">
+<div class="section-header">
+  <h2>調査〜納品の流れ</h2>
+  <p>お問い合わせからレポート納品まで、4ステップで初動情報を整えます。</p>
+</div>
+<div class="flow-steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <h3>お問い合わせ・ヒアリング</h3>
+    <p>特許リストと対象領域を共有。見積・納期をすり合わせます。</p>
+    <div class="step-chips"><span class="chip">特許リスト</span><span class="chip">見積提示</span></div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <h3>被疑侵害製品の調査</h3>
+    <p>専門家×AIで各特許を一件ずつ調査。候補製品・企業を抽出。</p>
+    <div class="step-chips"><span class="chip">グローバル</span><span class="chip">複数AI</span></div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <h3>売上調査（推定）</h3>
+    <p>侵害可能性が高い製品の権利期間における累計売上を推定。</p>
+    <div class="step-chips"><span class="chip">優先度</span><span class="chip">推定値</span></div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <h3>レポート納品</h3>
+    <p>4項目を検討しやすい形式で納品。次の検討の土台に。</p>
+    <div class="step-chips"><span class="chip">4点セット</span><span class="chip">初動情報</span></div>
+  </div>
+</div>
+<div style="text-align:center;margin-top:32px">
+  <a href="#contact" class="btn-primary" data-cta="flow_cta" data-pos="flow"><i class="fa-solid fa-paper-plane"></i> 進め方を相談する</a>
+</div>
+</div>
+</section>
+
+<!-- Domains -->
+<section id="domains">
+<div class="wrap">
+<div class="section-header">
+  <h2>対象技術分野</h2>
+  <p>公表情報から侵害の有無を判断しやすい分野に強みがあります。</p>
+</div>
+<div class="domain-grid">
+  <div class="domain-card good">
+    <h3><i class="fa-solid fa-circle-check"></i> 得意分野（公表情報で判断しやすい）</h3>
+    <ul class="domain-list">
+      <li><i class="fa-solid fa-laptop-code" style="color:#228b22"></i> ソフトウェア / ICT / IoT / AI / ビジネスモデル</li>
+      <li><i class="fa-solid fa-microchip" style="color:#228b22"></i> デバイス / 機械 / 電気電子 / 制御</li>
+      <li><i class="fa-solid fa-house" style="color:#228b22"></i> 構造物 / 日用品</li>
+    </ul>
+  </div>
+  <div class="domain-card bad">
+    <h3><i class="fa-solid fa-circle-xmark"></i> 原則対象外（分解・分析が必要）</h3>
+    <ul class="domain-list">
+      <li><i class="fa-solid fa-flask" style="color:#dc3545"></i> 製薬</li>
+      <li><i class="fa-solid fa-vial" style="color:#dc3545"></i> 化学</li>
+      <li><i class="fa-solid fa-cubes" style="color:#dc3545"></i> 材料</li>
+      <li><i class="fa-solid fa-memory" style="color:#dc3545"></i> 半導体</li>
+    </ul>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+<div class="wrap">
+<div class="section-header">
+  <h2>料金</h2>
+  <p>件数や難易度に応じた個別見積となります。まずはお気軽にご相談ください。</p>
+</div>
+<div class="pricing-box">
+  <div class="label">価格目安</div>
+  <div class="price">30万〜50万円 <span>（税別）</span></div>
+  <div class="note">特許100件あたり ／ 件数・難易度により個別見積</div>
+  <div class="price-details">
+    <span class="price-detail"><i class="fa-solid fa-magnifying-glass"></i> 一件ずつ専門家が調査</span>
+    <span class="price-detail"><i class="fa-solid fa-robot"></i> 複数AIで網羅的探索</span>
+    <span class="price-detail"><i class="fa-solid fa-file-lines"></i> 4項目レポート納品</span>
+  </div>
+  <a href="#contact" class="btn-primary" data-cta="pricing_cta" data-pos="pricing"><i class="fa-solid fa-paper-plane"></i> 見積を依頼する</a>
+</div>
+</div>
+</section>
+
+<!-- Notice -->
+<section id="notice">
+<div class="wrap">
+<div class="section-header">
+  <h2>注意事項</h2>
+</div>
+<div class="notice-box">
+  <h3><i class="fa-solid fa-triangle-exclamation"></i> ご理解いただきたい点</h3>
+  <ul class="notice-list">
+    <li><i class="fa-solid fa-circle-info"></i> 本サービスは侵害の成否を保証するものではありません。侵害可能性の整理と初動情報の提供を目的としています。</li>
+    <li><i class="fa-solid fa-circle-info"></i> 売上データは推定値を含み、正確性を保証するものではありません。</li>
+    <li><i class="fa-solid fa-circle-info"></i> 侵害鑑定や交渉代理は本サービスの範囲外です。必要な場合は別途ご相談ください。</li>
+  </ul>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<div class="wrap">
+<div class="section-header">
+  <h2>よくあるご質問</h2>
+</div>
+<div class="faq-list">
+  <details>
+    <summary>どのような情報があれば開始できますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">基本的には特許番号リスト（または公報）があれば開始可能です。対象技術分野や調査の目的をお伺いした上で、見積・納期をご提示します。</div>
+  </details>
+  <details>
+    <summary>何件から依頼できますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">件数に下限は設けていません。ただし、価格は100件あたりの目安を基準に、件数・難易度に応じて個別にお見積りします。少数でもお気軽にご相談ください。</div>
+  </details>
+  <details>
+    <summary>海外の製品も調査対象になりますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">はい。複数のAIツールを活用したグローバル調査を行っています。公表情報（Web情報、公開資料等）が入手可能な範囲で、海外製品・企業も候補に含めます。</div>
+  </details>
+  <details>
+    <summary>顧問弁理士がいても利用できますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">もちろんです。本サービスは「初動情報の提供」に特化しており、顧問弁理士との補完関係で機能します。レポートをそのまま社内検討や専門家評価の材料としてご活用いただけます。</div>
+  </details>
+  <details>
+    <summary>侵害鑑定や交渉まで依頼できますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">本サービスの範囲は被疑侵害製品の発見と初動情報の整理までです。鑑定や交渉が必要な場合は、別途ご相談ください。適切な専門家をご紹介することも可能です。</div>
+  </details>
+  <details>
+    <summary>調査結果で侵害が確定しますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">いいえ。本サービスは侵害の成否を保証するものではありません。公表情報に基づく「可能性の整理」と「候補の特定」を行い、次の検討に必要な材料を提供します。</div>
+  </details>
+  <details>
+    <summary>秘密保持はどうなっていますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">調査に際して知り得た情報は厳重に管理します。必要に応じて秘密保持契約（NDA）の締結も可能です。お問い合わせ時にご相談ください。</div>
+  </details>
+  <details>
+    <summary>対象外の分野でも相談できますか？ <i class="fa-solid fa-chevron-down"></i></summary>
+    <div class="faq-answer">まずはご相談ください。製薬・化学・材料・半導体等は原則対象外ですが、公表情報で判断可能な観点がある場合は、一部対応できる可能性があります。</div>
+  </details>
+</div>
+<div style="text-align:center;margin-top:32px">
+  <a href="#contact" class="btn-primary" data-cta="faq_cta" data-pos="faq"><i class="fa-solid fa-paper-plane"></i> 相談・見積依頼</a>
+</div>
+</div>
+</section>
+
+<!-- Final CTA / Form -->
+<section class="final-cta" id="contact">
+<div class="wrap">
+<div class="section-header">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>特許リストがなくてもOK。対象分野の確認や概算見積など、お気軽にお問い合わせください。<br>入力項目は最小限です。</p>
+</div>
+<div class="form-wrapper">
+  <form id="contactForm" onsubmit="return handleSubmit(event)">
+    <div class="form-grid">
+      <div class="field">
+        <label>会社名 <span class="req">必須</span></label>
+        <input type="text" name="company" placeholder="株式会社〇〇" required>
+      </div>
+      <div class="field">
+        <label>お名前 <span class="req">必須</span></label>
+        <input type="text" name="name" placeholder="山田 太郎" required>
+      </div>
+      <div class="field">
+        <label>メールアドレス <span class="req">必須</span></label>
+        <input type="email" name="email" placeholder="example@company.co.jp" required>
+      </div>
+      <div class="field">
+        <label>電話番号 <span style="font-size:11px;color:rgba(255,255,255,.4)">任意</span></label>
+        <input type="tel" name="phone" placeholder="03-0000-0000">
+      </div>
+      <div class="field">
+        <label>お問い合わせ種別 <span class="req">必須</span></label>
+        <select name="type" required>
+          <option value="">選択してください</option>
+          <option value="estimate">見積依頼</option>
+          <option value="consult">相談・質問</option>
+          <option value="domain_check">対象分野の確認</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>保有特許件数（概算） <span style="font-size:11px;color:rgba(255,255,255,.4)">任意</span></label>
+        <select name="patent_count">
+          <option value="">選択してください</option>
+          <option value="1-29">1〜29件</option>
+          <option value="30-99">30〜99件</option>
+          <option value="100-499">100〜499件</option>
+          <option value="500+">500件以上</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label>ご相談内容</label>
+        <textarea name="message" placeholder="ご相談内容、対象技術分野、ご質問などをご記入ください。"></textarea>
+      </div>
+    </div>
+    <div class="form-note">※入力いただいた情報は、本サービスに関するご連絡にのみ使用します。</div>
+    <div class="form-submit">
+      <button type="submit" data-cta="form_submit" data-pos="form"><i class="fa-solid fa-paper-plane"></i> 送信する</button>
+    </div>
+  </form>
+  <div class="form-success" id="formSuccess">
+    <i class="fa-solid fa-circle-check" style="font-size:24px;color:#c8a04e;margin-bottom:8px"></i><br>
+    お問い合わせありがとうございます。<br>内容を確認の上、担当者よりご連絡いたします。
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="wrap">
+<div class="footer-inner">
+  <div class="footer-brand">株式会社IPリッチ<span>IPリッチ国際特許事務所</span></div>
+  <div class="footer-links">
+    <a href="https://iprich.jp/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> iprich.jp</a>
+  </div>
+  <div class="footer-copy">&copy; 2024 IPRich Inc. All rights reserved.</div>
+</div>
+</div>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta">
+<div class="sticky-inner">
+  <div class="sticky-info"><strong>特許侵害製品発見サービス</strong>100件あたり 30万〜50万円（税別）</div>
+  <a href="#contact" class="sticky-btn" data-cta="sticky_cta" data-pos="sticky"><i class="fa-solid fa-paper-plane"></i> 相談</a>
+</div>
+</div>
+
+<!-- Analytics -->
+<script>
+(function(){
+  // Scroll depth tracking
+  var depths=[25,50,75,90],tracked={};
+  function checkScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    if(h<=0)return;
+    var pct=Math.round(window.scrollY/h*100);
+    depths.forEach(function(d){
+      if(pct>=d&&!tracked[d]){
+        tracked[d]=true;
+        trackEvent('scroll_depth',{depth:d});
+      }
+    });
+  }
+  window.addEventListener('scroll',checkScroll,{passive:true});
+
+  // CTA click tracking
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('[data-cta]');
+    if(btn){
+      trackEvent('cta_click',{
+        cta:btn.getAttribute('data-cta'),
+        position:btn.getAttribute('data-pos')||'unknown'
+      });
+    }
+  });
+
+  // Form tracking
+  var form=document.getElementById('contactForm');
+  if(form){
+    var formViewed=false,formStarted=false;
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting&&!formViewed){
+          formViewed=true;
+          trackEvent('form_view',{});
+        }
+      });
+    },{threshold:0.3});
+    observer.observe(form);
+
+    form.addEventListener('input',function(){
+      if(!formStarted){
+        formStarted=true;
+        trackEvent('form_start',{});
+      }
+    });
+  }
+
+  function trackEvent(name,data){
+    if(typeof gtag==='function'){
+      gtag('event',name,data);
+    }
+    if(typeof dataLayer!=='undefined'){
+      dataLayer.push(Object.assign({event:name},data));
+    }
+    console.log('[Analytics]',name,data);
+  }
+})();
+
+// Form submit handler
+function handleSubmit(e){
+  e.preventDefault();
+  var form=document.getElementById('contactForm');
+  var success=document.getElementById('formSuccess');
+  // Track submit
+  if(typeof gtag==='function') gtag('event','form_submit_success',{});
+  console.log('[Analytics] form_submit_success');
+  form.style.display='none';
+  success.style.display='block';
+  return false;
+}
+</script>
+</body>
+</html>

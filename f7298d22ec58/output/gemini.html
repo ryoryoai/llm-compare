@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特許侵害発見サービス | 株式会社IPリッチ - 眠る特許を収益へ</title>
+    <meta name="description" content="保有特許を侵害している可能性のある製品を調査・発見する「特許侵害発見サービス」。技術者×弁理士×AIによる高度分析で、眠っている特許を収益や交渉力に変えるための初動情報を提供します。">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0A2463; /* Trust Navy */
+            --accent: #D9A404; /* Gold/Revenue */
+            --accent-hover: #b58900;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f4f7f6;
+            --bg-white: #ffffff;
+            --white: #ffffff;
+            --border: #e0e0e0;
+            --danger: #d32f2f;
+            --spacing-section: 80px;
+            --spacing-mobile: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 80px; /* Space for sticky CTA */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+        .text-primary { color: var(--primary); }
+        .text-accent { color: var(--accent); }
+        .font-bold { font-weight: 700; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+
+        .section {
+            padding: var(--spacing-section) 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: var(--spacing-mobile) 0;
+            }
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-large {
+            padding: 1.2rem 3rem;
+            font-size: 1.25rem;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .btn-block-mobile {
+            display: inline-block;
+        }
+        @media(max-width: 768px) {
+            .btn-block-mobile {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0A2463 0%, #1a3c8a 100%);
+            color: var(--white);
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=');
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 960px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .hero-tag {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+            background: rgba(255,255,255,0.1);
+            padding: 0 5px;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-price-anchor {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .hero-price-text {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-price-val {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .hero-card {
+            background: var(--white);
+            color: var(--text-main);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+        
+        .hero-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .hero-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Problem Section */
+        .problem {
+            background-color: var(--bg-light);
+        }
+
+        .problem-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 5px solid var(--danger);
+        }
+
+        .problem-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-cost {
+            font-size: 1.5rem;
+            color: var(--danger);
+            font-weight: 900;
+        }
+
+        /* Solution Section */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .deliverable-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .deliverable-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .del-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .del-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .del-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* USP Section */
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 960px) {
+            .usp-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .usp-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usp-card::top {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+
+        .usp-num {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .usp-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Flow Section */
+        .flow-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .flow-container::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .flow-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .flow-container::before {
+                display: none;
+            }
+        }
+
+        .flow-step {
+            position: relative;
+            z-index: 1;
+            background: var(--white);
+            padding: 0 10px;
+            width: 22%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .flow-step {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 1rem;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+            }
+        }
+
+        .flow-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .flow-icon {
+                margin: 0 1rem 0 0;
+            }
+        }
+
+        .flow-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-content p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Areas Section */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .area-box {
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .area-good {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+        }
+
+        .area-bad {
+            background-color: #ffebee;
+            border: 1px solid #ffcdd2;
+        }
+
+        .area-title {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .area-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .area-good .area-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #2e7d32;
+            position: absolute;
+            left: 0;
+        }
+
+        .area-bad .area-list li::before {
+            content: '\f00d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #c62828;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Price Section */
+        .price-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .price-main {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            margin: 1rem 0;
+        }
+        
+        .price-main span {
+            font-size: 1.2rem;
+        }
+
+        .price-sub {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #f0f0f0;
+            padding: 2rem 0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .disclaimer ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+        }
+
+        .faq-question::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1rem 1rem;
+            display: none;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--bg-light);
+        }
+
+        .form-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(10, 36, 99, 0.1);
+        }
+
+        /* Sticky Footer CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 10px 20px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            display: none;
+            border-top: 1px solid var(--border);
+        }
+        
+        .sticky-cta-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                display: block;
+            }
+            .sticky-hide-mobile {
+                display: none;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 0 6rem; /* Extra padding for sticky cta */
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fa-solid fa-scale-balanced"></i> IP Rich
+            </div>
+            <nav class="sticky-hide-mobile">
+                <a href="#problem" style="margin-right: 20px; font-weight: 500;">課題</a>
+                <a href="#solution" style="margin-right: 20px; font-weight: 500;">解決策</a>
+                <a href="#price" style="margin-right: 20px; font-weight: 500;">料金</a>
+                <a href="#contact" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">無料相談</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-tag">特許侵害（被疑侵害製品）発見サービス</div>
+                <h1 class="hero-title">「眠っている特許」を<br><span>収益・交渉力</span>へ変える。</h1>
+                <p class="hero-sub">
+                    技術者×知財専門家×AIが、貴社の特許を侵害している可能性のある製品を網羅的に調査。<br>
+                    ライセンス交渉や事業優位性確保のための「初動情報」を提供します。
+                </p>
+                <div class="hero-price-anchor">
+                    <p class="hero-price-text">調査費用目安</p>
+                    <div class="hero-price-val">100件 30万円〜<span style="font-size:0.8rem; font-weight:normal; color:#fff;">(税別)</span></div>
+                </div>
+                <div class="sticky-hide-mobile">
+                    <a href="#contact" class="btn btn-large">侵害調査を依頼する <i class="fa-solid fa-arrow-right"></i></a>
+                    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">※まずは無料相談から可能です</p>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3><i class="fa-solid fa-file-contract"></i> 納品成果物イメージ</h3>
+                <ul class="hero-list">
+                    <li><strong>侵害可能性判定:</strong> ○△×で簡易評価</li>
+                    <li><strong>対象製品特定:</strong> 製品名・型番・提供企業</li>
+                    <li><strong>簡易クレームチャート:</strong> 請求項と製品構成の対比</li>
+                    <li><strong>推定売上算出:</strong> 権利期間の累計被害額試算</li>
+                </ul>
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #ddd; font-size: 0.9rem; color: #666;">
+                    <i class="fa-solid fa-users-gear"></i> <strong>調査体制:</strong> 技術者、弁理士、独自AIツール
+                </div>
+            </div>
+            <div style="display: none; width: 100%; margin-top: 20px;" class="btn-block-mobile-wrapper">
+                 <!-- Mobile Only Button in Flow handled by sticky footer, but put one here too -->
+                 <a href="#contact" class="btn btn-block-mobile" style="display: none;">今すぐ相談する</a>
+            </div>
+        </div>
+        <style>
+             @media(max-width: 960px) { .btn-block-mobile { display: block !important; margin-top: 20px; } }
+        </style>
+    </section>
+
+    <!-- Problem -->
+    <section id="problem" class="section problem">
+        <div class="container">
+            <h2 class="section-title">御社の特許、<br>維持費だけかかっていませんか？</h2>
+            <div class="problem-box">
+                <p class="problem-text">
+                    多くの企業が、膨大な維持年金を払いながら、<br>
+                    その特許が「他社に使われているか」を確認できていません。
+                </p>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <i class="fa-solid fa-sack-dollar" style="font-size: 3rem; color: #aaa; margin-bottom: 10px;"></i>
+                        <p>年々増大する<br>維持コスト</p>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <i class="fa-solid fa-magnifying-glass-chart" style="font-size: 3rem; color: #aaa; margin-bottom: 10px;"></i>
+                        <p>侵害発見の<br>リソース不足</p>
+                    </div>
+                </div>
+                <p>
+                    もし、他社がその技術を使用していた場合、<br>
+                    <span class="problem-cost">数億円規模の逸失利益</span>が発生している可能性があります。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="solution" class="section">
+        <div class="container">
+            <h2 class="section-title">「侵害の可視化」で攻めの知財へ</h2>
+            <p class="text-center mb-4">
+                IPリッチの侵害発見サービスは、公開情報から外観・UI・スペック等を分析し、<br>
+                貴社特許を侵害している可能性が高い製品（被疑侵害製品）を特定します。
+            </p>
+            
+            <div class="deliverables-grid">
+                <div class="deliverable-item">
+                    <div class="del-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h3 class="del-title">① 侵害可能性の判定</h3>
+                    <p class="del-desc">特許請求の範囲に基づき、他社製品が侵害している可能性を技術者が判定。優先順位付けが可能になります。</p>
+                </div>
+                <div class="deliverable-item">
+                    <div class="del-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h3 class="del-title">② 被疑侵害製品の特定</h3>
+                    <p class="del-desc">具体的な企業名、製品名、型番、証拠となるURL等をリスト化して提供します。</p>
+                </div>
+                <div class="deliverable-item">
+                    <div class="del-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <h3 class="del-title">③ 簡易クレームチャート</h3>
+                    <p class="del-desc">特許の構成要件と対象製品の仕様を対比させた簡易チャートを作成。内部検討の基礎資料として活用できます。</p>
+                </div>
+                <div class="deliverable-item">
+                    <div class="del-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="del-title">④ 推定売上・被害額算出</h3>
+                    <p class="del-desc">権利期間における対象製品の累計売上を独自に推計。ライセンス交渉や損害賠償請求のポテンシャルを可視化します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">選ばれる3つの理由</h2>
+            <div class="usp-grid">
+                <div class="usp-card">
+                    <div class="usp-num">1</div>
+                    <h3 class="usp-title">技術者×知財専門家の<br>高度分析</h3>
+                    <p style="font-size: 0.9rem;">単なるキーワード検索ではありません。当該技術分野に精通したエンジニアと弁理士がチームを組み、特許の技術的範囲を正確に解釈した上で調査を行います。</p>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-num">2</div>
+                    <h3 class="usp-title">AI活用による<br>網羅的グローバル調査</h3>
+                    <p style="font-size: 0.9rem;">独自のAIプロンプトと検索技術を駆使し、国内だけでなく海外製品も含めた膨大なWeb情報から、侵害の疑いがある製品を効率的にスクリーニングします。</p>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-num">3</div>
+                    <h3 class="usp-title">「価値ある特許」の<br>見極め視点</h3>
+                    <p style="font-size: 0.9rem;">弊社自身がライセンス交渉を行う主体でもあるため、「権利行使しやすいか」「賠償額が見込めるか」という実利的な視点でのスクリーニングが可能です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Areas -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">対象技術分野</h2>
+            <div class="areas-grid">
+                <div class="area-box area-good">
+                    <h3 class="area-title text-primary"><i class="fa-solid fa-circle-check"></i> 得意・推奨分野</h3>
+                    <p class="mb-2 text-primary" style="font-size: 0.9rem;">外観、UI、カタログスペック、マニュアル等から構成要件の充足性が判断しやすい分野</p>
+                    <ul class="area-list">
+                        <li>ソフトウェア / アプリ / UI・UX</li>
+                        <li>ICT / IoT / ビジネスモデル</li>
+                        <li>AIアルゴリズム（出力・仕様から推測可能なもの）</li>
+                        <li>構造物 / 日用品 / 事務機器</li>
+                        <li>電気・電子機器 / メカトロニクス</li>
+                    </ul>
+                </div>
+                <div class="area-box area-bad">
+                    <h3 class="area-title" style="color: #c62828;"><i class="fa-solid fa-circle-xmark"></i> 原則対象外</h3>
+                    <p class="mb-2" style="font-size: 0.9rem; color: #c62828;">製品の分解、成分分析、リバースエンジニアリングを行わないと侵害有無が分からない分野</p>
+                    <ul class="area-list">
+                        <li>医薬品 / バイオテクノロジー</li>
+                        <li>化学・材料（内部組成）</li>
+                        <li>半導体（内部構造）</li>
+                        <li>製造プロセス特許（生成物から判別不能なもの）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow -->
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">調査の流れ</h2>
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-regular fa-comments"></i></div>
+                    <div class="flow-content">
+                        <h4>STEP 1<br>お問い合わせ・見積</h4>
+                        <p>対象特許リストをいただき、概算見積を提示します。（NDA締結可）</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="flow-content">
+                        <h4>STEP 2<br>スクリーニング調査</h4>
+                        <p>技術者とAIにより、侵害の可能性がある製品を網羅的に抽出します。</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <div class="flow-content">
+                        <h4>STEP 3<br>詳細精査・売上推計</h4>
+                        <p>弁理士監修のもとクレームチャートを作成し、売上規模を調査します。</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-icon"><i class="fa-regular fa-file-lines"></i></div>
+                    <div class="flow-content">
+                        <h4>STEP 4<br>レポート納品</h4>
+                        <p>調査結果レポートを納品。今後の活用方針についても助言可能です。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price -->
+    <section id="price" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">ご利用料金</h2>
+            <p class="mb-4">特許の件数や技術分野の難易度に応じて個別にお見積もりいたします。</p>
+            <div class="price-box">
+                <h3>標準パッケージ</h3>
+                <div class="price-main">
+                    <span>特許100件あたり</span><br>
+                    30〜50<span>万円</span>
+                    <span style="font-size: 1rem; color: #666; font-weight: normal;">（税別）</span>
+                </div>
+                <p class="price-sub">※特許1件からの調査も可能です。お気軽にご相談ください。<br>※AIツールの活用により、従来の人力調査に比べ圧倒的な低コストを実現しています。</p>
+            </div>
+            <div style="margin-top: 3rem;">
+                <a href="#contact" class="btn btn-large">無料見積・相談をする <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+        <div class="container">
+            <h4>【注意事項】</h4>
+            <ul>
+                <li>本サービスは、公開情報に基づく調査結果を提供するものであり、特許侵害の事実を法的に保証するものではありません。</li>
+                <li>「侵害可能性」の判定は、弊社技術者および弁理士の知見に基づく推定です。正式な鑑定書（オピニオン）ではありません。</li>
+                <li>被疑侵害製品の売上は、IR資料、市場調査レポート、販売価格とランキング等からの推計値であり、実際の売上とは異なる場合があります。</li>
+                <li>相手方との交渉、訴訟代理業務は本サービスに含まれません。（提携弁護士の紹介は可能です）</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">よくある質問</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. 調査対象の特許が数件しかないのですが、依頼できますか？</div>
+                <div class="faq-answer">はい、可能です。1件からでも承っております。件数が少ない場合は、より詳細な深掘り調査を行うプランもご提案可能です。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q. 海外の製品も調査対象になりますか？</div>
+                <div class="faq-answer">はい、対象となります。英語圏や中国語圏を中心に、グローバル市場で販売されている製品を調査いたします。越境EC等での販売実績も含めて調査可能です。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 調査期間はどのくらいですか？</div>
+                <div class="faq-answer">通常、特許100件程度のスクリーニングであれば、ご発注から2〜3週間程度で一次レポートを納品いたします。お急ぎの場合はご相談ください。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 侵害が見つからなかった場合、費用はどうなりますか？</div>
+                <div class="faq-answer">本サービスは調査業務の委託となるため、侵害製品が発見されなかった場合でも調査費用は発生いたします。ただし、事前の簡易診断で「発見の見込みが低い」と判断した場合は、調査実施前にお伝えいたします。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 弁理士法や弁護士法には抵触しませんか？</div>
+                <div class="faq-answer">本サービスは、特許事務所（IPリッチ国際特許事務所）と連携し、事実調査および一般的な技術対比情報の提供を行うものです。法的効果を伴う鑑定や、代理人としての交渉は行いませんので、法的な問題はございません。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 競合他社に調査していることがバレませんか？</div>
+                <div class="faq-answer">はい、調査は全て公開情報（Web、製品カタログ、マニュアル等）を用いて非接触で行いますので、調査対象企業に知られることはありません。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 報告書（クレームチャート）のサンプルを見ることはできますか？</div>
+                <div class="faq-answer">はい、お問い合わせいただいた方には、個人情報や機密情報を伏せた形のサンプルレポートをご提示可能です。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 発見後のライセンス交渉もお願いできますか？</div>
+                <div class="faq-answer">交渉の戦略立案や、交渉用資料の作成支援は可能です。実際の交渉代理については、提携している弁護士を紹介させていただくか、貴社知財部・法務部のサポートに回る形となります。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section form-section">
+        <div class="container">
+            <h2 class="section-title">お問い合わせ・無料見積</h2>
+            <p class="text-center mb-4">
+                まずは保有特許のリスト（番号のみで可）や、<br>
+                気になる製品についてお気軽にご相談ください。<br>
+                <span style="font-size: 0.9rem; color: #666;">※通常1営業日以内に担当者よりご連絡いたします。</span>
+            </p>
+            
+            <div class="form-container">
+                <form onsubmit="event.preventDefault(); alert('デモ送信：お問い合わせありがとうございます。');">
+                    <div class="form-group">
+                        <label class="form-label">会社名 <span style="color:red">*</span></label>
+                        <input type="text" class="form-control" required placeholder="株式会社IPリッチ">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">お名前 <span style="color:red">*</span></label>
+                        <input type="text" class="form-control" required placeholder="知財 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">メールアドレス <span style="color:red">*</span></label>
+                        <input type="email" class="form-control" required placeholder="sample@iprich.jp">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">ご相談内容（概算の特許件数など）</label>
+                        <textarea class="form-control" rows="5" placeholder="保有特許約50件について、侵害調査を検討しています。費用感を知りたいです。"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-large" style="width: 100%;">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="justify-content: center; color: var(--white); margin-bottom: 1rem;">
+                <i class="fa-solid fa-scale-balanced"></i> IP Rich
+            </div>
+            <p style="margin-bottom: 1rem;">
+                <strong>株式会社IPリッチ / IPリッチ国際特許事務所</strong><br>
+                〒100-0000 東京都千代田区...<br>
+            </p>
+            <p class="copyright">&copy; IP Rich Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA (Mobile) -->
+    <div class="sticky-cta">
+        <div class="sticky-cta-inner">
+            <div style="font-size: 0.8rem; font-weight: bold; color: var(--text-main);">
+                特許侵害調査<br>
+                <span style="color: var(--primary);">100件30万円〜</span>
+            </div>
+            <a href="#contact" class="btn" style="padding: 0.7rem 1.5rem; font-size: 0.9rem; box-shadow: none;">
+                無料相談 <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 70;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

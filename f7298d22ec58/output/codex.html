@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="株式会社IPリッチの特許侵害（被疑侵害製品）発見サービス。眠る特許を、収益化/交渉可能な「初動情報」へ。技術者×知財専門家×高性能AIで、特許を一件ずつ調査し、被疑侵害製品と累計売上の推定まで可視化します。" />
+  <meta property="og:title" content="特許侵害（被疑侵害製品）発見サービス｜株式会社IPリッチ" />
+  <meta property="og:description" content="眠る特許を、収益化/交渉可能な「初動情報」へ。技術者×知財専門家×AIで被疑侵害製品・簡易クレームチャート・累計売上（推定）を可視化。" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>特許侵害（被疑侵害製品）発見サービス｜株式会社IPリッチ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#070b14;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --stroke:rgba(255,255,255,.12);
+      --stroke2:rgba(255,255,255,.18);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.74);
+      --muted2:rgba(234,240,255,.58);
+      --accent:#5b8cff;
+      --accent2:#55f3d0;
+      --warning:#ffd266;
+      --danger:#ff6b8b;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --shadow2: 0 12px 40px rgba(0,0,0,.18);
+      --radius:18px;
+      --radius2:26px;
+      --max:1160px;
+      --gap:18px;
+      --gap2:26px;
+      --pad: clamp(16px, 3vw, 28px);
+      --pad2: clamp(18px, 3.3vw, 34px);
+      --h1: clamp(30px, 4.2vw, 52px);
+      --h2: clamp(22px, 3vw, 34px);
+      --h3: clamp(18px, 2.3vw, 22px);
+      --p: 16px;
+      --p2: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --font: "Inter","Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background: radial-gradient(1200px 800px at 18% 12%, rgba(91,140,255,.22), transparent 55%),
+                  radial-gradient(900px 700px at 78% 18%, rgba(85,243,208,.16), transparent 55%),
+                  radial-gradient(800px 600px at 50% 90%, rgba(255,210,102,.10), transparent 60%),
+                  linear-gradient(180deg, var(--bg) 0%, var(--bg2) 80%);
+      color:var(--text);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{width:min(var(--max), calc(100% - 2*var(--pad))); margin:0 auto}
+    .grid{display:grid; gap:var(--gap2)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.55em;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(91,140,255,.95), rgba(85,243,208,.85));
+      color:#071020;
+      font-weight: 800;
+      letter-spacing: .02em;
+      box-shadow: 0 12px 35px rgba(91,140,255,.22);
+      transform: translateZ(0);
+      transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); filter:saturate(1.05); box-shadow: 0 14px 40px rgba(91,140,255,.28)}
+    .btn:active{transform: translateY(0px); filter:saturate(.98)}
+    .btn.secondary{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-color: rgba(255,255,255,.16);
+      box-shadow: none;
+    }
+    .btn.secondary:hover{background: rgba(255,255,255,.09)}
+    .btn.ghost{
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(255,255,255,.22);
+    }
+    .btn.small{padding:10px 14px; font-size:13px; font-weight:800}
+    .tag{
+      display:inline-flex; align-items:center; gap:.5em;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      color: rgba(234,240,255,.86);
+      font-weight: 700;
+      font-size: 13px;
+      white-space:nowrap;
+    }
+    .tag strong{color:var(--text)}
+    .tag .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(91,140,255,.14);
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .card.pad{padding: var(--pad2)}
+    .card.soft{box-shadow: var(--shadow2)}
+    .muted{color:var(--muted)}
+    .muted2{color:var(--muted2)}
+    .kicker{
+      display:inline-flex; align-items:center; gap:.6em;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(91,140,255,.14);
+      border:1px solid rgba(91,140,255,.22);
+      color: rgba(234,240,255,.92);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing:.02em;
+    }
+    .kicker i{color: rgba(85,243,208,.92)}
+    .headline{
+      font-size: var(--h1);
+      line-height: 1.12;
+      margin: 12px 0 10px 0;
+      letter-spacing: -0.02em;
+    }
+    .subhead{
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0 0 18px 0;
+      max-width: 60ch;
+    }
+    .section{padding: 68px 0}
+    .section.tight{padding: 46px 0}
+    .section .title{
+      font-size: var(--h2);
+      line-height:1.18;
+      margin: 0 0 10px 0;
+      letter-spacing:-.01em;
+    }
+    .section .lead{
+      color: var(--muted);
+      margin: 0 0 22px 0;
+      max-width: 70ch;
+    }
+    .hr{
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
+      margin: 22px 0;
+    }
+
+    header{
+      position: sticky;
+      top:0;
+      z-index: 50;
+      background: rgba(7,11,20,.68);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(12px);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .logo{
+      width: 40px; height: 40px; border-radius: 14px;
+      background: radial-gradient(18px 18px at 30% 35%, rgba(255,255,255,.65), rgba(255,255,255,0)),
+                  linear-gradient(135deg, rgba(91,140,255,.95), rgba(85,243,208,.85));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(91,140,255,.18);
+      display:grid; place-items:center;
+      color:#061020;
+      font-weight: 900;
+      letter-spacing:.02em;
+    }
+    .brand .names{display:flex; flex-direction:column; gap:2px}
+    .brand .names .top{font-weight: 900; letter-spacing:.02em}
+    .brand .names .sub{font-size: 12px; color: var(--muted2)}
+    .navlinks{
+      display:none;
+      gap: 14px;
+      align-items:center;
+      justify-content:center;
+      flex: 1;
+    }
+    .navlinks a{
+      color: rgba(234,240,255,.78);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid transparent;
+      transition: background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .navlinks a:hover{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+      color: rgba(234,240,255,.92);
+    }
+    .navcta{display:flex; gap:10px; align-items:center}
+
+    .hero{
+      padding: 44px 0 26px 0;
+      position: relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-120px -10vw auto -10vw;
+      height: 420px;
+      background: radial-gradient(600px 240px at 15% 30%, rgba(91,140,255,.22), transparent 60%),
+                  radial-gradient(520px 240px at 68% 25%, rgba(85,243,208,.16), transparent 60%);
+      pointer-events:none;
+      filter:saturate(1.05);
+    }
+    .heroGrid{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    .heroLeft{display:flex; flex-direction:column; gap: 16px}
+    .heroRight{height:100%}
+    .heroBadges{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      align-items:center;
+    }
+    .heroPoints{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .point{
+      padding: 14px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      display:flex; gap: 12px;
+      align-items:flex-start;
+    }
+    .point i{
+      color: rgba(85,243,208,.92);
+      margin-top: 2px;
+    }
+    .point .t{font-weight: 900}
+    .point .d{font-size: 13px; color: var(--muted2); margin-top: 2px}
+    .heroCtas{display:flex; gap: 12px; flex-wrap:wrap; align-items:center; margin-top: 2px}
+    .priceAnchor{
+      display:flex; gap: 10px; flex-wrap:wrap; align-items:center;
+      color: rgba(234,240,255,.86);
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .priceAnchor .pill{
+      display:inline-flex; align-items:center; gap:.55em;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,210,102,.12);
+      border:1px solid rgba(255,210,102,.22);
+    }
+    .priceAnchor .pill i{color: var(--warning)}
+    .trustRow{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-top: 6px;
+      color: rgba(234,240,255,.78);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .trustRow span{
+      display:inline-flex; align-items:center; gap:.5em;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+    .trustRow i{color: rgba(91,140,255,.92)}
+    .heroRightInner{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .reportPreview{
+      padding: 18px;
+      border-radius: 22px;
+      background:
+        radial-gradient(220px 140px at 15% 20%, rgba(91,140,255,.18), transparent 60%),
+        radial-gradient(220px 140px at 80% 30%, rgba(85,243,208,.12), transparent 60%),
+        rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow);
+      flex: 1;
+      min-height: 300px;
+      position: relative;
+      overflow:hidden;
+    }
+    .reportTop{
+      display:flex; align-items:center; justify-content:space-between; gap: 10px;
+      margin-bottom: 12px;
+    }
+    .reportTop .badge{
+      display:inline-flex; gap:.55em; align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(7,11,20,.35);
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(234,240,255,.90);
+    }
+    .reportTop .badge i{color: rgba(85,243,208,.92)}
+    .reportTop .mini{
+      font-size: 12px;
+      color: var(--muted2);
+      font-weight: 800;
+    }
+    .reportGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .reportBox{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,11,20,.35);
+      padding: 12px 12px;
+      min-height: 106px;
+      position: relative;
+      overflow:hidden;
+    }
+    .reportBox .n{
+      font-family: var(--mono);
+      font-weight: 900;
+      font-size: 12px;
+      color: rgba(255,255,255,.75);
+    }
+    .reportBox .h{
+      font-weight: 900;
+      margin: 6px 0 6px 0;
+      display:flex; align-items:center; gap:.55em;
+    }
+    .reportBox .h i{color: rgba(91,140,255,.95)}
+    .reportBox .c{
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .reportBox::after{
+      content:"";
+      position:absolute; inset:auto -40px -40px auto;
+      width: 140px; height: 140px;
+      background: radial-gradient(closest-side, rgba(91,140,255,.20), transparent 70%);
+      transform: rotate(18deg);
+      pointer-events:none;
+    }
+
+    .strip{
+      display:flex; gap: 12px;
+      flex-wrap:wrap;
+      align-items:stretch;
+      margin-top: 12px;
+    }
+    .strip .miniCard{
+      flex: 1 1 180px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      min-width: 180px;
+    }
+    .strip .miniCard .k{font-size: 12px; color: var(--muted2); font-weight: 900; letter-spacing:.02em}
+    .strip .miniCard .v{margin-top: 6px; font-weight: 900}
+    .strip .miniCard .v small{color: var(--muted2); font-weight: 900}
+    .strip .miniCard i{color: rgba(85,243,208,.92); margin-right: 8px}
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap2);
+      align-items:start;
+    }
+
+    .problemGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: var(--gap2);
+      align-items: stretch;
+    }
+    .bulletList{display:grid; gap: 10px; margin: 16px 0 0 0; padding: 0; list-style:none}
+    .bullet{
+      display:flex; gap: 12px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .bullet i{color: rgba(255,210,102,.92); margin-top: 2px}
+    .bullet .b{font-weight: 900}
+    .bullet .s{color: var(--muted2); font-size: 13px; margin-top: 2px}
+
+    .statBox{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .stat{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      position: relative;
+      overflow:hidden;
+    }
+    .stat .k{font-size: 12px; color: var(--muted2); font-weight: 900}
+    .stat .v{font-size: 18px; font-weight: 900; margin-top: 6px}
+    .stat .v span{color: rgba(85,243,208,.92)}
+    .stat .n{margin-top: 6px; font-size: 12px; color: var(--muted2)}
+    .stat::after{
+      content:"";
+      position:absolute; inset:auto -60px -60px auto;
+      width: 180px; height: 180px;
+      background: radial-gradient(closest-side, rgba(85,243,208,.16), transparent 70%);
+      pointer-events:none;
+    }
+
+    .reasons{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+      align-items:stretch;
+    }
+    .reason{
+      padding: 18px 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow2);
+      height:100%;
+      position: relative;
+      overflow:hidden;
+    }
+    .reason .icon{
+      width: 44px; height: 44px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      background: rgba(91,140,255,.14);
+      border: 1px solid rgba(91,140,255,.22);
+      color: rgba(234,240,255,.92);
+      margin-bottom: 10px;
+    }
+    .reason:nth-child(2) .icon{
+      background: rgba(85,243,208,.12);
+      border-color: rgba(85,243,208,.20);
+    }
+    .reason:nth-child(3) .icon{
+      background: rgba(255,210,102,.12);
+      border-color: rgba(255,210,102,.20);
+    }
+    .reason h3{margin: 0 0 6px 0; font-size: var(--h3)}
+    .reason p{margin: 0; color: var(--muted); font-size: 14px}
+    .reason::after{
+      content:"";
+      position:absolute; inset:-60px -80px auto auto;
+      width: 220px; height: 220px;
+      background: radial-gradient(closest-side, rgba(91,140,255,.18), transparent 70%);
+      transform: rotate(24deg);
+      pointer-events:none;
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      align-items:stretch;
+    }
+    .step{
+      padding: 16px 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      position: relative;
+      overflow:hidden;
+      min-height: 160px;
+    }
+    .step .num{
+      font-family: var(--mono);
+      font-weight: 900;
+      color: rgba(234,240,255,.72);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+    .step .head{
+      display:flex; align-items:center; justify-content:space-between; gap: 10px;
+      margin-top: 10px;
+    }
+    .step .head .ttl{font-weight: 900; font-size: 16px}
+    .step .head i{color: rgba(85,243,208,.92)}
+    .step .desc{margin-top: 8px; color: var(--muted2); font-size: 13px; line-height: 1.6}
+    .step .mini{margin-top: 12px; display:flex; flex-wrap:wrap; gap:8px}
+    .chip{
+      display:inline-flex; align-items:center; gap:.45em;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      background: rgba(7,11,20,.35);
+      border:1px solid rgba(255,255,255,.12);
+      color: rgba(234,240,255,.84);
+      white-space:nowrap;
+    }
+    .chip i{color: rgba(91,140,255,.95)}
+    .step::after{
+      content:"";
+      position:absolute; inset:auto -60px -60px auto;
+      width: 180px; height: 180px;
+      background: radial-gradient(closest-side, rgba(91,140,255,.16), transparent 70%);
+      pointer-events:none;
+    }
+    .flowLine{
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .flowLine strong{color: var(--text)}
+    .domainGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items:stretch;
+      margin-top: 18px;
+    }
+    .domain{
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+    }
+    .domain h3{
+      margin: 0 0 10px 0;
+      display:flex; align-items:center; gap:.6em;
+      font-size: 16px;
+    }
+    .domain p{margin:0; color: var(--muted); font-size: 14px}
+    .domain ul{margin: 12px 0 0 0; padding: 0; list-style:none; display:grid; gap: 8px}
+    .domain li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 10px 10px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(7,11,20,.25);
+      color: rgba(234,240,255,.86);
+      font-size: 13px;
+    }
+    .domain li i{margin-top: 2px}
+    .domain.good h3 i{color: rgba(85,243,208,.92)}
+    .domain.bad h3 i{color: rgba(255,107,139,.92)}
+    .domain.bad{border-color: rgba(255,107,139,.22)}
+    .domain.good{border-color: rgba(85,243,208,.18)}
+    .pricing{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: var(--gap2);
+      align-items:stretch;
+    }
+    .priceCard{
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(340px 200px at 20% 20%, rgba(255,210,102,.14), transparent 60%),
+        radial-gradient(300px 200px at 80% 30%, rgba(91,140,255,.16), transparent 60%),
+        rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position: relative;
+    }
+    .priceCard .top{
+      display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap
+    }
+    .priceCard .label{
+      display:inline-flex; align-items:center; gap:.6em;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,210,102,.12);
+      border: 1px solid rgba(255,210,102,.22);
+      font-weight: 900;
+      color: rgba(234,240,255,.92);
+      font-size: 13px;
+    }
+    .priceCard .label i{color: var(--warning)}
+    .priceCard .price{
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin: 12px 0 8px 0;
+    }
+    .priceCard .price small{
+      font-size: 14px; color: var(--muted2); font-weight: 900; margin-left: 6px;
+    }
+    .priceCard .note{color: var(--muted); font-size: 14px; margin: 0}
+    .priceCard .list{
+      margin: 16px 0 0 0; padding: 0; list-style:none;
+      display:grid; gap: 10px;
+    }
+    .priceCard .list li{
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 18px;
+      background: rgba(7,11,20,.30);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(234,240,255,.88);
+      font-size: 13px;
+    }
+    .priceCard .list li i{color: rgba(85,243,208,.92); margin-top: 2px}
+    .priceCard::after{
+      content:"";
+      position:absolute; inset:auto -120px -120px auto;
+      width: 340px; height: 340px;
+      background: radial-gradient(closest-side, rgba(255,210,102,.22), transparent 70%);
+      pointer-events:none;
+    }
+    .smallCard{
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow2);
+    }
+    .smallCard h3{margin:0 0 10px 0; font-size: 16px}
+    .smallCard p{margin:0; color: var(--muted); font-size: 14px}
+    .smallCard .miniList{margin: 14px 0 0 0; padding: 0; list-style:none; display:grid; gap: 10px}
+    .smallCard .miniList li{
+      display:flex; gap: 10px;
+      padding: 12px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,11,20,.25);
+      color: rgba(234,240,255,.86);
+      font-size: 13px;
+    }
+    .smallCard .miniList li i{margin-top: 2px; color: rgba(91,140,255,.92)}
+
+    .notice{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: var(--gap2);
+      align-items: start;
+    }
+    .noticeBox{
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+    }
+    .noticeBox h3{margin:0 0 10px 0; font-size: 16px; display:flex; align-items:center; gap:.6em}
+    .noticeBox h3 i{color: rgba(255,107,139,.92)}
+    .noticeBox ul{margin: 12px 0 0 0; padding: 0; list-style:none; display:grid; gap: 10px}
+    .noticeBox li{
+      display:flex; gap: 12px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,11,20,.25);
+      color: rgba(234,240,255,.86);
+      font-size: 13px;
+    }
+    .noticeBox li i{color: rgba(255,210,102,.92); margin-top: 2px}
+    .scopeBox h3 i{color: rgba(85,243,208,.92)}
+    .faq{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    details{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding: 16px 16px;
+      font-weight: 900;
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 12px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary .q{display:flex; gap: 10px; align-items:flex-start}
+    summary .q i{color: rgba(91,140,255,.92); margin-top: 2px}
+    summary .chev{color: rgba(234,240,255,.62); margin-top: 2px; transition: transform .15s ease}
+    details[open] summary .chev{transform: rotate(180deg)}
+    details .a{
+      padding: 0 16px 16px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    details .a strong{color: var(--text)}
+    .ctaBand{
+      padding: 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(380px 220px at 18% 40%, rgba(91,140,255,.18), transparent 60%),
+        radial-gradient(340px 220px at 80% 30%, rgba(85,243,208,.14), transparent 60%),
+        rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: var(--gap2);
+      align-items: stretch;
+      position: relative;
+      overflow:hidden;
+    }
+    .ctaBand::after{
+      content:"";
+      position:absolute; inset:auto -120px -120px auto;
+      width: 340px; height: 340px;
+      background: radial-gradient(closest-side, rgba(85,243,208,.16), transparent 70%);
+      pointer-events:none;
+    }
+    .ctaBand h2{margin:0 0 10px 0; font-size: var(--h2); line-height:1.16}
+    .ctaBand p{margin:0 0 14px 0; color: var(--muted)}
+    .form{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(7,11,20,.28);
+      padding: 16px;
+    }
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{
+      display:flex; flex-direction:column; gap: 8px;
+    }
+    label{
+      font-size: 12px;
+      color: rgba(234,240,255,.78);
+      font-weight: 900;
+      letter-spacing:.02em;
+      display:flex; align-items:center; justify-content:space-between; gap: 8px;
+    }
+    .req{
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255,107,139,.12);
+      border: 1px solid rgba(255,107,139,.18);
+      color: rgba(234,240,255,.86);
+      font-weight: 900;
+      white-space:nowrap;
+    }
+    input, select, textarea{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      outline: none;
+      font-size: 14px;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    input::placeholder, textarea::placeholder{color: rgba(234,240,255,.40)}
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(91,140,255,.45);
+      background: rgba(255,255,255,.06);
+    }
+    textarea{min-height: 104px; resize: vertical}
+    .formActions{
+      margin-top: 12px;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .consent{
+      display:flex; align-items:flex-start; gap: 10px;
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.55;
+    }
+    .consent input{width: 18px; height: 18px; margin-top: 2px}
+    .success{
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(85,243,208,.20);
+      background: rgba(85,243,208,.10);
+      color: rgba(234,240,255,.92);
+      font-size: 13px;
+      font-weight: 800;
+      display:none;
+    }
+    .error{
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,107,139,.22);
+      background: rgba(255,107,139,.10);
+      color: rgba(234,240,255,.92);
+      font-size: 13px;
+      font-weight: 800;
+      display:none;
+    }
+    footer{
+      padding: 34px 0 96px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(7,11,20,.35);
+    }
+    .footGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: var(--gap2);
+      align-items:start;
+    }
+    .footLeft .b{font-weight: 900; font-size: 14px}
+    .footLeft .s{color: var(--muted); font-size: 13px; margin-top: 8px}
+    .footRight{
+      display:flex; flex-direction:column; gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footRight a{
+      display:inline-flex; align-items:center; gap:.6em;
+      color: rgba(234,240,255,.86);
+      font-weight: 900;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      width: fit-content;
+    }
+    .footRight a i{color: rgba(91,140,255,.92)}
+    .tiny{
+      margin-top: 16px;
+      color: rgba(234,240,255,.52);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .stickyMobile{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 60;
+      padding: 10px 12px;
+      background: rgba(7,11,20,.72);
+      border-top: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      display:none;
+    }
+    .stickyMobile .row{
+      display:flex; gap: 10px; align-items:center; justify-content:space-between;
+      width:min(var(--max), calc(100% - 2*var(--pad)));
+      margin:0 auto;
+    }
+    .stickyMobile .row .meta{
+      display:flex; flex-direction:column; gap: 2px;
+      min-width: 0;
+    }
+    .stickyMobile .row .meta .a{font-size: 12px; color: rgba(234,240,255,.74); font-weight: 900}
+    .stickyMobile .row .meta .b{
+      font-size: 12px; color: rgba(234,240,255,.56); font-weight: 800;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      max-width: 48vw;
+    }
+    .stickyMobile .row .btn{padding: 12px 14px; font-size: 13px}
+
+    .skip{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left: 12px; top: 12px; width:auto; height:auto;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      z-index: 1000;
+    }
+
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr}
+      .problemGrid{grid-template-columns: 1fr}
+      .pricing{grid-template-columns: 1fr}
+      .notice{grid-template-columns: 1fr}
+      .ctaBand{grid-template-columns: 1fr}
+      .flow{grid-template-columns: 1fr 1fr}
+      .reasons{grid-template-columns: 1fr}
+      .domainGrid{grid-template-columns: 1fr}
+      .navlinks{display:none}
+      .brand{min-width: 0}
+    }
+    @media (min-width: 981px){
+      .navlinks{display:flex}
+    }
+    @media (max-width: 640px){
+      .section{padding: 56px 0}
+      .hero{padding: 34px 0 18px 0}
+      .heroPoints{grid-template-columns: 1fr}
+      .reportGrid{grid-template-columns: 1fr}
+      .statBox{grid-template-columns: 1fr}
+      .flow{grid-template-columns: 1fr}
+      .formGrid{grid-template-columns: 1fr}
+      .stickyMobile{display:block}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .btn{transition:none}
+      summary .chev{transition:none}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#form">フォームへスキップ</a>
+
+  <header>
+    <div class="wrap">
+      <div class="nav" role="navigation" aria-label="主要ナビゲーション">
+        <a class="brand" href="#top" aria-label="IPリッチ トップへ">
+          <div class="logo" aria-hidden="true">IP</div>
+          <div class="names">
+            <div class="top">株式会社IPリッチ</div>
+            <div class="sub">IPリッチ国際特許事務所</div>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="ページ内リンク">
+          <a href="#problem">課題</a>
+          <a href="#solution">解決策</a>
+          <a href="#reasons">選ばれる理由</a>
+          <a href="#flow">流れ</a>
+          <a href="#domains">対象領域</a>
+          <a href="#pricing">料金</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="navcta">
+          <a class="btn secondary small" href="#pricing" data-cta="nav_pricing" data-cta-position="header"><i class="fa-solid fa-tag"></i>料金を見る</a>
+          <a class="btn small" href="#form" data-cta="nav_consult" data-cta-position="header"><i class="fa-solid fa-paper-plane"></i>相談する</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="heroGrid">
+          <div class="heroLeft">
+            <div class="kicker"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>特許侵害（被疑侵害製品）発見サービス</div>
+
+            <h1 class="headline">
+              眠る特許を、<br />
+              収益化/交渉可能な<br />
+              <span style="background:linear-gradient(135deg, rgba(91,140,255,1), rgba(85,243,208,1)); -webkit-background-clip:text; background-clip:text; color:transparent;">「初動情報」</span>へ
+            </h1>
+
+            <p class="subhead">
+              技術者 × 知財専門家（弁理士等） × 複数の高性能AIツールで、特許を<strong>一件ずつ</strong>調査。
+              被疑侵害製品の特定から、簡易クレームチャート、権利期間における累計売上（推定）まで、次のアクションに繋がる材料を可視化します。
+            </p>
+
+            <div class="heroBadges" aria-label="要点バッジ">
+              <span class="tag"><span class="dot" aria-hidden="true"></span><strong>価格目安</strong>：特許100件あたり 30万〜50万円（税別）</span>
+              <span class="tag"><span class="dot" aria-hidden="true"></span><strong>納品</strong>：侵害可能性・製品/企業・簡易チャート・累計売上（推定）</span>
+              <span class="tag"><span class="dot" aria-hidden="true"></span><strong>体制</strong>：技術×知財×AIで多面的に照合</span>
+            </div>
+
+            <div class="heroCtas" role="group" aria-label="主要CTA">
+              <a class="btn" href="#form" data-cta="hero_primary" data-cta-position="hero"><i class="fa-solid fa-message"></i>無料で相談する</a>
+              <a class="btn secondary" href="#solution" data-cta="hero_secondary" data-cta-position="hero"><i class="fa-solid fa-eye"></i>成果物のイメージを見る</a>
+              <div class="priceAnchor" aria-label="価格アンカー">
+                <span class="pill"><i class="fa-solid fa-receipt" aria-hidden="true"></i>100件 30万〜50万 <span class="muted2">（税別・個別見積）</span></span>
+              </div>
+            </div>
+
+            <div class="trustRow" aria-label="信頼バッジ">
+              <span><i class="fa-solid fa-user-shield" aria-hidden="true"></i>知財専門家がレビュー</span>
+              <span><i class="fa-solid fa-layer-group" aria-hidden="true"></i>複数AIで網羅性を補強</span>
+              <span><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>レポートで可視化</span>
+              <span><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>非保証・推定値あり</span>
+            </div>
+
+            <div class="heroPoints" aria-label="ファーストビュー要点">
+              <div class="point">
+                <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                <div>
+                  <div class="t">成果物が具体的</div>
+                  <div class="d">侵害可能性・製品/企業・簡易クレームチャート・累計売上（推定）を一式で。</div>
+                </div>
+              </div>
+              <div class="point">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <div>
+                  <div class="t">初動を速く、判断を早く</div>
+                  <div class="d">「次の検討に必要な材料」を短時間で整える前提の調査設計。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="heroRight">
+            <div class="heroRightInner">
+              <div class="reportPreview" aria-label="納品物プレビュー">
+                <div class="reportTop">
+                  <div class="badge"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>納品レポート（例）</div>
+                  <div class="mini">※実際は特許ごとに調査し、根拠情報を整理します</div>
+                </div>
+                <div class="reportGrid">
+                  <div class="reportBox">
+                    <div class="n">01 / Infringement Likelihood</div>
+                    <div class="h"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>侵害可能性</div>
+                    <div class="c">公表情報の照合から「可能性」を段階的に整理。追加調査の必要性も明確化。</div>
+                  </div>
+                  <div class="reportBox">
+                    <div class="n">02 / Suspected Products</div>
+                    <div class="h"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>被疑侵害製品・提供企業</div>
+                    <div class="c">対象製品/サービスと、提供企業（グループ含む）を候補としてリスト化。</div>
+                  </div>
+                  <div class="reportBox">
+                    <div class="n">03 / Claim Chart (Lite)</div>
+                    <div class="h"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>簡易クレームチャート</div>
+                    <div class="c">主要クレーム要素と公表情報の対応関係を整理し、検討の土台を作成。</div>
+                  </div>
+                  <div class="reportBox">
+                    <div class="n">04 / Sales (Estimated)</div>
+                    <div class="h"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>累計売上（推定）</div>
+                    <div class="c">権利期間における累計売上を推定し、優先順位付けと投資対効果の判断材料に。</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="strip" aria-label="ファーストビュー補足">
+                <div class="miniCard">
+                  <div class="k"><i class="fa-solid fa-people-group" aria-hidden="true"></i>体制</div>
+                  <div class="v">技術者 + 知財専門家 + AI</div>
+                </div>
+                <div class="miniCard">
+                  <div class="k"><i class="fa-solid fa-globe" aria-hidden="true"></i>調査範囲</div>
+                  <div class="v">公表情報ベースでグローバル</div>
+                </div>
+                <div class="miniCard">
+                  <div class="k"><i class="fa-solid fa-sitemap" aria-hidden="true"></i>進め方</div>
+                  <div class="v">特許を<strong>一件ずつ</strong>精査</div>
+                </div>
+              </div>
+
+              <div class="card soft" style="padding:14px 16px; border-radius:22px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05)">
+                <div style="display:flex; gap:12px; align-items:flex-start">
+                  <div style="width:40px; height:40px; border-radius:16px; display:grid; place-items:center; background: rgba(255,210,102,.12); border:1px solid rgba(255,210,102,.20)">
+                    <i class="fa-solid fa-lightbulb" style="color: rgba(255,210,102,.95)" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:900; margin-bottom:4px">まずは「可視化」から</div>
+                    <div class="muted2" style="font-size:13px; line-height:1.65">
+                      侵害の<strong>断定</strong>ではなく、収益化/交渉の入口となる「候補」「根拠」「優先度」を整えるサービスです。
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section">
+      <div class="wrap">
+        <div class="problemGrid">
+          <div>
+            <h2 class="title">放置コストは、静かに積み上がります</h2>
+            <p class="lead">
+              「侵害していそう」と感じても、調査リソースや時間が足りず、特許が眠ったままになっていませんか。
+              侵害の疑いを<strong>検討可能な形</strong>にするには、候補製品・根拠・優先度が必要です。
+            </p>
+
+            <ul class="bulletList" aria-label="課題リスト">
+              <li class="bullet">
+                <i class="fa-solid fa-hourglass-half" aria-hidden="true"></i>
+                <div>
+                  <div class="b">社内の調査が後回しになりがち</div>
+                  <div class="s">知財・法務・開発それぞれ忙しく、継続的な探索が止まる。</div>
+                </div>
+              </li>
+              <li class="bullet">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                <div>
+                  <div class="b">情報が散らばり、判断材料にならない</div>
+                  <div class="s">候補はあっても、根拠整理（対応関係）や優先順位が作れない。</div>
+                </div>
+              </li>
+              <li class="bullet">
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                <div>
+                  <div class="b">取りこぼし・偏りが起きやすい</div>
+                  <div class="s">特定の国/市場/キーワードに偏り、網羅性が担保しづらい。</div>
+                </div>
+              </li>
+              <li class="bullet">
+                <i class="fa-solid fa-arrow-up-right-dots" aria-hidden="true"></i>
+                <div>
+                  <div class="b">ROIが見えず、意思決定が遅れる</div>
+                  <div class="s">売上規模（推定）が分からず、どこから着手すべきか決めにくい。</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="kicker"><i class="fa-solid fa-compass" aria-hidden="true"></i>このLPで分かること</div>
+            <h3 style="margin:12px 0 8px 0; font-size: var(--h3)">「初動情報」を整えると、何が変わるか</h3>
+            <p class="muted" style="margin:0 0 14px 0; font-size:14px">
+              侵害の可能性を<strong>可視化</strong>し、次の検討（追加調査・専門家評価・方針検討）の入口を作ります。
+            </p>
+
+            <div class="statBox" aria-label="効果の整理（概念）">
+              <div class="stat">
+                <div class="k">知財・法務向け</div>
+                <div class="v"><span>根拠</span>の形が揃う</div>
+                <div class="n">簡易チャートで、社内/外部専門家への引き継ぎがしやすく。</div>
+              </div>
+              <div class="stat">
+                <div class="k">CFO/事業向け</div>
+                <div class="v"><span>優先度</span>を付けやすい</div>
+                <div class="n">累計売上（推定）を材料に、投資対効果で選別。</div>
+              </div>
+              <div class="stat">
+                <div class="k">開発向け</div>
+                <div class="v"><span>成立条件</span>が明確に</div>
+                <div class="n">公表情報で判断可能なポイントを整理し、追加情報の要否を判断。</div>
+              </div>
+              <div class="stat">
+                <div class="k">共通</div>
+                <div class="v"><span>次の一手</span>に進める</div>
+                <div class="n">「やる/やらない」を決めるための初期材料が揃う。</div>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+              <div class="muted2" style="font-size:13px; font-weight:900">まずは、保有特許のリスト（番号/公報）だけでOK</div>
+              <a class="btn" href="#form" data-cta="problem_to_form" data-cta-position="problem"><i class="fa-solid fa-paper-plane"></i>無料で相談する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution" class="section tight">
+      <div class="wrap">
+        <h2 class="title">解決策：被疑侵害製品の発見から「判断材料」まで一気通貫</h2>
+        <p class="lead">
+          技術者と知財専門家が協働し、複数の高性能AIツール（独自プロンプト等）を活用して、
+          各特許を一件ずつ調査。公表情報の照合を中心に、侵害可能性の整理と候補の特定を行います。
+        </p>
+
+        <div class="card pad" aria-label="納品物の図解">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap">
+            <div>
+              <div class="kicker"><i class="fa-solid fa-box-open" aria-hidden="true"></i>納品物（4点セット）</div>
+              <div style="margin-top:10px; font-weight:900; font-size:18px">「検討可能」な形で整理し、初動を加速</div>
+              <div class="muted" style="margin-top:6px; font-size:14px">※非保証・推定値を含みます。詳細評価/鑑定は別途専門家対応が必要です。</div>
+            </div>
+            <a class="btn secondary" href="#pricing" data-cta="deliverable_to_pricing" data-cta-position="solution"><i class="fa-solid fa-tag"></i>料金目安を見る</a>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="reportGrid" style="grid-template-columns: repeat(4, 1fr);" aria-label="納品物4項目">
+            <div class="reportBox" style="min-height: 140px">
+              <div class="n">Deliverable 01</div>
+              <div class="h"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i>侵害可能性</div>
+              <div class="c">公表情報の範囲で「可能性」を整理し、追加調査の要否と優先度を明確化。</div>
+            </div>
+            <div class="reportBox" style="min-height: 140px">
+              <div class="n">Deliverable 02</div>
+              <div class="h"><i class="fa-solid fa-building" aria-hidden="true"></i>被疑侵害製品・提供企業</div>
+              <div class="c">対象製品/サービス、提供企業、関連情報（URL等）を候補として整理。</div>
+            </div>
+            <div class="reportBox" style="min-height: 140px">
+              <div class="n">Deliverable 03</div>
+              <div class="h"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>簡易クレームチャート</div>
+              <div class="c">主要構成/要件と公表情報の対応を整理し、検討の「土台」を作成。</div>
+            </div>
+            <div class="reportBox" style="min-height: 140px">
+              <div class="n">Deliverable 04</div>
+              <div class="h"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>累計売上（推定）</div>
+              <div class="c">権利期間における累計売上を推定し、ROI観点の優先順位付けに活用。</div>
+            </div>
+          </div>
+
+          <div class="flowLine" role="note" aria-label="補足">
+            <div><strong>ポイント：</strong>断定ではなく、収益化/交渉に進むための「初動情報」を短距離で作ります。</div>
+            <div class="muted2" style="font-weight:900"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 非保証 / 推定値あり / 公表情報ベース</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reasons" class="section">
+      <div class="wrap">
+        <h2 class="title">選ばれる理由（USP）</h2>
+        <p class="lead">調査の「網羅性」と「価値ある特許の見極め」を両立し、次のアクションに繋がるアウトプットへ。</p>
+
+        <div class="reasons" aria-label="差別化ポイント3つ">
+          <div class="reason">
+            <div class="icon" aria-hidden="true"><i class="fa-solid fa-user-gear"></i></div>
+            <h3>技術者 × 知財専門家の高度分析</h3>
+            <p>技術的整合性と知財観点の妥当性を両立。単なる検索結果ではなく、判断材料として使える形に整理します。</p>
+          </div>
+
+          <div class="reason">
+            <div class="icon" aria-hidden="true"><i class="fa-solid fa-robot"></i></div>
+            <h3>AI活用による網羅的グローバル調査</h3>
+            <p>複数の高性能AIツールと独自プロンプト等で探索範囲を拡張。偏り/取りこぼしを抑え、候補を広く拾います。</p>
+          </div>
+
+          <div class="reason">
+            <div class="icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
+            <h3>自らライセンシングを行う主体の視点</h3>
+            <p>「見つける」だけではなく、収益化/交渉に繋がる価値ある特許を見極める視点で、優先度付けに耐える材料を作ります。</p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="card pad" aria-label="誰に効くか">
+          <div class="twoCol">
+            <div>
+              <div class="kicker"><i class="fa-solid fa-bullseye" aria-hidden="true"></i>ICP（理想顧客）</div>
+              <h3 style="margin:12px 0 8px 0; font-size: var(--h3)">特許はある。だが、侵害発見の体制が足りない。</h3>
+              <p class="muted" style="margin:0; font-size:14px">
+                特許を数十件以上保有し、侵害発見に割けるリソースが不足している企業/組織。
+                かつ、公表情報から侵害の有無を判断しやすい領域（ソフトウェア/ICT/機械/電気電子/日用品など）で成立しやすい設計です。
+              </p>
+            </div>
+            <div>
+              <ul class="bulletList" style="margin-top:0" aria-label="ペルソナ別の刺さりどころ">
+                <li class="bullet">
+                  <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+                  <div>
+                    <div class="b">知財・法務</div>
+                    <div class="s">成果物の具体性、調査プロセスの妥当性、根拠整理の粒度。</div>
+                  </div>
+                </li>
+                <li class="bullet">
+                  <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+                  <div>
+                    <div class="b">事業責任者 / CFO</div>
+                    <div class="s">投資対効果、優先度付け、価格アンカー（100件 30〜50万）。</div>
+                  </div>
+                </li>
+                <li class="bullet">
+                  <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                  <div>
+                    <div class="b">R&D / 開発</div>
+                    <div class="s">対象分野、成立条件（公表情報で判断可能か）、追加情報の要否。</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+            <div class="muted2" style="font-size:13px; font-weight:900">「自社特許が対象になりそうか」だけの確認でもOK</div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn secondary" href="#domains" data-cta="reasons_to_domains" data-cta-position="reasons"><i class="fa-solid fa-layer-group"></i>対象領域を見る</a>
+              <a class="btn" href="#form" data-cta="reasons_to_form" data-cta-position="reasons"><i class="fa-solid fa-message"></i>無料で相談する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="section tight">
+      <div class="wrap">
+        <h2 class="title">調査〜納品の流れ（図解）</h2>
+        <p class="lead">お問い合わせからレポート納品まで、4ステップで「初動情報」を整えます。</p>
+
+        <div class="flow" aria-label="4ステップのフロー図解">
+          <div class="step">
+            <div class="num">STEP 01</div>
+            <div class="head">
+              <div class="ttl">お問い合わせ</div>
+              <i class="fa-solid fa-inbox" aria-hidden="true"></i>
+            </div>
+            <div class="desc">特許リスト（番号/公報）と対象領域、期待するゴール感を共有。成立条件と見積をすり合わせます。</div>
+            <div class="mini">
+              <span class="chip"><i class="fa-solid fa-check" aria-hidden="true"></i>秘密保持配慮</span>
+              <span class="chip"><i class="fa-solid fa-list" aria-hidden="true"></i>特許リスト</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">STEP 02</div>
+            <div class="head">
+              <div class="ttl">被疑侵害製品の探索</div>
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </div>
+            <div class="desc">技術者×知財専門家×AIで、特許を一件ずつ調査。公表情報から候補製品/企業を抽出します。</div>
+            <div class="mini">
+              <span class="chip"><i class="fa-solid fa-globe" aria-hidden="true"></i>グローバル</span>
+              <span class="chip"><i class="fa-solid fa-robot" aria-hidden="true"></i>複数AI</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">STEP 03</div>
+            <div class="head">
+              <div class="ttl">売上調査（推定）</div>
+              <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+            </div>
+            <div class="desc">権利期間における累計売上（推定）を整理し、優先度付けとROI判断の材料にします。</div>
+            <div class="mini">
+              <span class="chip"><i class="fa-solid fa-filter" aria-hidden="true"></i>優先度</span>
+              <span class="chip"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>推定値</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">STEP 04</div>
+            <div class="head">
+              <div class="ttl">レポート納品</div>
+              <i class="fa-solid fa-file-export" aria-hidden="true"></i>
+            </div>
+            <div class="desc">侵害可能性・製品/企業・簡易クレームチャート・累計売上（推定）を、検討しやすい形式で納品します。</div>
+            <div class="mini">
+              <span class="chip"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>4点セット</span>
+              <span class="chip"><i class="fa-solid fa-handshake" aria-hidden="true"></i>次の検討へ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flowLine" aria-label="補足：調査設計">
+          <div><strong>設計思想：</strong>「断定」よりも、収益化/交渉を可能にするための<strong>入口</strong>を作る（可視化・候補・根拠・優先度）。</div>
+          <a class="btn" href="#form" data-cta="flow_to_form" data-cta-position="flow"><i class="fa-solid fa-paper-plane"></i>相談して進め方を確認</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="domains" class="section">
+      <div class="wrap">
+        <h2 class="title">対象技術分野（得意領域 / 原則対象外）</h2>
+        <p class="lead">
+          公表情報（外観・UI・仕様・公開資料・Web情報等）から侵害の有無を判断しやすい分野に強みがあります。
+          一方、分解や成分分析等が前提となる分野は原則対象外です。
+        </p>
+
+        <div class="domainGrid" aria-label="対象領域の図解">
+          <div class="domain good">
+            <h3><i class="fa-solid fa-circle-check" aria-hidden="true"></i>得意：公表情報から判断しやすい分野</h3>
+            <p>外観/画面/UI/仕様/提供形態など、公開情報で「要件対応」を検討しやすい領域で成果が出やすい設計です。</p>
+            <ul aria-label="得意分野の例">
+              <li><i class="fa-solid fa-laptop-code" aria-hidden="true" style="color: rgba(85,243,208,.92)"></i><span><strong>ソフトウェア / ICT / IoT / AI / ビジネスモデル</strong>（UI・機能・運用フロー等）</span></li>
+              <li><i class="fa-solid fa-microchip" aria-hidden="true" style="color: rgba(85,243,208,.92)"></i><span><strong>デバイス / 機械 / 電気電子 / 制御</strong>（構造・仕様・公開資料等）</span></li>
+              <li><i class="fa-solid fa-house-chimney" aria-hidden="true" style="color: rgba(85,243,208,.92)"></i><span><strong>構造物 / 日用品</strong>（外観・構成・公開情報等）</span></li>
+            </ul>
+          </div>
+
+          <div class="domain bad">
+            <h3><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>原則対象外：分解・分析が必要な分野</h3>
+            <p>公表情報だけでは判断が難しく、分解や成分分析等が必要となるため、本サービスの前提に合いません。</p>
+            <ul aria-label="対象外の例">
+              <li><i class="fa-solid fa-flask" aria-hidden="true" style="color: rgba(255,107,139,.92)"></i><span><strong>製薬</strong></span></li>
+              <li><i class="fa-solid fa-vial" aria-hidden="true" style="color: rgba(255,107,139,.92)"></i><span><strong>化学</strong></span></li>
+              <li><i class="fa-solid fa-cubes" aria-hidden="true" style="color: rgba(255,107,139,.92)"></i><span><strong>材料</strong></span></li>
+              <li><i class="fa-solid fa-wave-square" aria-hidden="true" style="color: rgba(255,107,139,.92)"></i><span><strong>半導体 等</strong></span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="card pad" aria-label="成立条件の確認">
+          <div style="display:flex; gap: 12px; align-items:flex-start; flex-wrap:wrap; justify-content:space-between">
+            <div style="min-width: 260px">
+              <div class="kicker"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>成立条件の目安</div>
+              <h3 style="margin:12px 0 8px 0; font-size: var(--h3)">「公開情報で検討できるか」を最初に確認します</h3>
+              <p class="muted" style="margin:0; font-size:14px">
+                製品/サービスの公開情報（UI・仕様・カタログ・マニュアル・Web等）から、クレーム要件との対応関係が追えるかが鍵です。
+              </p>
+            </div>
+
+            <div style="display:flex; gap: 10px; flex-wrap:wrap; align-items:center">
+              <a class="btn secondary" href="#faq" data-cta="domains_to_faq" data-cta-position="domains"><i class="fa-solid fa-circle-question"></i>よくある質問</a>
+              <a class="btn" href="#form" data-cta="domains_to_form" data-cta-position="domains"><i class="fa-solid fa-message"></i>対象か相談する</a>
+            </div>
+          </div>
+
+          <div class="flowLine" style="margin-top: 16px" aria-label="注意">
+            <div><strong>注意：</strong>対象外領域でも、公開情報で成立するケースは個別に確認します（事前相談推奨）。</div>
+            <div class="muted2" style="font-weight:900"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> 個別見積 / 個別判断</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section tight">
+      <div class="wrap">
+        <h2 class="title">料金（目安）</h2>
+        <p class="lead">件数・難易度・対象領域により個別見積。まずは「どの程度の規模で始めるか」を一緒に設計します。</p>
+
+        <div class="pricing" aria-label="料金ブロック">
+          <div class="priceCard">
+            <div class="top">
+              <div class="label"><i class="fa-solid fa-tag" aria-hidden="true"></i>価格アンカー</div>
+              <div class="muted2" style="font-size:12px; font-weight:900">※税別 / 個別見積</div>
+            </div>
+            <div class="price">特許100件あたり 30万〜50万円<small>（税別）</small></div>
+            <p class="note">調査対象の特許件数や難易度、対象領域により変動します。まずは小さく始めて、勝ち筋を見て拡張する設計も可能です。</p>
+
+            <ul class="list" aria-label="料金に含まれるイメージ">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>特許を一件ずつ調査</strong>し、候補製品/企業を抽出</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>簡易クレームチャート</strong>で対応関係を整理</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>権利期間の累計売上（推定）</strong>で優先度付けの材料を作成</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span><strong>侵害可能性</strong>を段階的に整理（非保証）</span></li>
+            </ul>
+
+            <div class="hr"></div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+              <div class="muted2" style="font-size:13px; font-weight:900">見積に必要：特許リスト、対象領域、目標（優先度付け/候補抽出など）</div>
+              <a class="btn" href="#form" data-cta="pricing_to_form" data-cta-position="pricing"><i class="fa-solid fa-paper-plane"></i>見積相談する</a>
+            </div>
+          </div>
+
+          <div class="smallCard" aria-label="おすすめの進め方">
+            <h3>おすすめの始め方（ROI重視）</h3>
+            <p>「全件を一気に」より、まずは成立しやすい領域/特許群から始め、勝ち筋が見えたら拡張する進め方が合理的です。</p>
+
+            <ul class="miniList" aria-label="進め方の例">
+              <li><i class="fa-solid fa-play" aria-hidden="true"></i><span><strong>小さく開始：</strong>特許群を絞り、アウトプットの粒度と成立条件を確認</span></li>
+              <li><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i><span><strong>改善：</strong>検索観点・優先度ロジック・対象国/市場を調整</span></li>
+              <li><i class="fa-solid fa-arrow-up-right-dots" aria-hidden="true"></i><span><strong>拡張：</strong>対象特許を追加し、網羅的調査へ拡大</span></li>
+            </ul>
+
+            <div class="hr"></div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn secondary" href="#flow" data-cta="pricing_to_flow" data-cta-position="pricing"><i class="fa-solid fa-diagram-project"></i>流れを再確認</a>
+              <a class="btn" href="#form" data-cta="pricing_to_form2" data-cta-position="pricing"><i class="fa-solid fa-message"></i>最適な開始規模を相談</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes" class="section">
+      <div class="wrap">
+        <h2 class="title">注意事項（非保証 / 推定 / 範囲）</h2>
+        <p class="lead">
+          本サービスは「侵害の断定」ではなく、収益化/交渉の入口となる初動情報を整えるための調査・整理です。
+          透明性のため、前提と範囲を明示します。
+        </p>
+
+        <div class="notice" aria-label="注意事項の整理">
+          <div class="noticeBox">
+            <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>非保証・推定に関する重要事項</h3>
+            <ul aria-label="非保証・推定事項">
+              <li><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span><strong>侵害可能性は「可能性」の整理</strong>であり、侵害の断定/保証ではありません。</span></li>
+              <li><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span><strong>累計売上は推定値</strong>を含み、入手可能な公開情報等に基づき算出します。</span></li>
+              <li><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>公表情報では追えない要件がある場合、<strong>追加調査</strong>や別手段が必要になることがあります。</span></li>
+              <li><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>対象外領域/要件に該当する場合、<strong>調査成立が難しい</strong>可能性があります（事前確認します）。</span></li>
+            </ul>
+          </div>
+
+          <div class="noticeBox scopeBox">
+            <h3><i class="fa-solid fa-circle-check" aria-hidden="true"></i>本サービスの範囲（できる / できない）</h3>
+            <ul aria-label="範囲事項">
+              <li><i class="fa-solid fa-check" aria-hidden="true" style="color: rgba(85,243,208,.92)"></i><span><strong>できる：</strong>被疑侵害製品の探索、候補の整理、簡易チャート、売上推定、優先度の材料作成</span></li>
+              <li><i class="fa-solid fa-xmark" aria-hidden="true" style="color: rgba(255,107,139,.92)"></i><span><strong>範囲外：</strong>鑑定書の作成、侵害訴訟対応、交渉代理（必要に応じて別途専門家対応）</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true" style="color: rgba(85,243,208,.92)"></i><span><strong>目的：</strong>「次の検討」に進むための初動情報を整える</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true" style="color: rgba(85,243,208,.92)"></i><span><strong>使いどころ：</strong>社内稟議・優先度付け・追加調査の判断・外部専門家への引き継ぎ</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="card pad" aria-label="透明性の宣言">
+          <div style="display:flex; gap:12px; align-items:flex-start">
+            <div style="width:44px; height:44px; border-radius:16px; display:grid; place-items:center; background: rgba(91,140,255,.14); border:1px solid rgba(91,140,255,.20)">
+              <i class="fa-solid fa-clipboard-list" style="color: rgba(91,140,255,.95)" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div style="font-weight:900; margin-bottom:4px">「見える化」した上で、次の意思決定へ</div>
+              <div class="muted2" style="font-size:13px; line-height:1.7">
+                本サービスは、断定ではなく「候補と根拠の整理」を目的とします。必要に応じて、詳細評価（専門家）へ繋げられる形式で整えます。
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="faq" class="section tight">
+      <div class="wrap">
+        <h2 class="title">FAQ</h2>
+        <p class="lead">よくある質問に、短く・具体的にお答えします（最低限の前提も明示します）。</p>
+
+        <div class="faq" aria-label="FAQリスト">
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>どの程度の情報があれば相談できますか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              <strong>特許の番号/公報リスト</strong>があれば相談可能です。対象領域と「何を判断したいか」（優先度付け、候補抽出、社内説明材料など）も併せて共有いただくと、調査設計と見積がスムーズです。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>成果物は、社内稟議や外部専門家への引き継ぎに使えますか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              はい。<strong>候補製品/企業</strong>、<strong>簡易クレームチャート</strong>、<strong>累計売上（推定）</strong>など、検討に必要な材料をセットで整理します。侵害の断定ではありませんが、「次の検討」に進むための土台になります。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>AIだけで自動判定するサービスですか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              いいえ。AIは網羅性を補強するために活用しますが、<strong>技術者と知財専門家（弁理士等）が関与</strong>し、根拠整理と妥当性確認を行います。特許は<strong>一件ずつ</strong>調査します。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>売上の調査はどこまで正確ですか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              <strong>推定値</strong>を含みます。公開情報等に基づき算出するため、完全な正確性を保証するものではありません。意思決定のための「目安」として、優先度付けに活用いただく設計です。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>調査できない分野はありますか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              原則として、<strong>製薬・化学・材料・半導体等</strong>のように分解や成分分析が必要な分野は対象外です。公表情報で成立するか個別に確認しますので、まずはご相談ください。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>侵害の「断定」や鑑定書の作成もお願いできますか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              本サービスは<strong>初動情報の可視化</strong>が目的で、侵害の断定/保証や鑑定書作成、交渉代理は範囲外です。必要に応じて、別途専門家による詳細評価へ繋げやすい形式で整理します。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>どのくらいの件数から依頼できますか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              まずは<strong>小さく開始</strong>して成立条件とアウトプット粒度を合わせる進め方も可能です。価格は「特許100件あたり 30万〜50万円（税別）」が目安で、件数/難易度で個別見積となります。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>秘密保持や社内規程の都合があるのですが大丈夫ですか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              まずは<strong>公報番号等の公開情報</strong>ベースでご相談可能です。共有範囲や取り扱い条件は、貴社の規程に合わせて調整します。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>UI/ソフトウェアの特許でも成立しますか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              はい。特に<strong>UI・機能・運用フロー</strong>などが公開情報で追える場合、成立しやすい領域です。対象国/市場や情報入手性も含めて、初回相談で成立条件を確認します。
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="q"><i class="fa-solid fa-circle-question" aria-hidden="true"></i>すでに候補製品があるのですが、それでも価値はありますか？</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </summary>
+            <div class="a">
+              はい。候補がある場合でも、<strong>根拠整理（簡易チャート）</strong>、<strong>追加候補の探索</strong>、<strong>売上推定による優先度付け</strong>で、意思決定の精度を上げやすくなります。
+            </div>
+          </details>
+        </div>
+
+        <div class="hr"></div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+          <div class="muted2" style="font-size:13px; font-weight:900">ここにない質問も、フォームで気軽にご相談ください</div>
+          <a class="btn" href="#form" data-cta="faq_to_form" data-cta-position="faq"><i class="fa-solid fa-message"></i>質問してみる</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="final" class="section">
+      <div class="wrap">
+        <div class="ctaBand" aria-label="最終CTAとフォーム">
+          <div>
+            <div class="kicker"><i class="fa-solid fa-rocket" aria-hidden="true"></i>次の一手を早くする</div>
+            <h2>「眠る特許」を、収益/交渉力へ。<br />まずは初動情報の可視化から。</h2>
+            <p>
+              侵害の断定ではなく、候補と根拠と優先度を整えることで、社内の意思決定と次の検討が進みやすくなります。
+              対象分野の適合や進め方の設計から、一緒に確認できます。
+            </p>
+
+            <div class="strip" style="margin-top: 14px" aria-label="背中押し">
+              <div class="miniCard">
+                <div class="k"><i class="fa-solid fa-check" aria-hidden="true"></i>相談のゴール</div>
+                <div class="v">成立条件と見積の目安</div>
+              </div>
+              <div class="miniCard">
+                <div class="k"><i class="fa-solid fa-file" aria-hidden="true"></i>必要なもの</div>
+                <div class="v">特許リスト（公開情報）</div>
+              </div>
+              <div class="miniCard">
+                <div class="k"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>前提</div>
+                <div class="v">非保証・推定値あり</div>
+              </div>
+            </div>
+
+            <div class="flowLine" style="margin-top: 16px">
+              <div><strong>価格目安：</strong>特許100件あたり 30万〜50万円（税別）</div>
+              <div class="muted2" style="font-weight:900"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> 件数/難易度で個別見積</div>
+            </div>
+          </div>
+
+          <div>
+            <div id="form" class="form" role="form" aria-label="お問い合わせフォーム">
+              <form id="lpForm" novalidate>
+                <div class="formGrid">
+                  <div class="field">
+                    <label for="company">会社名 <span class="req">必須</span></label>
+                    <input id="company" name="company" type="text" placeholder="例）株式会社〇〇" autocomplete="organization" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="name">お名前 <span class="req">必須</span></label>
+                    <input id="name" name="name" type="text" placeholder="例）山田 太郎" autocomplete="name" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="email">メールアドレス <span class="req">必須</span></label>
+                    <input id="email" name="email" type="email" placeholder="例）taro@example.com" autocomplete="email" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">電話番号 <span class="muted2" style="font-weight:900; font-size:11px">任意</span></label>
+                    <input id="phone" name="phone" type="tel" placeholder="例）090-1234-5678" autocomplete="tel" />
+                  </div>
+
+                  <div class="field">
+                    <label for="count">保有特許（概数） <span class="req">必須</span></label>
+                    <select id="count" name="count" required>
+                      <option value="" selected disabled>選択してください</option>
+                      <option value="10-30">10〜30件</option>
+                      <option value="31-80">31〜80件</option>
+                      <option value="81-200">81〜200件</option>
+                      <option value="201-500">201〜500件</option>
+                      <option value="500+">500件以上</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="domain">対象領域（近いもの） <span class="req">必須</span></label>
+                    <select id="domain" name="domain" required>
+                      <option value="" selected disabled>選択してください</option>
+                      <option value="software">ソフトウェア/ICT/IoT/AI/ビジネスモデル</option>
+                      <option value="device">デバイス/機械/電気電子/制御</option>
+                      <option value="consumer">構造物/日用品</option>
+                      <option value="other">その他（相談したい）</option>
+                      <option value="excluded">製薬/化学/材料/半導体等（原則対象外）</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field" style="margin-top:12px">
+                  <label for="goal">相談したいこと <span class="req">必須</span></label>
+                  <textarea id="goal" name="goal" placeholder="例）UI特許群で、侵害候補の優先度付けと売上推定まで見たい。まずは100件相当で見積希望。候補企業が数社あり、根拠整理も進めたい。" required></textarea>
+                </div>
+
+                <div class="formActions">
+                  <label class="consent" for="consent">
+                    <input id="consent" name="consent" type="checkbox" required />
+                    <span>「非保証」「推定値を含む」「鑑定・交渉は範囲外」を理解した上で問い合わせます。</span>
+                  </label>
+
+                  <button class="btn" type="submit" data-cta="form_submit" data-cta-position="form">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>送信する
+                  </button>
+                </div>
+
+                <div id="formError" class="error" role="alert" aria-live="polite"></div>
+                <div id="formSuccess" class="success" role="status" aria-live="polite">
+                  送信を受け付けました（デモ表示）。このLPは計測用のサンプル実装です。実運用では送信先（CRM/フォーム）に接続してください。
+                </div>
+
+                <div class="tiny">
+                  送信内容は、貴社の相談対応の目的で利用します。実運用ではプライバシーポリシー等の掲示を推奨します。<br />
+                  会社情報：株式会社IPリッチ / IPリッチ国際特許事務所（<span style="font-family:var(--mono)">iprich.jp</span>）
+                </div>
+              </form>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+              <a class="btn secondary" href="#problem" data-cta="final_back" data-cta-position="final"><i class="fa-solid fa-arrow-up"></i>もう一度概要を見る</a>
+              <a class="btn ghost" href="https://iprich.jp/" target="_blank" rel="noopener noreferrer" data-cta="final_site" data-cta-position="final"><i class="fa-solid fa-arrow-up-right-from-square"></i>公式サイト</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer aria-label="フッター">
+    <div class="wrap">
+      <div class="footGrid">
+        <div class="footLeft">
+          <div class="b">株式会社IPリッチ / IPリッチ国際特許事務所</div>
+          <div class="s">特許侵害（被疑侵害製品）発見サービス：眠る特許を、収益化/交渉可能な「初動情報」へ。</div>
+          <div class="tiny">
+            本ページは、侵害の断定や法的助言を行うものではありません。侵害可能性・売上は推定を含み、非保証です。<br />
+            鑑定書作成、交渉代理、訴訟対応等は本サービスの範囲外です。
+          </div>
+        </div>
+
+        <div class="footRight">
+          <a href="https://iprich.jp/" target="_blank" rel="noopener noreferrer" data-cta="footer_site" data-cta-position="footer">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i> https://iprich.jp/
+          </a>
+          <div class="muted2" style="font-weight:900; font-size:12px">計測：CTAクリック / フォーム / スクロール深度（25/50/75/90%）</div>
+          <div class="muted2" style="font-weight:900; font-size:12px">実運用：GTM/GA4/CRM連携に差し替え推奨</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="stickyMobile" role="region" aria-label="追従CTA">
+    <div class="row">
+      <div class="meta">
+        <div class="a">無料相談</div>
+        <div class="b">100件 30万〜50万（税別・目安）</div>
+      </div>
+      <a class="btn" href="#form" data-cta="sticky_mobile" data-cta-position="sticky"><i class="fa-solid fa-message"></i>相談する</a>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      "use strict";
+
+      window.dataLayer = window.dataLayer || [];
+
+      var state = {
+        formViewed: false,
+        formStarted: false,
+        scrollMarks: {25:false, 50:false, 75:false, 90:false}
+      };
+
+      function safeNow(){
+        try { return new Date().toISOString(); } catch (e) { return ""; }
+      }
+
+      function pushEvent(name, params){
+        var payload = Object.assign({
+          event: name,
+          page: location.pathname + location.search + location.hash,
+          ts: safeNow()
+        }, params || {});
+        try { window.dataLayer.push(payload); } catch (e) {}
+        try {
+          if (window.localStorage){
+            var key = "lp_events_iprich";
+            var arr = [];
+            try { arr = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { arr = []; }
+            arr.push(payload);
+            localStorage.setItem(key, JSON.stringify(arr.slice(-200)));
+          }
+        } catch (e) {}
+        try { console.log("[track]", payload); } catch (e) {}
+      }
+
+      function onClickCTA(e){
+        var el = e.target && e.target.closest ? e.target.closest("[data-cta]") : null;
+        if (!el) return;
+        var cta = el.getAttribute("data-cta") || "";
+        var pos = el.getAttribute("data-cta-position") || "";
+        pushEvent("cta_click", {cta: cta, position: pos, text: (el.textContent || "").trim().slice(0,60)});
+      }
+
+      document.addEventListener("click", onClickCTA, {passive:true});
+
+      function scrollDepth(){
+        var doc = document.documentElement;
+        var body = document.body;
+        var scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop || 0;
+        var scrollHeight = Math.max(body.scrollHeight, doc.scrollHeight);
+        var clientHeight = Math.max(doc.clientHeight, window.innerHeight || 0);
+        var maxScroll = Math.max(scrollHeight - clientHeight, 1);
+        var pct = (scrollTop / maxScroll) * 100;
+
+        var marks = [25,50,75,90];
+        for (var i=0;i<marks.length;i++){
+          var m = marks[i];
+          if (!state.scrollMarks[m] && pct >= m){
+            state.scrollMarks[m] = true;
+            pushEvent("scroll_depth", {percent: m});
+          }
+        }
+      }
+
+      var ticking = false;
+      window.addEventListener("scroll", function(){
+        if (!ticking){
+          window.requestAnimationFrame(function(){
+            scrollDepth();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, {passive:true});
+
+      function observeForm(){
+        var formEl = document.getElementById("form");
+        if (!formEl) return;
+
+        if (!("IntersectionObserver" in window)){
+          state.formViewed = true;
+          pushEvent("form_view", {method: "fallback"});
+          return;
+        }
+
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(ent){
+            if (ent.isIntersecting && !state.formViewed){
+              state.formViewed = true;
+              pushEvent("form_view", {method: "intersection"});
+            }
+          });
+        }, {threshold: 0.35});
+
+        obs.observe(formEl);
+      }
+
+      observeForm();
+
+      var lpForm = document.getElementById("lpForm");
+      var formError = document.getElementById("formError");
+      var formSuccess = document.getElementById("formSuccess");
+
+      function showError(msg){
+        if (!formError) return;
+        formError.textContent = msg;
+        formError.style.display = "block";
+        if (formSuccess) formSuccess.style.display = "none";
+      }
+
+      function showSuccess(){
+        if (formSuccess) formSuccess.style.display = "block";
+        if (formError) formError.style.display = "none";
+      }
+
+      function firstFormStart(){
+        if (state.formStarted) return;
+        state.formStarted = true;
+        pushEvent("form_start", {source: "first_input"});
+      }
+
+      if (lpForm){
+        lpForm.addEventListener("input", function(){
+          firstFormStart();
+        }, {passive:true});
+
+        lpForm.addEventListener("submit", function(e){
+          e.preventDefault();
+
+          var company = (document.getElementById("company") || {}).value || "";
+          var name = (document.getElementById("name") || {}).value || "";
+          var email = (document.getElementById("email") || {}).value || "";
+          var count = (document.getElementById("count") || {}).value || "";
+          var domain = (document.getElementById("domain") || {}).value || "";
+          var goal = (document.getElementById("goal") || {}).value || "";
+          var consent = (document.getElementById("consent") || {}).checked || false;
+
+          var missing = [];
+          if (!company.trim()) missing.push("会社名");
+          if (!name.trim()) missing.push("お名前");
+          if (!email.trim()) missing.push("メールアドレス");
+          if (!count) missing.push("保有特許（概数）");
+          if (!domain) missing.push("対象領域");
+          if (!goal.trim()) missing.push("相談したいこと");
+          if (!consent) missing.push("同意チェック");
+
+          if (missing.length){
+            pushEvent("form_submit_error", {reason: "missing", fields: missing.join(",")});
+            showError("入力を確認してください（未入力/未選択）： " + missing.join("、"));
+            return;
+          }
+
+          var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+          if (!emailOk){
+            pushEvent("form_submit_error", {reason: "invalid_email"});
+            showError("メールアドレスの形式を確認してください。");
+            return;
+          }
+
+          var payload = {
+            company: company.trim().slice(0,120),
+            name: name.trim().slice(0,60),
+            email: email.trim().slice(0,120),
+            phone: ((document.getElementById("phone") || {}).value || "").trim().slice(0,40),
+            count: count,
+            domain: domain,
+            goal: goal.trim().slice(0,1200)
+          };
+
+          pushEvent("form_submit_success", {fields: Object.keys(payload).join(","), domain: domain, count: count});
+
+          showSuccess();
+
+          try { lpForm.reset(); } catch (e) {}
+        });
+      }
+
+      function trackInitial(){
+        pushEvent("page_view", {title: document.title});
+        scrollDepth();
+      }
+
+      trackInitial();
+
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener("click", function(){
+          var href = a.getAttribute("href");
+          if (!href || href.length < 2) return;
+          var id = href.slice(1);
+          var el = document.getElementById(id);
+          if (!el) return;
+          pushEvent("anchor_nav", {to: "#" + id});
+        }, {passive:true});
+      });
+    })();
+  </script>
+</body>
+</html>
