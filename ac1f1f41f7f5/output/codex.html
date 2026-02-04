@@ -1,0 +1,4386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#6B4EFF" />
+  <title>LUMINE BEAUTY（ルミネビューティー）｜最短6ヶ月で、自信の素肌へ</title>
+  <meta name="description" content="「予約が取れない」にサヨナラ。SHR+IPLハイブリッド脱毛×当日予約OK。最短6ヶ月で、自信の素肌へ。全身6回 98,000円（顔・VIO込み）。シェービング無料／キャンセル料なし／完全定額。無料カウンセリング受付中。" />
+  <meta property="og:title" content="LUMINE BEAUTY｜最短6ヶ月で、自信の素肌へ" />
+  <meta property="og:description" content="SHR+IPLハイブリッド脱毛×当日予約OK。全身6回 98,000円（顔・VIO込み）。痛みほぼゼロ／追加料金なし。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lumine-beauty.example.com/" />
+  <meta property="og:image" content="https://lumine-beauty.example.com/ogp.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0B0A12;
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(255,255,255,.10);
+      --card: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.62);
+      --line: rgba(255,255,255,.14);
+      --lav: #7C5CFF;
+      --lav2:#B6A7FF;
+      --gold: #F6D27B;
+      --gold2:#FFECB8;
+      --good: #3AE0B8;
+      --warn: #FFCB4B;
+      --danger:#FF5D7A;
+      --shadow: 0 18px 48px rgba(0,0,0,.45);
+      --shadow2: 0 10px 24px rgba(0,0,0,.38);
+      --radius-lg: 26px;
+      --radius: 18px;
+      --radius-sm: 14px;
+      --max: 1120px;
+      --header: 74px;
+      --ring: 0 0 0 4px rgba(124,92,255,.24), 0 0 0 1px rgba(246,210,123,.20);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 650px at 80% -10%, rgba(124,92,255,.45), transparent 60%),
+        radial-gradient(900px 520px at 10% 0%, rgba(246,210,123,.22), transparent 60%),
+        radial-gradient(900px 520px at 70% 60%, rgba(58,224,184,.18), transparent 55%),
+        linear-gradient(180deg, #05040B 0%, #0B0A12 55%, #070612 100%);
+      font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    ::selection{background:rgba(124,92,255,.35)}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .skip{
+      position:absolute; left:-9999px; top:6px; z-index:9999;
+      padding:10px 12px; border-radius:12px; background:#fff; color:#000;
+    }
+    .skip:focus{left:12px; outline:none; box-shadow: var(--ring)}
+    .topbar{
+      position:sticky; top:0; z-index:80;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(11,10,18,.82), rgba(11,10,18,.52));
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .topbar-inner{
+      height:var(--header);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:240px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: radial-gradient(14px 14px at 25% 30%, rgba(255,255,255,.92), rgba(255,255,255,.24) 60%, transparent 62%),
+                  conic-gradient(from 210deg, rgba(124,92,255,1), rgba(246,210,123,1), rgba(58,224,184,1), rgba(124,92,255,1));
+      box-shadow: 0 12px 22px rgba(124,92,255,.18);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .brand-text{display:flex; flex-direction:column; line-height:1.05}
+    .brand-name{
+      font-family:"Playfair Display", serif;
+      letter-spacing:.05em;
+      font-weight:700;
+      font-size:14px;
+    }
+    .brand-sub{font-size:12px; color:var(--muted2)}
+    .nav{
+      display:flex; align-items:center; gap:18px;
+      color:var(--muted);
+      font-size:13px;
+      overflow:hidden;
+    }
+    .nav a{opacity:.92}
+    .nav a:hover{opacity:1; color:#fff}
+    .nav-cta{
+      display:flex; gap:10px; align-items:center;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18)}
+    .btn:active{transform: translateY(0px)}
+    .btn:focus-visible{outline:none; box-shadow: var(--ring)}
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(246,210,123,1));
+      border-color: rgba(246,210,123,.35);
+      color:#0B0A12;
+      font-weight:800;
+      box-shadow: 0 18px 44px rgba(124,92,255,.22), 0 14px 32px rgba(246,210,123,.10);
+    }
+    .btn-primary:hover{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(255,236,184,1));
+      border-color: rgba(255,236,184,.48);
+    }
+    .btn-ghost{
+      background: transparent;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color:var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .pill strong{color:#fff; font-weight:800}
+    .icon{
+      width:16px; height:16px; display:inline-block; flex:0 0 auto;
+      fill: currentColor;
+    }
+
+    main{padding-bottom: 120px}
+    .hero{
+      padding: 34px 0 26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:24px;
+      align-items:stretch;
+    }
+    .hero-left{
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(400px 240px at 65% 25%, rgba(246,210,123,.18), transparent 65%),
+        radial-gradient(520px 320px at 20% 20%, rgba(124,92,255,.22), transparent 65%),
+        radial-gradient(520px 320px at 80% 78%, rgba(58,224,184,.14), transparent 62%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .hero-left > *{position:relative}
+    .kicker{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-bottom: 12px;
+    }
+    .headline{
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.12;
+      letter-spacing:-.02em;
+      font-weight:900;
+      margin: 10px 0 10px;
+    }
+    .headline .grad{
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(182,167,255,.92), rgba(255,236,184,.92));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .subhead{
+      color:var(--muted);
+      font-size: 15px;
+      line-height:1.7;
+      margin: 0 0 14px;
+    }
+    .anchor{
+      margin: 16px 0 12px;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .price-anchor{
+      display:flex; align-items:baseline; gap:10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(246,210,123,.12);
+      border:1px solid rgba(246,210,123,.28);
+      color: rgba(255,236,184,.95);
+      box-shadow: 0 14px 30px rgba(246,210,123,.08);
+    }
+    .price-anchor .label{
+      font-size:12px; color: rgba(255,236,184,.82);
+      letter-spacing:.08em;
+      font-weight:800;
+    }
+    .price-anchor .value{
+      font-size: 22px;
+      font-weight: 900;
+      color: rgba(255,255,255,.96);
+    }
+    .price-anchor .note{
+      font-size:12px; color: rgba(255,255,255,.70);
+    }
+    .trust{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin: 12px 0 16px;
+    }
+    .trust .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.86);
+      font-size:12px;
+    }
+    .trust .badge .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(246,210,123,1));
+      box-shadow: 0 0 0 3px rgba(124,92,255,.16);
+    }
+    .hero-actions{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin: 10px 0 0;
+    }
+    .hero-actions small{
+      color: var(--muted2);
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .hero-actions .mini{
+      width:10px; height:10px; border-radius:50%;
+      background: rgba(58,224,184,.95);
+      box-shadow: 0 0 0 4px rgba(58,224,184,.12);
+    }
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .panel{
+      padding:16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      position:relative;
+    }
+    .panel h3{
+      margin:0 0 10px;
+      font-size: 14px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      color: rgba(255,236,184,.92);
+      font-weight:900;
+    }
+    .panel .row{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+    .feature{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .feature .i{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(124,92,255,.25), rgba(246,210,123,.18));
+      border:1px solid rgba(246,210,123,.18);
+      color: rgba(255,236,184,.95);
+      box-shadow: 0 12px 24px rgba(124,92,255,.10);
+      flex:0 0 auto;
+    }
+    .feature .t{
+      font-weight:900; margin:0; font-size:14px;
+    }
+    .feature .d{
+      margin:4px 0 0; color: var(--muted); font-size:12.5px; line-height:1.6
+    }
+    .note-box{
+      margin-top:12px;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(58,224,184,.08);
+      border:1px solid rgba(58,224,184,.18);
+      color: rgba(255,255,255,.84);
+      font-size:12.5px;
+      line-height:1.6;
+    }
+
+    .section{
+      padding: 34px 0;
+    }
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:12px;
+      margin-bottom: 16px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: clamp(20px, 2.1vw, 28px);
+      letter-spacing:-.01em;
+      font-weight: 900;
+    }
+    .section-title p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 56ch;
+    }
+    .grid-4{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+
+    .card{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+    }
+    .card h3{margin:0 0 8px; font-size: 15px; font-weight:900}
+    .card p{margin:0; color: var(--muted); font-size: 13px; line-height:1.7}
+    .card .k{
+      display:flex; align-items:center; gap:10px;
+      margin-bottom:10px;
+      color: rgba(255,236,184,.92);
+      font-weight:900;
+      letter-spacing:.02em;
+    }
+
+    .problem{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .problem-item{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .problem-item .mark{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(255,93,122,.10);
+      border: 1px solid rgba(255,93,122,.18);
+      color: rgba(255,93,122,.95);
+      flex:0 0 auto;
+    }
+    .problem-item h4{margin:0; font-size: 14px; font-weight:900}
+    .problem-item p{margin:4px 0 0; color:var(--muted); font-size: 13px; line-height:1.7}
+
+    .reasons .card{position:relative; overflow:hidden}
+    .reasons .card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(320px 220px at 85% 25%, rgba(124,92,255,.18), transparent 70%),
+                  radial-gradient(360px 260px at 20% 80%, rgba(246,210,123,.12), transparent 72%);
+      opacity:.85;
+      pointer-events:none;
+    }
+    .reasons .card > *{position:relative}
+    .reason-num{
+      font-family:"Playfair Display", serif;
+      color: rgba(255,236,184,.92);
+      font-size: 18px;
+      letter-spacing:.05em;
+    }
+    .reason-title{margin:6px 0 6px; font-size: 16px; font-weight: 900}
+    .reason-desc{margin:0; color: var(--muted); font-size: 13px; line-height:1.75}
+    .reason-list{
+      margin:10px 0 0; padding:0; list-style:none;
+      display:grid; gap:8px;
+      color: rgba(255,255,255,.86);
+      font-size: 12.5px;
+    }
+    .reason-list li{
+      display:flex; gap:8px; align-items:flex-start;
+    }
+    .check{
+      width:18px; height:18px; border-radius:6px;
+      background: rgba(58,224,184,.14);
+      border:1px solid rgba(58,224,184,.22);
+      display:grid; place-items:center;
+      color: rgba(58,224,184,.98);
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+
+    .pricing .card{display:flex; flex-direction:column; gap:10px}
+    .price-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px}
+    .plan-name{font-size:16px; font-weight:900; margin:0}
+    .plan-tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      background: rgba(124,92,255,.12);
+      border:1px solid rgba(124,92,255,.20);
+      color: rgba(182,167,255,.95);
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .price{
+      font-size: 24px;
+      font-weight: 1000;
+      letter-spacing:-.01em;
+      margin:0;
+    }
+    .price small{font-size:12px; color: var(--muted2); font-weight:700}
+    .perks{
+      margin:0; padding:0; list-style:none;
+      display:grid; gap:8px;
+      color: rgba(255,255,255,.84);
+      font-size: 12.5px;
+    }
+    .perks li{display:flex; gap:8px; align-items:flex-start}
+    .pricing .primary{
+      border-color: rgba(246,210,123,.26);
+      background: linear-gradient(180deg, rgba(246,210,123,.11), rgba(255,255,255,.04));
+      box-shadow: 0 18px 46px rgba(246,210,123,.08), 0 18px 46px rgba(124,92,255,.10);
+    }
+    .split{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      padding:10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+    .split strong{color:#fff}
+    .guarantee{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 12px;
+    }
+    .guarantee .pill{
+      background: rgba(246,210,123,.10);
+      border-color: rgba(246,210,123,.22);
+      color: rgba(255,236,184,.92);
+    }
+
+    .compare{
+      position:relative;
+    }
+    .compare-wrap{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .compare .legend{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .key{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .chip{
+      width:10px; height:10px; border-radius:50%;
+      background: rgba(255,255,255,.35);
+    }
+    .chip.good{background: rgba(58,224,184,.95); box-shadow: 0 0 0 4px rgba(58,224,184,.12)}
+    .chip.mid{background: rgba(255,203,75,.95); box-shadow: 0 0 0 4px rgba(255,203,75,.12)}
+    .chip.bad{background: rgba(255,93,122,.95); box-shadow: 0 0 0 4px rgba(255,93,122,.10)}
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    thead th{
+      text-align:left;
+      padding: 12px 12px;
+      font-size: 12px;
+      color: rgba(255,236,184,.92);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    tbody td{
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.84);
+      font-size: 13px;
+      vertical-align:top;
+    }
+    tbody tr:last-child td{border-bottom:none}
+    .brand-col{
+      font-weight: 900;
+      color:#fff;
+    }
+    .meter{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      font-size: 12px;
+      color: rgba(255,255,255,.80);
+      white-space:nowrap;
+    }
+    .meter strong{color:#fff}
+    .meter.good{border-color: rgba(58,224,184,.20); background: rgba(58,224,184,.08)}
+    .meter.mid{border-color: rgba(255,203,75,.20); background: rgba(255,203,75,.08)}
+    .meter.bad{border-color: rgba(255,93,122,.18); background: rgba(255,93,122,.07)}
+
+    .steps .step{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .steps .n{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(124,92,255,.12);
+      border:1px solid rgba(124,92,255,.20);
+      color: rgba(182,167,255,.95);
+      font-weight: 1000;
+      flex:0 0 auto;
+    }
+    .steps h4{margin:0; font-size: 14px; font-weight: 900}
+    .steps p{margin:4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7}
+
+    .voices .quote{
+      position:relative;
+      padding:16px 16px 14px;
+    }
+    .voices .quote:before{
+      content:"“";
+      position:absolute;
+      left:14px; top:6px;
+      font-family:"Playfair Display", serif;
+      font-size: 44px;
+      color: rgba(246,210,123,.28);
+      line-height:1;
+    }
+    .voices .quote p{
+      margin: 12px 0 10px;
+      color: rgba(255,255,255,.88);
+      font-size: 13.5px;
+      line-height: 1.75;
+    }
+    .voices .meta{
+      display:flex; justify-content:space-between; gap:10px;
+      color: var(--muted2);
+      font-size: 12px;
+      border-top: 1px dashed rgba(255,255,255,.14);
+      padding-top: 10px;
+    }
+    .ba{
+      display:grid; grid-template-columns:1fr; gap:10px;
+    }
+    .ba .bar{
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .bar .lbl{display:flex; justify-content:space-between; gap:12px; color: var(--muted2); font-size: 12px}
+    .bar .track{
+      height:12px; border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      margin-top: 8px;
+      overflow:hidden;
+    }
+    .bar .fill{
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(124,92,255,1), rgba(246,210,123,1));
+      box-shadow: 0 10px 20px rgba(124,92,255,.18);
+      transition: width 1s ease;
+    }
+    .disclaimer{
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    details{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 12px 14px;
+    }
+    details + details{margin-top: 10px}
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      font-weight: 900;
+      color: rgba(255,255,255,.92);
+    }
+    summary::-webkit-details-marker{display:none}
+    .faq-a{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(255,255,255,.14);
+    }
+    .chev{
+      width:18px; height:18px; flex:0 0 auto;
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      display:grid; place-items:center;
+      color: rgba(255,236,184,.90);
+      transition: transform .12s ease;
+    }
+    details[open] .chev{transform: rotate(180deg)}
+
+    .stores .city{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .store-grid{
+      display:grid; grid-template-columns: repeat(5, 1fr);
+      gap:10px;
+    }
+    .store{
+      padding:12px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      display:flex; flex-direction:column; gap:8px;
+      min-height: 92px;
+    }
+    .store .name{font-weight:900}
+    .store .hint{color: var(--muted2); font-size: 12px; line-height:1.6}
+    .store .tag{
+      align-self:flex-start;
+      font-size: 11px;
+      padding:6px 8px;
+      border-radius: 999px;
+      background: rgba(124,92,255,.10);
+      border: 1px solid rgba(124,92,255,.18);
+      color: rgba(182,167,255,.92);
+      font-weight:800;
+    }
+
+    .cta-final{
+      padding: 28px 0 44px;
+    }
+    .cta-box{
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(246,210,123,.22);
+      background: linear-gradient(180deg, rgba(246,210,123,.10), rgba(255,255,255,.04));
+      box-shadow: 0 22px 56px rgba(246,210,123,.10), 0 18px 46px rgba(124,92,255,.10);
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:stretch;
+      overflow:hidden;
+      position:relative;
+    }
+    .cta-box:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 260px at 70% 0%, rgba(124,92,255,.22), transparent 70%),
+        radial-gradient(520px 280px at 15% 90%, rgba(58,224,184,.14), transparent 70%);
+      pointer-events:none;
+      opacity:.85;
+    }
+    .cta-box > *{position:relative}
+    .campaign{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .campaign .big{
+      font-size: 26px; font-weight: 1000; margin: 8px 0 0; letter-spacing:-.02em
+    }
+    .campaign .big .off{
+      display:inline-block; margin-left: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,93,122,.10);
+      border: 1px solid rgba(255,93,122,.18);
+      color: rgba(255,93,122,.95);
+      font-size: 12px;
+      vertical-align:middle;
+      font-weight:1000;
+    }
+    .campaign .desc{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .form-card{
+      padding:16px;
+      border-radius: var(--radius-lg);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(11,10,18,.55);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow2);
+    }
+    form{
+      display:grid;
+      gap:10px;
+    }
+    label{
+      font-size:12px;
+      color: rgba(255,255,255,.78);
+      display:block;
+      margin-bottom: 6px;
+      font-weight: 800;
+      letter-spacing:.02em;
+    }
+    .field{
+      display:grid;
+      gap:6px;
+    }
+    .input, select, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      outline:none;
+      transition: box-shadow .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .input::placeholder, textarea::placeholder{color: rgba(255,255,255,.48)}
+    .input:focus, select:focus, textarea:focus{
+      border-color: rgba(246,210,123,.30);
+      box-shadow: var(--ring);
+      background: rgba(255,255,255,.08);
+    }
+    select option{color:#0B0A12}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .three{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:10px;
+    }
+    .consent{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+    .consent input{margin-top: 3px}
+    .form-actions{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      margin-top: 4px;
+    }
+    .fineprint{
+      margin:0;
+      color: rgba(255,255,255,.60);
+      font-size: 11.5px;
+      line-height:1.7;
+    }
+    .success{
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(58,224,184,.10);
+      border: 1px solid rgba(58,224,184,.20);
+      color: rgba(255,255,255,.90);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .success strong{color:#fff}
+    .error{
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,93,122,.10);
+      border: 1px solid rgba(255,93,122,.20);
+      color: rgba(255,255,255,.92);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer{
+      padding: 24px 0 110px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.12);
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:12px;
+      align-items:start;
+    }
+    .footer-links{
+      display:flex; gap:14px; flex-wrap:wrap;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footer-links a:hover{color:#fff}
+    .footer-note{color: var(--muted2); font-size: 12px; line-height: 1.7; margin: 10px 0 0}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    .sticky-cta{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      z-index:90;
+      padding: 10px 12px;
+      background: linear-gradient(180deg, rgba(11,10,18,.08), rgba(11,10,18,.84));
+      border-top: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(12px);
+      display:none;
+    }
+    .sticky-cta .inner{
+      width:min(var(--max), calc(100% - 10px));
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .sticky-cta .mini{
+      display:flex; flex-direction:column; gap:2px;
+      min-width: 0;
+    }
+    .sticky-cta .mini b{
+      font-size: 12px;
+      letter-spacing:.02em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sticky-cta .mini span{
+      font-size: 11px;
+      color: rgba(255,255,255,.64);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sticky-cta .btn{padding: 12px 14px; border-radius: 16px}
+
+    .sr-only{
+      position:absolute!important;
+      width:1px; height:1px;
+      padding:0; margin:-1px;
+      overflow:hidden; clip: rect(0,0,0,0);
+      white-space:nowrap; border:0;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; gap:14px}
+      .brand{min-width:auto}
+      .nav{display:none}
+      .compare-wrap{grid-template-columns: 1fr}
+      .cta-box{grid-template-columns: 1fr; gap:12px}
+      .store-grid{grid-template-columns: repeat(3, 1fr)}
+    }
+    @media (max-width: 720px){
+      .container{width: calc(100% - 24px)}
+      .grid-4{grid-template-columns: 1fr; gap:10px}
+      .grid-3{grid-template-columns: 1fr; gap:10px}
+      .grid-2{grid-template-columns: 1fr; gap:10px}
+      .two{grid-template-columns: 1fr}
+      .three{grid-template-columns: 1fr}
+      .topbar-inner{height: 66px}
+      :root{--header: 66px}
+      .hero{padding-top: 18px}
+      .hero-left{padding: 18px}
+      .panel{padding: 14px}
+      .sticky-cta{display:block}
+      footer{padding-bottom: 120px}
+      main{padding-bottom: 140px}
+      .store-grid{grid-template-columns: repeat(2, 1fr)}
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *{transition:none!important}
+      .bar .fill{transition:none!important}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "株式会社ルミネビューティー",
+    "url": "https://lumine-beauty.example.com/",
+    "brand": {
+      "@type": "Brand",
+      "name": "LUMINE BEAUTY"
+    },
+    "areaServed": ["東京都","神奈川県","埼玉県","千葉県"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+
+  <header class="topbar" role="banner">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="LUMINE BEAUTY トップへ">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-text">
+            <div class="brand-name">LUMINE BEAUTY</div>
+            <div class="brand-sub">最短6ヶ月で、自信の素肌へ</div>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="ページ内ナビゲーション">
+          <a href="#reasons">選ばれる理由</a>
+          <a href="#pricing">料金</a>
+          <a href="#compare">比較</a>
+          <a href="#flow">流れ</a>
+          <a href="#voices">口コミ</a>
+          <a href="#faq">FAQ</a>
+          <a href="#stores">店舗</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="#campaign" data-track="cta_click" data-cta-pos="header_secondary" data-cta-label="初回1,980円を見る">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5a1 1 0 1 0-2 0v5.2c0 .3.1.6.3.8l3.4 3.4a1 1 0 0 0 1.4-1.4L13 11.8V7Z"/></svg>
+            今だけキャンペーン
+          </a>
+          <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="header_primary" data-cta-label="無料カウンセリング予約">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2a1 1 0 0 0-1 1v2H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v2H7V3a1 1 0 0 0-1-1Zm14 8H4v10h16V10Zm-2 2a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2h10Z"/></svg>
+            無料カウンセリング予約
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="kicker" aria-label="特徴の要約">
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 7.3-5.2 5.2a1 1 0 0 1-1.4 0l-2-2a1 1 0 1 1 1.4-1.4l1.3 1.3 4.5-4.5a1 1 0 1 1 1.4 1.4Z"/></svg>
+                <strong>当日予約OK</strong> 毎朝10時に枠開放
+              </span>
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.8 0 5.4 1.2 7.1 3.1a1 1 0 1 1-1.5 1.3A7.99 7.99 0 1 0 20 12a1 1 0 1 1 2 0c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2Zm1 5a1 1 0 1 0-2 0v5.2c0 .3.1.6.3.8l3.4 3.4a1 1 0 0 0 1.4-1.4L13 11.8V7Z"/></svg>
+                <strong>最短6ヶ月</strong> SHR+IPLハイブリッド
+              </span>
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.6 3.8 10.8 9 12 5.2-1.2 9-6.4 9-12V5l-9-4Zm-1 16-4-4a1 1 0 1 1 1.4-1.4l2.6 2.6 5.6-5.6a1 1 0 0 1 1.4 1.4L11 17Z"/></svg>
+                <strong>追加料金なし</strong> シェービング無料
+              </span>
+            </div>
+
+            <h1 class="headline">
+              「予約が取れない」にサヨナラ。<br />
+              <span class="grad">最短6ヶ月で、自信の素肌へ。</span>
+            </h1>
+            <p class="subhead">
+              <strong>SHR（蓄熱式）× IPL（光脱毛）のハイブリッド</strong>だから、産毛から濃い毛までしっかり対応。<br />
+              さらに<strong>最新冷却システム</strong>で痛みへの不安も軽く。初めてでも、乗り換えでも、続けやすい理由があります。
+            </p>
+
+            <div class="anchor" aria-label="価格アンカーと補足">
+              <div class="price-anchor" role="group" aria-label="全身脱毛6回の料金">
+                <span class="label">価格アンカー</span>
+                <span class="value">全身6回 98,000円</span>
+                <span class="note">（顔・VIO込み／税込）</span>
+              </div>
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a1 1 0 0 1 1 1v4h3a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                <strong>全身約60分</strong> 忙しくても通いやすい
+              </span>
+            </div>
+
+            <div class="trust" aria-label="信頼バッジ">
+              <div class="badge"><span class="dot" aria-hidden="true"></span>痛みほぼゼロ</div>
+              <div class="badge"><span class="dot" aria-hidden="true"></span>シェービング無料</div>
+              <div class="badge"><span class="dot" aria-hidden="true"></span>当日キャンセルも無料（1時間前まで）</div>
+              <div class="badge"><span class="dot" aria-hidden="true"></span>専用アプリで24時間予約</div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="hero_primary" data-cta-label="無料カウンセリング予約（FV）">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1 14-4-4a1 1 0 1 1 1.4-1.4l2.6 2.6 5.6-5.6a1 1 0 0 1 1.4 1.4L11 16Z"/></svg>
+                無料カウンセリング予約
+              </a>
+              <a class="btn" href="#compare" data-track="cta_click" data-cta-pos="hero_secondary" data-cta-label="比較で納得する">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H6v14a1 1 0 1 1-2 0V4Zm6 6a1 1 0 0 1 1-1h9a1 1 0 1 1 0 2h-9a1 1 0 0 1-1-1Zm0 5a1 1 0 0 1 1-1h9a1 1 0 1 1 0 2h-9a1 1 0 0 1-1-1Z"/></svg>
+                競合比較を見る
+              </a>
+              <small><span class="mini" aria-hidden="true"></span>しつこい勧誘はしないから安心</small>
+            </div>
+          </div>
+
+          <div class="hero-right" aria-label="差別化ポイントまとめ">
+            <div class="panel">
+              <h3>予約が取れる仕組み</h3>
+              <div class="row">
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M7 2a1 1 0 0 0-1 1v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v2H8V3a1 1 0 0 0-1-1Zm12 8H5v10h14V10Zm-2 2a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h9Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">当日予約OK（毎朝10時に枠開放）</p>
+                    <p class="d">「行ける日に空きがない」を減らすため、当日枠をルール化。</p>
+                  </div>
+                </div>
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v7a2 2 0 0 0 2 2h3a1 1 0 1 0 0-2H5v-7a7 7 0 0 1 14 0v7h-3a1 1 0 1 0 0 2h3a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9Zm-1 16a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2h-2Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">アプリで24時間、予約・変更が完結</p>
+                    <p class="d">空き通知もリアルタイム。通うほどラクになる設計。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="note-box">
+                <strong>回数の消化状況</strong>もアプリで一目。次回の最適なタイミングがわかるから、置いてけぼりにならない。
+              </div>
+            </div>
+
+            <div class="panel">
+              <h3>痛み＆追加料金の不安をゼロへ</h3>
+              <div class="row">
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2c4.4 0 8 3.6 8 8 0 3.8-2.7 7-6.3 7.8l-1.2 3.1a1 1 0 0 1-1.9 0l-1.2-3.1C6.7 17 4 13.8 4 10c0-4.4 3.6-8 8-8Zm0 2a6 6 0 0 0-6 6c0 2.9 2.1 5.3 4.9 5.8.3.1.6.3.7.6l.4 1 .4-1c.1-.3.4-.5.7-.6A6 6 0 0 0 18 10a6 6 0 0 0-6-6Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">最新冷却で、痛みほぼゼロ</p>
+                    <p class="d">熱さ・刺激が不安でも、続けやすい肌あたり。</p>
+                  </div>
+                </div>
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.8 9 12 5.2-1.2 9-6.4 9-12V5l-9-4Zm-1 16-4-4a1 1 0 1 1 1.4-1.4l2.6 2.6 5.6-5.6a1 1 0 0 1 1.4 1.4L11 17Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">完全定額。追加料金ゼロ保証</p>
+                    <p class="d">シェービング無料／キャンセル料なし／解約手数料なし。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem" id="problem">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>こんなお悩み、ありませんか？</h2>
+            <p>よくある“脱毛あるある”が、続けられない理由。LUMINE BEAUTYはそこから変えます。</p>
+          </div>
+          <span class="pill"><strong>首都圏</strong> 東京・神奈川・埼玉・千葉</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="お悩みリスト">
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 12a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1Zm0-8a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V7a1 1 0 0 1 1-1Z"/></svg>
+            </div>
+            <div>
+              <h4>予約が全然取れない…</h4>
+              <p>通える頻度が落ちると、完了まで遠回りになりがち。</p>
+            </div>
+          </div>
+
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5a1 1 0 1 0-2 0v5.2c0 .3.1.6.3.8l3.4 3.4a1 1 0 0 0 1.4-1.4L13 11.8V7Z"/></svg>
+            </div>
+            <div>
+              <h4>効果を実感するまでに長い</h4>
+              <p>「いつ終わるの？」が不安で、途中でやめてしまうことも。</p>
+            </div>
+          </div>
+
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v2H7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V4a3 3 0 0 0-3-3Zm-1 5V4a1 1 0 1 1 2 0v2h-2Zm-4 4h10v9H7v-9Z"/></svg>
+            </div>
+            <div>
+              <h4>追加料金で総額が膨れ上がる</h4>
+              <p>剃り残し・キャンセル・解約…。細かい不安が積もる。</p>
+            </div>
+          </div>
+
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2c3 0 5.7 1.3 7.5 3.3a1 1 0 0 1-1.5 1.3A7.9 7.9 0 0 0 12 4c-2.1 0-4 .8-5.5 2.1a1 1 0 0 1-1.3-1.5A9.9 9.9 0 0 1 12 2Zm-7 9a1 1 0 0 1 2 0 5 5 0 0 0 10 0 1 1 0 1 1 2 0 7 7 0 1 1-14 0Zm7 7a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Z"/></svg>
+            </div>
+            <div>
+              <h4>痛くて続けられなかった</h4>
+              <p>「またあの痛み？」と思うと、足が遠のきやすい。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reasons" id="reasons">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>LUMINE BEAUTYが選ばれる理由</h2>
+            <p>競合の“強み”は参考に、競合の“弱み”はまるごと潰す。だから安心が続きます。</p>
+          </div>
+          <span class="pill"><strong>首都圏特化</strong> 通いやすさ重視</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="選ばれる理由">
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 01</span></div>
+            <div class="reason-title">当日予約OK。専用アプリで24時間管理</div>
+            <p class="reason-desc">「予約が取れない」ストレスを減らす仕組みを、最初から設計しました。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>当日枠を毎朝10時に開放</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>空き状況をリアルタイム通知</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>変更もアプリで完結</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 02</span></div>
+            <div class="reason-title">SHR+IPLで、最短6ヶ月完了へ</div>
+            <p class="reason-desc">産毛から濃い毛まで対応。完了までの見通しが立つから、続けやすい。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>蓄熱式×光脱毛のハイブリッド</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>日焼け肌・敏感肌もOK</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>全身約60分で時短</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 03</span></div>
+            <div class="reason-title">追加料金ゼロ保証。完全定額で安心</div>
+            <p class="reason-desc">「結局いくら？」をなくす。お金の不安がないから、気持ちがラク。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>シェービング代無料</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>当日キャンセル無料（1時間前まで）</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>解約手数料なし</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 04</span></div>
+            <div class="reason-title">最新冷却で、痛みほぼゼロ</div>
+            <p class="reason-desc">「怖い」を「これなら平気」に。初めての一歩が軽くなります。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>冷却システム搭載</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>肌への刺激を最小化</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>敏感肌も相談OK</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>料金プラン（完全定額）</h2>
+            <p>競合比較でも最安値帯を狙いながら、予約・痛み・追加料金の不安までまとめて解消。</p>
+          </div>
+          <span class="pill"><strong>分割OK</strong> 月々3,200円〜</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="料金プラン一覧">
+          <div class="card" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">全身脱毛6回（顔・VIO込み）</p>
+                <p class="price">98,000円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag">最安値帯</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>初めての“ちゃんと実感”に</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>顔・VIO込みで明朗</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>追加料金ゼロ保証</li>
+            </ul>
+          </div>
+
+          <div class="card primary" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">全身脱毛12回（顔・VIO込み）</p>
+                <p class="price">178,000円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag" style="background: rgba(246,210,123,.14); border-color: rgba(246,210,123,.26); color: rgba(255,236,184,.95);">人気No.1</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>自己処理がほぼ不要へ</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>乗り換えでも満足しやすい回数</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>当日予約枠で通いやすい</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">全身脱毛通い放題</p>
+                <p class="price">298,000円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag">満足保証</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>「納得できるまで」通える安心</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>周期管理をアプリで可視化</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>顔・VIO込み</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">都度払い（1回）</p>
+                <p class="price">9,800円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag" style="background: rgba(58,224,184,.10); border-color: rgba(58,224,184,.18); color: rgba(58,224,184,.95);">お試し</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>まずは体感から</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>痛み・肌あたりを確認</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>無理なく始められる</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="split" role="note" aria-label="分割払いの案内">
+          <strong>分割払い対応：</strong>月々3,200円〜（分割例：全身6回 98,000円を36回分割した場合の目安。審査・手数料等は条件により異なります）
+        </div>
+
+        <div class="guarantee" aria-label="追加料金ゼロ保証の内容">
+          <span class="pill"><strong>シェービング代</strong> 無料</span>
+          <span class="pill"><strong>キャンセル料</strong> 当日でも無料（1時間前まで）</span>
+          <span class="pill"><strong>解約手数料</strong> なし</span>
+          <span class="pill"><strong>初回カウンセリング</strong> 無料</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compare" id="compare" data-track-view="compare_view">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>競合比較で“安心”が見える</h2>
+            <p>店舗数・価格・明朗会計。大手の強みは参考にしつつ、「予約」「完了まで」「追加料金」「痛み」を徹底対策。</p>
+          </div>
+          <span class="pill"><strong>首都圏10店舗</strong> 展開予定</span>
+        </div>
+
+        <div class="compare-wrap">
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-size:15px; font-weight:1000;">図解：不満が出やすいポイントを先回り</h3>
+            <table aria-label="競合比較表">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>LUMINE BEAUTY</th>
+                  <th>一般的な大手</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="brand-col">予約の取りやすさ</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>当日枠＋アプリ</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>混雑で取りづらいことも</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">完了までのスピード感</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>最短6ヶ月</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>実感まで長い場合も</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">追加料金の透明性</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>ゼロ保証</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>細かな条件で変動</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">痛みへの配慮</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>最新冷却</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>部位によって刺激</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">通いやすさ</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>首都圏特化</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>店舗は多いが分散</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">初回の始めやすさ</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>初回1,980円</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>条件が複雑なことも</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="legend" aria-label="比較表の凡例">
+              <span class="key"><span class="chip good" aria-hidden="true"></span>強い</span>
+              <span class="key"><span class="chip mid" aria-hidden="true"></span>一般的</span>
+              <span class="key"><span class="chip bad" aria-hidden="true"></span>不安が残る</span>
+              <span class="key">※一般論のイメージ図です。詳細はカウンセリングでご案内します。</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-size:15px; font-weight:1000;">予約システム（専用アプリ）でできること</h3>
+            <div class="grid-2" style="gap:10px" role="list" aria-label="アプリ機能">
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7Zm0 2h10v16H7V4Zm2 13a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Z"/></svg></div>
+                <div>
+                  <p class="t">24時間 予約・変更OK</p>
+                  <p class="d">電話待ちゼロ。思い立ったらすぐ。</p>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.5 7.5-4.2 4.2a1 1 0 0 1-1.4 0l-1.9-1.9a1 1 0 1 1 1.4-1.4l1.2 1.2 3.5-3.5a1 1 0 0 1 1.4 1.4Z"/></svg></div>
+                <div>
+                  <p class="t">当日枠が毎朝10時に出る</p>
+                  <p class="d">「急に空いた日」も活かせる。</p>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7v3a5 5 0 0 0 5 5h1v3a1 1 0 1 0 2 0v-3h1a5 5 0 0 0 5-5V9a7 7 0 0 0-7-7Zm-5 7a5 5 0 0 1 10 0v3a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3V9Z"/></svg></div>
+                <div>
+                  <p class="t">空き状況を通知</p>
+                  <p class="d">人気時間帯の取りこぼしを減らす。</p>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v2h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4Zm13 4H6v12h14V8h-3Zm-2-4H6v2h9V4Z"/></svg></div>
+                <div>
+                  <p class="t">回数の消化状況も確認</p>
+                  <p class="d">通い忘れ・迷子を防ぐ。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="note-box" style="margin-top:12px">
+              <strong>通いやすさ＝結果に近づく近道。</strong> 予約のストレスを減らして、最短ルートで“自信の素肌”へ。
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="compare_primary" data-cta-label="比較後の予約">
+                無料カウンセリング予約
+              </a>
+              <a class="btn" href="#pricing" data-track="cta_click" data-cta-pos="compare_secondary" data-cta-label="料金へ戻る">
+                料金を確認
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section steps" id="flow">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>施術の流れ（最短・最小ストレス）</h2>
+            <p>初めてでも安心な“迷わない導線”。無理な勧誘はしないから、相談だけでも大丈夫。</p>
+          </div>
+          <span class="pill"><strong>全身約60分</strong> 時短設計</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="施術の流れ">
+          <div class="step" role="listitem">
+            <div class="n">1</div>
+            <div>
+              <h4>無料カウンセリング</h4>
+              <p>肌質・毛質チェック。目標と不安を“先に”すり合わせ。</p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="n">2</div>
+            <div>
+              <h4>お着替え・施術準備</h4>
+              <p>剃り残しがあっても大丈夫。シェービング無料でフォロー。</p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="n">3</div>
+            <div>
+              <h4>ハイブリッド脱毛</h4>
+              <p>SHR+IPL×最新冷却。全身の目安は約60分。</p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="n">4</div>
+            <div>
+              <h4>アフターケア・次回予約</h4>
+              <p>肌状態を見ながらケア提案。予約はアプリでいつでも調整。</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="disclaimer" role="note">
+          ※施術時間・感じ方・回数は個人差があります。肌状態や生活習慣に合わせて最適なペースをご提案します。
+        </p>
+      </div>
+    </section>
+
+    <section class="section voices" id="voices">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Before/After・お客様の声</h2>
+            <p>「痛くない」「予約が取れる」「総額が明朗」——続けられる理由が、実感につながる。</p>
+          </div>
+          <span class="pill"><strong>乗り換え</strong> 相談歓迎</span>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-weight:1000;">効果実感の目安（イメージ）</h3>
+            <div class="ba" aria-label="効果実感の目安グラフ">
+              <div class="bar" data-fill="35">
+                <div class="lbl"><span>3回目〜：自己処理がラクに</span><span>実感</span></div>
+                <div class="track"><div class="fill" aria-hidden="true"></div></div>
+              </div>
+              <div class="bar" data-fill="80">
+                <div class="lbl"><span>6回：平均で約80%減の声</span><span>大きく変化</span></div>
+                <div class="track"><div class="fill" aria-hidden="true"></div></div>
+              </div>
+              <div class="bar" data-fill="92">
+                <div class="lbl"><span>12回：満足ラインへ</span><span>安定</span></div>
+                <div class="track"><div class="fill" aria-hidden="true"></div></div>
+              </div>
+            </div>
+            <p class="disclaimer">※イメージです。毛質・部位・肌状態により個人差があります。</p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-weight:1000;">リアルな声（抜粋）</h3>
+            <div class="grid-3" style="grid-template-columns:1fr; gap:10px">
+              <div class="card quote" style="background: rgba(255,255,255,.05)">
+                <p>他サロンから乗り換えて正解でした。<strong>予約が取れる</strong>って、こんなに気持ちがラクなんだ…！</p>
+                <div class="meta"><span>20代後半／乗り換え</span><span>首都圏</span></div>
+              </div>
+              <div class="card quote" style="background: rgba(255,255,255,.05)">
+                <p>本当に<strong>痛くなくてびっくり</strong>。冷たい感じはあるけど、怖さがなくなりました。</p>
+                <div class="meta"><span>20代前半／初めて</span><span>首都圏</span></div>
+              </div>
+              <div class="card quote" style="background: rgba(255,255,255,.05)">
+                <p>アプリで予約が取れるのが神。空き通知のおかげで、忙しくてもちゃんと通えます。</p>
+                <div class="meta"><span>30代前半／仕事忙しい</span><span>首都圏</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top: 14px">
+          <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="voices_primary" data-cta-label="口コミ後の予約">
+            無料カウンセリング予約
+          </a>
+          <a class="btn" href="#faq" data-track="cta_click" data-cta-pos="voices_secondary" data-cta-label="不安をFAQで解消">
+            FAQで不安を消す
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>よくある質問（FAQ）</h2>
+            <p>迷いやすいポイントは、最初にスッキリ。安心できる状態で、スタートを。</p>
+          </div>
+          <span class="pill"><strong>追加料金</strong> なし保証</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <details>
+              <summary>
+                何回で効果を実感できますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                目安として<strong>3回目あたりから「自己処理がラク」</strong>を感じる方が多いです。さらに<strong>6回で平均約80%減</strong>の声も。毛質・部位・肌状態で個人差があるため、カウンセリングで最適な回数をご提案します。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                痛みはありますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                最新冷却システムで、刺激を大幅に軽減。多くの方が<strong>「ほぼ感じない」</strong>と回答しています。部位による感じ方の差はありますが、出力は肌状態に合わせて調整するから安心です。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                日焼け肌・敏感肌でも大丈夫ですか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                SHR+IPLのハイブリッドは幅広い肌状態に対応しやすい設計です。ただし、当日の肌状態によっては安全を優先して施術を見合わせる場合があります。カウンセリングで必ず肌チェックを行います。
+              </div>
+            </details>
+          </div>
+
+          <div>
+            <details>
+              <summary>
+                予約は本当に取れますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                当日予約枠を<strong>毎朝10時に開放</strong>し、アプリで空き通知も受け取れます。さらに、予約変更も24時間できるので、通える日を逃しにくい仕組みです。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                追加料金は本当にかかりませんか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                シェービング代は無料、キャンセル料も<strong>当日でも無料（1時間前まで）</strong>、解約手数料もありません。料金が“増えない”ことを前提にした、完全定額です。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                解約はできますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                いつでも可能です。手数料はかかりません。まずはカウンセリングで、ご希望と不安を聞かせてください。
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top: 14px">
+          <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="faq_primary" data-cta-label="FAQ後の予約">
+            無料カウンセリング予約
+          </a>
+          <a class="btn" href="#stores" data-track="cta_click" data-cta-pos="faq_secondary" data-cta-label="店舗を確認する">
+            店舗一覧を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stores" id="stores">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>店舗一覧（首都圏10店舗展開予定）</h2>
+            <p>“通いやすさ”を最優先。東京・神奈川・埼玉・千葉で、日常の動線に寄り添います。</p>
+          </div>
+          <span class="pill"><strong>通いやすい</strong> 主要駅エリア</span>
+        </div>
+
+        <div class="city" aria-label="エリア別店舗">
+          <span class="key"><span class="chip good" aria-hidden="true"></span>東京</span>
+          <span class="key"><span class="chip mid" aria-hidden="true"></span>神奈川</span>
+          <span class="key"><span class="chip mid" aria-hidden="true"></span>埼玉</span>
+          <span class="key"><span class="chip mid" aria-hidden="true"></span>千葉</span>
+          <span class="key">※詳細住所・オープン日は順次公開予定</span>
+        </div>
+
+        <div class="store-grid" role="list" aria-label="店舗カード">
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">新宿</div><div class="hint">仕事帰りに寄りやすい</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">渋谷</div><div class="hint">買い物ついでに通える</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">池袋</div><div class="hint">アクセス良好</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">銀座</div><div class="hint">大人の落ち着き</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">立川</div><div class="hint">沿線利用に便利</div></div>
+
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">神奈川</span><div class="name">横浜</div><div class="hint">大型ターミナル</div></div>
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">神奈川</span><div class="name">川崎</div><div class="hint">都内からも近い</div></div>
+
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">埼玉</span><div class="name">大宮</div><div class="hint">乗り換え拠点</div></div>
+
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">千葉</span><div class="name">船橋</div><div class="hint">通勤動線に</div></div>
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">千葉</span><div class="name">柏</div><div class="hint">地域密着</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-final" id="campaign">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <div class="campaign" aria-label="初回限定キャンペーン">
+              <span class="pill"><strong>今だけ</strong> 初回限定キャンペーン</span>
+              <span class="pill"><strong>通常</strong> 9,800円 →</span>
+              <span class="pill"><strong>初回</strong> 1,980円</span>
+            </div>
+            <div class="campaign">
+              <div class="big">
+                全身脱毛1回 <span style="color: rgba(255,236,184,.98);">1,980円</span>
+                <span class="off">期間限定</span>
+              </div>
+            </div>
+            <p class="campaign desc">
+              まずは痛み・肌あたり・通いやすさを<strong>体感</strong>。<br />
+              「予約が取れない」「追加料金が怖い」から卒業して、最短ルートで自信の素肌へ。
+            </p>
+
+            <div class="guarantee" aria-label="安心の約束" style="margin-top: 12px">
+              <span class="pill"><strong>しつこい勧誘</strong> なし</span>
+              <span class="pill"><strong>当日枠</strong> 毎朝10時に開放</span>
+              <span class="pill"><strong>キャンセル</strong> 当日でも無料（1時間前まで）</span>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 14px">
+              <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="final_primary" data-cta-label="最終CTA予約">
+                無料カウンセリング予約
+              </a>
+              <a class="btn" href="#pricing" data-track="cta_click" data-cta-pos="final_secondary" data-cta-label="料金確認に戻る">
+                料金をもう一度確認
+              </a>
+            </div>
+
+            <p class="disclaimer">※キャンペーンは予告なく終了する場合があります。対象条件はカウンセリング時にご案内します。</p>
+          </div>
+
+          <div class="form-card" id="reserve" data-track-view="form_view">
+            <h3 style="margin:0 0 10px; font-size: 16px; font-weight: 1000;">無料カウンセリング予約（LP内完結）</h3>
+
+            <div class="success" id="formSuccess" role="status" aria-live="polite">
+              <strong>送信完了</strong>：内容を受け付けました。担当よりご連絡します（架空デモ）。
+            </div>
+            <div class="error" id="formError" role="alert">
+              入力内容をご確認ください（必須項目・形式）。
+            </div>
+
+            <form id="leadForm" novalidate aria-describedby="formHelp">
+              <p id="formHelp" class="fineprint">
+                ※送信後は別ページへ移動しません。入力開始・送信成功は計測されます（デモ実装）。
+              </p>
+
+              <div class="two">
+                <div class="field">
+                  <label for="name">お名前（必須）</label>
+                  <input class="input" id="name" name="name" autocomplete="name" required placeholder="例）山田 花子" />
+                </div>
+                <div class="field">
+                  <label for="age">年代（任意）</label>
+                  <select id="age" name="age" aria-label="年代">
+                    <option value="">選択してください</option>
+                    <option>20代前半</option>
+                    <option>20代後半</option>
+                    <option>30代前半</option>
+                    <option>30代後半</option>
+                    <option>その他</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="two">
+                <div class="field">
+                  <label for="email">メール（必須）</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" required placeholder="例）hanako@example.com" />
+                </div>
+                <div class="field">
+                  <label for="phone">電話番号（必須）</label>
+                  <input class="input" id="phone" name="phone" inputmode="tel" autocomplete="tel" required placeholder="例）09012345678" pattern="^[0-9+\-\s]{9,15}$" />
+                </div>
+              </div>
+
+              <div class="two">
+                <div class="field">
+                  <label for="store">希望店舗（必須）</label>
+                  <select id="store" name="store" required>
+                    <option value="">選択してください</option>
+                    <option>新宿</option>
+                    <option>渋谷</option>
+                    <option>池袋</option>
+                    <option>銀座</option>
+                    <option>立川</option>
+                    <option>横浜</option>
+                    <option>川崎</option>
+                    <option>大宮</option>
+                    <option>船橋</option>
+                    <option>柏</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="interest">気になるプラン（必須）</label>
+                  <select id="interest" name="interest" required>
+                    <option value="">選択してください</option>
+                    <option>初回1,980円でお試し</option>
+                    <option>全身6回（98,000円）</option>
+                    <option>全身12回（178,000円）</option>
+                    <option>通い放題（298,000円）</option>
+                    <option>都度払い（9,800円）</option>
+                    <option>まずは相談したい</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="three">
+                <div class="field">
+                  <label for="date1">第一希望日（任意）</label>
+                  <input class="input" id="date1" name="date1" type="date" />
+                </div>
+                <div class="field">
+                  <label for="time1">時間帯（任意）</label>
+                  <select id="time1" name="time1">
+                    <option value="">選択してください</option>
+                    <option>午前</option>
+                    <option>午後</option>
+                    <option>夕方</option>
+                    <option>夜</option>
+                    <option>いつでも</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="visit">来店経験（任意）</label>
+                  <select id="visit" name="visit">
+                    <option value="">選択してください</option>
+                    <option>初めての脱毛</option>
+                    <option>他サロンから乗り換え</option>
+                    <option>過去に経験あり（再開）</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="msg">相談内容（任意）</label>
+                <textarea class="input" id="msg" name="msg" rows="3" placeholder="例）痛みが不安、予約の取りやすさを知りたい、敏感肌の相談など"></textarea>
+              </div>
+
+              <div class="consent">
+                <input id="agree" name="agree" type="checkbox" required aria-required="true" />
+                <label for="agree" style="margin:0; font-weight:800; color: rgba(255,255,255,.82)">
+                  送信内容の確認と、連絡のための利用に同意します（必須）
+                  <div class="fineprint">※個人情報の取り扱いは、運営（株式会社ルミネビューティー）の社内規定に準拠（架空）。</div>
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" data-track="form_submit_click" data-cta-pos="form_primary" data-cta-label="フォーム送信">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12a10 10 0 1 0 20 0A10 10 0 0 0 2 12Zm14.7-2.3-5.2 5.2a1 1 0 0 1-1.4 0l-2-2a1 1 0 1 1 1.4-1.4l1.3 1.3 4.5-4.5a1 1 0 1 1 1.4 1.4Z"/></svg>
+                  送信して予約する
+                </button>
+                <p class="fineprint">※送信はデモです。実運用時はAPI連携してください。</p>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="gap:12px">
+            <div class="logo" aria-hidden="true"></div>
+            <div class="brand-text">
+              <div class="brand-name">LUMINE BEAUTY</div>
+              <div class="brand-sub">「最短6ヶ月で、自信の素肌へ」</div>
+            </div>
+          </div>
+          <p class="footer-note">
+            運営：株式会社ルミネビューティー（架空）<br />
+            公式URL：<span class="mono">https://lumine-beauty.example.com/</span><br />
+            対象エリア：東京・神奈川・埼玉・千葉（首都圏10店舗展開予定）
+          </p>
+          <p class="footer-note">
+            ※本LPはデモ用の架空ページです。効果・回数・痛みの感じ方には個人差があります。安全のため、肌状態によって施術を見合わせる場合があります。
+          </p>
+        </div>
+
+        <div>
+          <div class="card" style="background: rgba(255,255,255,.05)">
+            <h3 style="margin:0 0 8px; font-size: 14px; font-weight:1000;">計測（実装済み / デモ）</h3>
+            <p style="margin:0; color: var(--muted); font-size: 12.5px; line-height: 1.7;">
+              CTAクリック（位置別）／フォーム表示・入力開始・送信成功／スクロール深度（25/50/75/90%）／比較表の閲覧率をイベント送信します。
+            </p>
+            <div class="footer-links" style="margin-top: 10px">
+              <a href="#top" data-track="cta_click" data-cta-pos="footer" data-cta-label="トップへ">トップへ</a>
+              <a href="#pricing" data-track="cta_click" data-cta-pos="footer" data-cta-label="料金へ">料金</a>
+              <a href="#reserve" data-track="cta_click" data-cta-pos="footer" data-cta-label="予約へ">予約</a>
+              <a href="#faq" data-track="cta_click" data-cta-pos="footer" data-cta-label="FAQへ">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" role="region" aria-label="追従CTA（モバイル）">
+    <div class="inner">
+      <div class="mini">
+        <b>無料カウンセリング受付中</b>
+        <span>全身6回 98,000円｜初回1,980円も</span>
+      </div>
+      <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="sticky_mobile" data-cta-label="追従CTA予約">
+        予約する
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      window.dataLayer = window.dataLayer || [];
+
+      function uuid(){
+        try{
+          return crypto.randomUUID();
+        }catch(e){
+          return "id-" + Math.random().toString(16).slice(2) + "-" + Date.now().toString(16);
+        }
+      }
+
+      var sessionId = sessionStorage.getItem("lb_session_id");
+      if(!sessionId){
+        sessionId = uuid();
+        sessionStorage.setItem("lb_session_id", sessionId);
+      }
+
+      var pageId = uuid();
+      var startTs = Date.now();
+
+      function track(eventName, params){
+        var payload = Object.assign({
+          event: eventName,
+          session_id: sessionId,
+          page_id: pageId,
+          page_url: location.href,
+          page_path: location.pathname + location.search + location.hash,
+          ts: new Date().toISOString(),
+          ms_since_load: Date.now() - startTs
+        }, params || {});
+        window.dataLayer.push(payload);
+
+        if(typeof window.gtag === "function"){
+          window.gtag("event", eventName, payload);
+        }
+
+        if(typeof window.fbq === "function"){
+          window.fbq("trackCustom", eventName, payload);
+        }
+
+        if(window.__LB_DEBUG === true){
+          console.log("[LUMINE BEAUTY track]", eventName, payload);
+        }
+      }
+
+      track("lp_view", {title: document.title});
+
+      function bindCtas(){
+        var nodes = document.querySelectorAll("[data-track='cta_click']");
+        nodes.forEach(function(el){
+          el.addEventListener("click", function(){
+            var pos = el.getAttribute("data-cta-pos") || "unknown";
+            var label = el.getAttribute("data-cta-label") || (el.textContent || "").trim().slice(0, 50);
+            track("cta_click", {cta_pos: pos, cta_label: label});
+          }, {passive:true});
+        });
+      }
+
+      function scrollDepth(){
+        var fired = new Set();
+        var thresholds = [25,50,75,90];
+
+        function percent(){
+          var doc = document.documentElement;
+          var scrollTop = window.scrollY || doc.scrollTop || 0;
+          var height = (doc.scrollHeight || 0) - (window.innerHeight || 0);
+          if(height <= 0) return 100;
+          return Math.round((scrollTop / height) * 100);
+        }
+
+        function onScroll(){
+          var p = percent();
+          thresholds.forEach(function(t){
+            if(p >= t && !fired.has(t)){
+              fired.add(t);
+              track("scroll_depth", {depth: t});
+            }
+          });
+        }
+
+        window.addEventListener("scroll", onScroll, {passive:true});
+        onScroll();
+      }
+
+      function observeViews(){
+        if(!("IntersectionObserver" in window)){
+          return;
+        }
+
+        var viewTargets = document.querySelectorAll("[data-track-view]");
+        if(viewTargets.length === 0) return;
+
+        var seen = new Set();
+
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              var name = entry.target.getAttribute("data-track-view");
+              if(name && !seen.has(name)){
+                seen.add(name);
+                track(name, {ratio: entry.intersectionRatio});
+              }
+            }
+          });
+        }, {threshold: [0.25, 0.5, 0.75]});
+
+        viewTargets.forEach(function(el){ io.observe(el); });
+      }
+
+      function animateBars(){
+        if(!("IntersectionObserver" in window)){
+          document.querySelectorAll(".bar[data-fill] .fill").forEach(function(f){
+            var v = f.closest(".bar").getAttribute("data-fill");
+            f.style.width = v + "%";
+          });
+          return;
+        }
+        var bars = document.querySelectorAll(".bar[data-fill]");
+        if(bars.length === 0) return;
+
+        var done = false;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting && !done){
+              done = true;
+              bars.forEach(function(b){
+                var v = b.getAttribute("data-fill") || "0";
+                var fill = b.querySelector(".fill");
+                if(fill) fill.style.width = v + "%";
+              });
+              io.disconnect();
+            }
+          });
+        }, {threshold: 0.35});
+
+        io.observe(bars[0]);
+      }
+
+      function formTracking(){
+        var formCard = document.getElementById("reserve");
+        var form = document.getElementById("leadForm");
+        var formSuccess = document.getElementById("formSuccess");
+        var formError = document.getElementById("formError");
+        if(!form) return;
+
+        var started = false;
+
+        function markStart(field){
+          if(started) return;
+          started = true;
+          track("form_start", {field: field || "unknown"});
+        }
+
+        form.addEventListener("focusin", function(e){
+          var t = e.target;
+          if(!t) return;
+          if(t.matches("input, select, textarea")){
+            markStart(t.name || t.id || t.type || "field");
+          }
+        });
+
+        form.addEventListener("input", function(e){
+          var t = e.target;
+          if(!t) return;
+          if(t.matches("input, select, textarea")){
+            markStart(t.name || t.id || t.type || "field");
+          }
+        });
+
+        function show(el){
+          if(!el) return;
+          el.style.display = "block";
+        }
+        function hide(el){
+          if(!el) return;
+          el.style.display = "none";
+        }
+
+        function validate(){
+          hide(formError);
+          hide(formSuccess);
+
+          var name = document.getElementById("name");
+          var email = document.getElementById("email");
+          var phone = document.getElementById("phone");
+          var store = document.getElementById("store");
+          var interest = document.getElementById("interest");
+          var agree = document.getElementById("agree");
+
+          var ok = true;
+
+          function invalid(el){
+            ok = false;
+            if(el){
+              el.setAttribute("aria-invalid", "true");
+            }
+          }
+          function valid(el){
+            if(el){
+              el.removeAttribute("aria-invalid");
+            }
+          }
+
+          if(!name.value.trim()) invalid(name); else valid(name);
+
+          if(!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) invalid(email); else valid(email);
+
+          var p = phone.value.trim();
+          if(!p || !/^[0-9+\-\s]{9,15}$/.test(p)) invalid(phone); else valid(phone);
+
+          if(!store.value) invalid(store); else valid(store);
+
+          if(!interest.value) invalid(interest); else valid(interest);
+
+          if(!agree.checked) invalid(agree); else valid(agree);
+
+          if(!ok){
+            show(formError);
+            track("form_error", {reason: "validation_failed"});
+            return false;
+          }
+          return true;
+        }
+
+        form.addEventListener("submit", function(e){
+          e.preventDefault();
+          track("form_submit_attempt", {});
+          if(!validate()){
+            return;
+          }
+
+          var payload = {
+            name: (document.getElementById("name").value || "").trim(),
+            age: document.getElementById("age").value || "",
+            email: (document.getElementById("email").value || "").trim(),
+            phone: (document.getElementById("phone").value || "").trim(),
+            store: document.getElementById("store").value || "",
+            interest: document.getElementById("interest").value || "",
+            date1: document.getElementById("date1").value || "",
+            time1: document.getElementById("time1").value || "",
+            visit: document.getElementById("visit").value || "",
+            msg_len: (document.getElementById("msg").value || "").trim().length
+          };
+
+          setTimeout(function(){
+            show(formSuccess);
+            hide(formError);
+            track("form_submit_success", payload);
+            form.reset();
+            started = false;
+
+            if(formCard){
+              formCard.scrollIntoView({behavior: "smooth", block: "center"});
+            }
+          }, 450);
+        });
+
+        if("IntersectionObserver" in window && formCard){
+          var seen = false;
+          var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+              if(entry.isIntersecting && !seen){
+                seen = true;
+                track("form_view", {ratio: entry.intersectionRatio});
+              }
+            });
+          }, {threshold: [0.3, 0.6]});
+          io.observe(formCard);
+        }
+      }
+
+      bindCtas();
+      scrollDepth();
+      observeViews();
+      animateBars();
+      formTracking();
+
+      var compareEl = document.getElementById("compare");
+      if(compareEl && "IntersectionObserver" in window){
+        var fired = false;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting && !fired){
+              fired = true;
+              track("compare_view", {ratio: entry.intersectionRatio});
+              io.disconnect();
+            }
+          });
+        }, {threshold: [0.35]});
+        io.observe(compareEl);
+      }
+    })();
+  </script>
+</body>
+</html>
+tokens used
+33,613
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#6B4EFF" />
+  <title>LUMINE BEAUTY（ルミネビューティー）｜最短6ヶ月で、自信の素肌へ</title>
+  <meta name="description" content="「予約が取れない」にサヨナラ。SHR+IPLハイブリッド脱毛×当日予約OK。最短6ヶ月で、自信の素肌へ。全身6回 98,000円（顔・VIO込み）。シェービング無料／キャンセル料なし／完全定額。無料カウンセリング受付中。" />
+  <meta property="og:title" content="LUMINE BEAUTY｜最短6ヶ月で、自信の素肌へ" />
+  <meta property="og:description" content="SHR+IPLハイブリッド脱毛×当日予約OK。全身6回 98,000円（顔・VIO込み）。痛みほぼゼロ／追加料金なし。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lumine-beauty.example.com/" />
+  <meta property="og:image" content="https://lumine-beauty.example.com/ogp.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0B0A12;
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(255,255,255,.10);
+      --card: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.62);
+      --line: rgba(255,255,255,.14);
+      --lav: #7C5CFF;
+      --lav2:#B6A7FF;
+      --gold: #F6D27B;
+      --gold2:#FFECB8;
+      --good: #3AE0B8;
+      --warn: #FFCB4B;
+      --danger:#FF5D7A;
+      --shadow: 0 18px 48px rgba(0,0,0,.45);
+      --shadow2: 0 10px 24px rgba(0,0,0,.38);
+      --radius-lg: 26px;
+      --radius: 18px;
+      --radius-sm: 14px;
+      --max: 1120px;
+      --header: 74px;
+      --ring: 0 0 0 4px rgba(124,92,255,.24), 0 0 0 1px rgba(246,210,123,.20);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 650px at 80% -10%, rgba(124,92,255,.45), transparent 60%),
+        radial-gradient(900px 520px at 10% 0%, rgba(246,210,123,.22), transparent 60%),
+        radial-gradient(900px 520px at 70% 60%, rgba(58,224,184,.18), transparent 55%),
+        linear-gradient(180deg, #05040B 0%, #0B0A12 55%, #070612 100%);
+      font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    ::selection{background:rgba(124,92,255,.35)}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .skip{
+      position:absolute; left:-9999px; top:6px; z-index:9999;
+      padding:10px 12px; border-radius:12px; background:#fff; color:#000;
+    }
+    .skip:focus{left:12px; outline:none; box-shadow: var(--ring)}
+    .topbar{
+      position:sticky; top:0; z-index:80;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(11,10,18,.82), rgba(11,10,18,.52));
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .topbar-inner{
+      height:var(--header);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:240px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: radial-gradient(14px 14px at 25% 30%, rgba(255,255,255,.92), rgba(255,255,255,.24) 60%, transparent 62%),
+                  conic-gradient(from 210deg, rgba(124,92,255,1), rgba(246,210,123,1), rgba(58,224,184,1), rgba(124,92,255,1));
+      box-shadow: 0 12px 22px rgba(124,92,255,.18);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .brand-text{display:flex; flex-direction:column; line-height:1.05}
+    .brand-name{
+      font-family:"Playfair Display", serif;
+      letter-spacing:.05em;
+      font-weight:700;
+      font-size:14px;
+    }
+    .brand-sub{font-size:12px; color:var(--muted2)}
+    .nav{
+      display:flex; align-items:center; gap:18px;
+      color:var(--muted);
+      font-size:13px;
+      overflow:hidden;
+    }
+    .nav a{opacity:.92}
+    .nav a:hover{opacity:1; color:#fff}
+    .nav-cta{
+      display:flex; gap:10px; align-items:center;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18)}
+    .btn:active{transform: translateY(0px)}
+    .btn:focus-visible{outline:none; box-shadow: var(--ring)}
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(246,210,123,1));
+      border-color: rgba(246,210,123,.35);
+      color:#0B0A12;
+      font-weight:800;
+      box-shadow: 0 18px 44px rgba(124,92,255,.22), 0 14px 32px rgba(246,210,123,.10);
+    }
+    .btn-primary:hover{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(255,236,184,1));
+      border-color: rgba(255,236,184,.48);
+    }
+    .btn-ghost{
+      background: transparent;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color:var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .pill strong{color:#fff; font-weight:800}
+    .icon{
+      width:16px; height:16px; display:inline-block; flex:0 0 auto;
+      fill: currentColor;
+    }
+
+    main{padding-bottom: 120px}
+    .hero{
+      padding: 34px 0 26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:24px;
+      align-items:stretch;
+    }
+    .hero-left{
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(400px 240px at 65% 25%, rgba(246,210,123,.18), transparent 65%),
+        radial-gradient(520px 320px at 20% 20%, rgba(124,92,255,.22), transparent 65%),
+        radial-gradient(520px 320px at 80% 78%, rgba(58,224,184,.14), transparent 62%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .hero-left > *{position:relative}
+    .kicker{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-bottom: 12px;
+    }
+    .headline{
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.12;
+      letter-spacing:-.02em;
+      font-weight:900;
+      margin: 10px 0 10px;
+    }
+    .headline .grad{
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(182,167,255,.92), rgba(255,236,184,.92));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .subhead{
+      color:var(--muted);
+      font-size: 15px;
+      line-height:1.7;
+      margin: 0 0 14px;
+    }
+    .anchor{
+      margin: 16px 0 12px;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .price-anchor{
+      display:flex; align-items:baseline; gap:10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(246,210,123,.12);
+      border:1px solid rgba(246,210,123,.28);
+      color: rgba(255,236,184,.95);
+      box-shadow: 0 14px 30px rgba(246,210,123,.08);
+    }
+    .price-anchor .label{
+      font-size:12px; color: rgba(255,236,184,.82);
+      letter-spacing:.08em;
+      font-weight:800;
+    }
+    .price-anchor .value{
+      font-size: 22px;
+      font-weight: 900;
+      color: rgba(255,255,255,.96);
+    }
+    .price-anchor .note{
+      font-size:12px; color: rgba(255,255,255,.70);
+    }
+    .trust{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin: 12px 0 16px;
+    }
+    .trust .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.86);
+      font-size:12px;
+    }
+    .trust .badge .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(246,210,123,1));
+      box-shadow: 0 0 0 3px rgba(124,92,255,.16);
+    }
+    .hero-actions{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin: 10px 0 0;
+    }
+    .hero-actions small{
+      color: var(--muted2);
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .hero-actions .mini{
+      width:10px; height:10px; border-radius:50%;
+      background: rgba(58,224,184,.95);
+      box-shadow: 0 0 0 4px rgba(58,224,184,.12);
+    }
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .panel{
+      padding:16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      position:relative;
+    }
+    .panel h3{
+      margin:0 0 10px;
+      font-size: 14px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      color: rgba(255,236,184,.92);
+      font-weight:900;
+    }
+    .panel .row{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+    .feature{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .feature .i{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(124,92,255,.25), rgba(246,210,123,.18));
+      border:1px solid rgba(246,210,123,.18);
+      color: rgba(255,236,184,.95);
+      box-shadow: 0 12px 24px rgba(124,92,255,.10);
+      flex:0 0 auto;
+    }
+    .feature .t{
+      font-weight:900; margin:0; font-size:14px;
+    }
+    .feature .d{
+      margin:4px 0 0; color: var(--muted); font-size:12.5px; line-height:1.6
+    }
+    .note-box{
+      margin-top:12px;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(58,224,184,.08);
+      border:1px solid rgba(58,224,184,.18);
+      color: rgba(255,255,255,.84);
+      font-size:12.5px;
+      line-height:1.6;
+    }
+
+    .section{
+      padding: 34px 0;
+    }
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:12px;
+      margin-bottom: 16px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: clamp(20px, 2.1vw, 28px);
+      letter-spacing:-.01em;
+      font-weight: 900;
+    }
+    .section-title p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 56ch;
+    }
+    .grid-4{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+
+    .card{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+    }
+    .card h3{margin:0 0 8px; font-size: 15px; font-weight:900}
+    .card p{margin:0; color: var(--muted); font-size: 13px; line-height:1.7}
+    .card .k{
+      display:flex; align-items:center; gap:10px;
+      margin-bottom:10px;
+      color: rgba(255,236,184,.92);
+      font-weight:900;
+      letter-spacing:.02em;
+    }
+
+    .problem{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .problem-item{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .problem-item .mark{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(255,93,122,.10);
+      border: 1px solid rgba(255,93,122,.18);
+      color: rgba(255,93,122,.95);
+      flex:0 0 auto;
+    }
+    .problem-item h4{margin:0; font-size: 14px; font-weight:900}
+    .problem-item p{margin:4px 0 0; color:var(--muted); font-size: 13px; line-height:1.7}
+
+    .reasons .card{position:relative; overflow:hidden}
+    .reasons .card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(320px 220px at 85% 25%, rgba(124,92,255,.18), transparent 70%),
+                  radial-gradient(360px 260px at 20% 80%, rgba(246,210,123,.12), transparent 72%);
+      opacity:.85;
+      pointer-events:none;
+    }
+    .reasons .card > *{position:relative}
+    .reason-num{
+      font-family:"Playfair Display", serif;
+      color: rgba(255,236,184,.92);
+      font-size: 18px;
+      letter-spacing:.05em;
+    }
+    .reason-title{margin:6px 0 6px; font-size: 16px; font-weight: 900}
+    .reason-desc{margin:0; color: var(--muted); font-size: 13px; line-height:1.75}
+    .reason-list{
+      margin:10px 0 0; padding:0; list-style:none;
+      display:grid; gap:8px;
+      color: rgba(255,255,255,.86);
+      font-size: 12.5px;
+    }
+    .reason-list li{
+      display:flex; gap:8px; align-items:flex-start;
+    }
+    .check{
+      width:18px; height:18px; border-radius:6px;
+      background: rgba(58,224,184,.14);
+      border:1px solid rgba(58,224,184,.22);
+      display:grid; place-items:center;
+      color: rgba(58,224,184,.98);
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+
+    .pricing .card{display:flex; flex-direction:column; gap:10px}
+    .price-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px}
+    .plan-name{font-size:16px; font-weight:900; margin:0}
+    .plan-tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      background: rgba(124,92,255,.12);
+      border:1px solid rgba(124,92,255,.20);
+      color: rgba(182,167,255,.95);
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .price{
+      font-size: 24px;
+      font-weight: 1000;
+      letter-spacing:-.01em;
+      margin:0;
+    }
+    .price small{font-size:12px; color: var(--muted2); font-weight:700}
+    .perks{
+      margin:0; padding:0; list-style:none;
+      display:grid; gap:8px;
+      color: rgba(255,255,255,.84);
+      font-size: 12.5px;
+    }
+    .perks li{display:flex; gap:8px; align-items:flex-start}
+    .pricing .primary{
+      border-color: rgba(246,210,123,.26);
+      background: linear-gradient(180deg, rgba(246,210,123,.11), rgba(255,255,255,.04));
+      box-shadow: 0 18px 46px rgba(246,210,123,.08), 0 18px 46px rgba(124,92,255,.10);
+    }
+    .split{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      padding:10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+    .split strong{color:#fff}
+    .guarantee{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 12px;
+    }
+    .guarantee .pill{
+      background: rgba(246,210,123,.10);
+      border-color: rgba(246,210,123,.22);
+      color: rgba(255,236,184,.92);
+    }
+
+    .compare{
+      position:relative;
+    }
+    .compare-wrap{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .compare .legend{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .key{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .chip{
+      width:10px; height:10px; border-radius:50%;
+      background: rgba(255,255,255,.35);
+    }
+    .chip.good{background: rgba(58,224,184,.95); box-shadow: 0 0 0 4px rgba(58,224,184,.12)}
+    .chip.mid{background: rgba(255,203,75,.95); box-shadow: 0 0 0 4px rgba(255,203,75,.12)}
+    .chip.bad{background: rgba(255,93,122,.95); box-shadow: 0 0 0 4px rgba(255,93,122,.10)}
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    thead th{
+      text-align:left;
+      padding: 12px 12px;
+      font-size: 12px;
+      color: rgba(255,236,184,.92);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    tbody td{
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.84);
+      font-size: 13px;
+      vertical-align:top;
+    }
+    tbody tr:last-child td{border-bottom:none}
+    .brand-col{
+      font-weight: 900;
+      color:#fff;
+    }
+    .meter{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      font-size: 12px;
+      color: rgba(255,255,255,.80);
+      white-space:nowrap;
+    }
+    .meter strong{color:#fff}
+    .meter.good{border-color: rgba(58,224,184,.20); background: rgba(58,224,184,.08)}
+    .meter.mid{border-color: rgba(255,203,75,.20); background: rgba(255,203,75,.08)}
+    .meter.bad{border-color: rgba(255,93,122,.18); background: rgba(255,93,122,.07)}
+
+    .steps .step{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .steps .n{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(124,92,255,.12);
+      border:1px solid rgba(124,92,255,.20);
+      color: rgba(182,167,255,.95);
+      font-weight: 1000;
+      flex:0 0 auto;
+    }
+    .steps h4{margin:0; font-size: 14px; font-weight: 900}
+    .steps p{margin:4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7}
+
+    .voices .quote{
+      position:relative;
+      padding:16px 16px 14px;
+    }
+    .voices .quote:before{
+      content:"“";
+      position:absolute;
+      left:14px; top:6px;
+      font-family:"Playfair Display", serif;
+      font-size: 44px;
+      color: rgba(246,210,123,.28);
+      line-height:1;
+    }
+    .voices .quote p{
+      margin: 12px 0 10px;
+      color: rgba(255,255,255,.88);
+      font-size: 13.5px;
+      line-height: 1.75;
+    }
+    .voices .meta{
+      display:flex; justify-content:space-between; gap:10px;
+      color: var(--muted2);
+      font-size: 12px;
+      border-top: 1px dashed rgba(255,255,255,.14);
+      padding-top: 10px;
+    }
+    .ba{
+      display:grid; grid-template-columns:1fr; gap:10px;
+    }
+    .ba .bar{
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .bar .lbl{display:flex; justify-content:space-between; gap:12px; color: var(--muted2); font-size: 12px}
+    .bar .track{
+      height:12px; border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      margin-top: 8px;
+      overflow:hidden;
+    }
+    .bar .fill{
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(124,92,255,1), rgba(246,210,123,1));
+      box-shadow: 0 10px 20px rgba(124,92,255,.18);
+      transition: width 1s ease;
+    }
+    .disclaimer{
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    details{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 12px 14px;
+    }
+    details + details{margin-top: 10px}
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      font-weight: 900;
+      color: rgba(255,255,255,.92);
+    }
+    summary::-webkit-details-marker{display:none}
+    .faq-a{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(255,255,255,.14);
+    }
+    .chev{
+      width:18px; height:18px; flex:0 0 auto;
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      display:grid; place-items:center;
+      color: rgba(255,236,184,.90);
+      transition: transform .12s ease;
+    }
+    details[open] .chev{transform: rotate(180deg)}
+
+    .stores .city{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .store-grid{
+      display:grid; grid-template-columns: repeat(5, 1fr);
+      gap:10px;
+    }
+    .store{
+      padding:12px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      display:flex; flex-direction:column; gap:8px;
+      min-height: 92px;
+    }
+    .store .name{font-weight:900}
+    .store .hint{color: var(--muted2); font-size: 12px; line-height:1.6}
+    .store .tag{
+      align-self:flex-start;
+      font-size: 11px;
+      padding:6px 8px;
+      border-radius: 999px;
+      background: rgba(124,92,255,.10);
+      border: 1px solid rgba(124,92,255,.18);
+      color: rgba(182,167,255,.92);
+      font-weight:800;
+    }
+
+    .cta-final{
+      padding: 28px 0 44px;
+    }
+    .cta-box{
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(246,210,123,.22);
+      background: linear-gradient(180deg, rgba(246,210,123,.10), rgba(255,255,255,.04));
+      box-shadow: 0 22px 56px rgba(246,210,123,.10), 0 18px 46px rgba(124,92,255,.10);
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:stretch;
+      overflow:hidden;
+      position:relative;
+    }
+    .cta-box:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 260px at 70% 0%, rgba(124,92,255,.22), transparent 70%),
+        radial-gradient(520px 280px at 15% 90%, rgba(58,224,184,.14), transparent 70%);
+      pointer-events:none;
+      opacity:.85;
+    }
+    .cta-box > *{position:relative}
+    .campaign{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .campaign .big{
+      font-size: 26px; font-weight: 1000; margin: 8px 0 0; letter-spacing:-.02em
+    }
+    .campaign .big .off{
+      display:inline-block; margin-left: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,93,122,.10);
+      border: 1px solid rgba(255,93,122,.18);
+      color: rgba(255,93,122,.95);
+      font-size: 12px;
+      vertical-align:middle;
+      font-weight:1000;
+    }
+    .campaign .desc{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .form-card{
+      padding:16px;
+      border-radius: var(--radius-lg);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(11,10,18,.55);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow2);
+    }
+    form{
+      display:grid;
+      gap:10px;
+    }
+    label{
+      font-size:12px;
+      color: rgba(255,255,255,.78);
+      display:block;
+      margin-bottom: 6px;
+      font-weight: 800;
+      letter-spacing:.02em;
+    }
+    .field{
+      display:grid;
+      gap:6px;
+    }
+    .input, select, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      outline:none;
+      transition: box-shadow .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .input::placeholder, textarea::placeholder{color: rgba(255,255,255,.48)}
+    .input:focus, select:focus, textarea:focus{
+      border-color: rgba(246,210,123,.30);
+      box-shadow: var(--ring);
+      background: rgba(255,255,255,.08);
+    }
+    select option{color:#0B0A12}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .three{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:10px;
+    }
+    .consent{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+    .consent input{margin-top: 3px}
+    .form-actions{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      margin-top: 4px;
+    }
+    .fineprint{
+      margin:0;
+      color: rgba(255,255,255,.60);
+      font-size: 11.5px;
+      line-height:1.7;
+    }
+    .success{
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(58,224,184,.10);
+      border: 1px solid rgba(58,224,184,.20);
+      color: rgba(255,255,255,.90);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .success strong{color:#fff}
+    .error{
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,93,122,.10);
+      border: 1px solid rgba(255,93,122,.20);
+      color: rgba(255,255,255,.92);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer{
+      padding: 24px 0 110px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.12);
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:12px;
+      align-items:start;
+    }
+    .footer-links{
+      display:flex; gap:14px; flex-wrap:wrap;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footer-links a:hover{color:#fff}
+    .footer-note{color: var(--muted2); font-size: 12px; line-height: 1.7; margin: 10px 0 0}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    .sticky-cta{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      z-index:90;
+      padding: 10px 12px;
+      background: linear-gradient(180deg, rgba(11,10,18,.08), rgba(11,10,18,.84));
+      border-top: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(12px);
+      display:none;
+    }
+    .sticky-cta .inner{
+      width:min(var(--max), calc(100% - 10px));
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .sticky-cta .mini{
+      display:flex; flex-direction:column; gap:2px;
+      min-width: 0;
+    }
+    .sticky-cta .mini b{
+      font-size: 12px;
+      letter-spacing:.02em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sticky-cta .mini span{
+      font-size: 11px;
+      color: rgba(255,255,255,.64);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .sticky-cta .btn{padding: 12px 14px; border-radius: 16px}
+
+    .sr-only{
+      position:absolute!important;
+      width:1px; height:1px;
+      padding:0; margin:-1px;
+      overflow:hidden; clip: rect(0,0,0,0);
+      white-space:nowrap; border:0;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; gap:14px}
+      .brand{min-width:auto}
+      .nav{display:none}
+      .compare-wrap{grid-template-columns: 1fr}
+      .cta-box{grid-template-columns: 1fr; gap:12px}
+      .store-grid{grid-template-columns: repeat(3, 1fr)}
+    }
+    @media (max-width: 720px){
+      .container{width: calc(100% - 24px)}
+      .grid-4{grid-template-columns: 1fr; gap:10px}
+      .grid-3{grid-template-columns: 1fr; gap:10px}
+      .grid-2{grid-template-columns: 1fr; gap:10px}
+      .two{grid-template-columns: 1fr}
+      .three{grid-template-columns: 1fr}
+      .topbar-inner{height: 66px}
+      :root{--header: 66px}
+      .hero{padding-top: 18px}
+      .hero-left{padding: 18px}
+      .panel{padding: 14px}
+      .sticky-cta{display:block}
+      footer{padding-bottom: 120px}
+      main{padding-bottom: 140px}
+      .store-grid{grid-template-columns: repeat(2, 1fr)}
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *{transition:none!important}
+      .bar .fill{transition:none!important}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "株式会社ルミネビューティー",
+    "url": "https://lumine-beauty.example.com/",
+    "brand": {
+      "@type": "Brand",
+      "name": "LUMINE BEAUTY"
+    },
+    "areaServed": ["東京都","神奈川県","埼玉県","千葉県"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+
+  <header class="topbar" role="banner">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="LUMINE BEAUTY トップへ">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-text">
+            <div class="brand-name">LUMINE BEAUTY</div>
+            <div class="brand-sub">最短6ヶ月で、自信の素肌へ</div>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="ページ内ナビゲーション">
+          <a href="#reasons">選ばれる理由</a>
+          <a href="#pricing">料金</a>
+          <a href="#compare">比較</a>
+          <a href="#flow">流れ</a>
+          <a href="#voices">口コミ</a>
+          <a href="#faq">FAQ</a>
+          <a href="#stores">店舗</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="#campaign" data-track="cta_click" data-cta-pos="header_secondary" data-cta-label="初回1,980円を見る">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5a1 1 0 1 0-2 0v5.2c0 .3.1.6.3.8l3.4 3.4a1 1 0 0 0 1.4-1.4L13 11.8V7Z"/></svg>
+            今だけキャンペーン
+          </a>
+          <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="header_primary" data-cta-label="無料カウンセリング予約">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2a1 1 0 0 0-1 1v2H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v2H7V3a1 1 0 0 0-1-1Zm14 8H4v10h16V10Zm-2 2a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2h10Z"/></svg>
+            無料カウンセリング予約
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="kicker" aria-label="特徴の要約">
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 7.3-5.2 5.2a1 1 0 0 1-1.4 0l-2-2a1 1 0 1 1 1.4-1.4l1.3 1.3 4.5-4.5a1 1 0 1 1 1.4 1.4Z"/></svg>
+                <strong>当日予約OK</strong> 毎朝10時に枠開放
+              </span>
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.8 0 5.4 1.2 7.1 3.1a1 1 0 1 1-1.5 1.3A7.99 7.99 0 1 0 20 12a1 1 0 1 1 2 0c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2Zm1 5a1 1 0 1 0-2 0v5.2c0 .3.1.6.3.8l3.4 3.4a1 1 0 0 0 1.4-1.4L13 11.8V7Z"/></svg>
+                <strong>最短6ヶ月</strong> SHR+IPLハイブリッド
+              </span>
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.6 3.8 10.8 9 12 5.2-1.2 9-6.4 9-12V5l-9-4Zm-1 16-4-4a1 1 0 1 1 1.4-1.4l2.6 2.6 5.6-5.6a1 1 0 0 1 1.4 1.4L11 17Z"/></svg>
+                <strong>追加料金なし</strong> シェービング無料
+              </span>
+            </div>
+
+            <h1 class="headline">
+              「予約が取れない」にサヨナラ。<br />
+              <span class="grad">最短6ヶ月で、自信の素肌へ。</span>
+            </h1>
+            <p class="subhead">
+              <strong>SHR（蓄熱式）× IPL（光脱毛）のハイブリッド</strong>だから、産毛から濃い毛までしっかり対応。<br />
+              さらに<strong>最新冷却システム</strong>で痛みへの不安も軽く。初めてでも、乗り換えでも、続けやすい理由があります。
+            </p>
+
+            <div class="anchor" aria-label="価格アンカーと補足">
+              <div class="price-anchor" role="group" aria-label="全身脱毛6回の料金">
+                <span class="label">価格アンカー</span>
+                <span class="value">全身6回 98,000円</span>
+                <span class="note">（顔・VIO込み／税込）</span>
+              </div>
+              <span class="pill">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a1 1 0 0 1 1 1v4h3a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                <strong>全身約60分</strong> 忙しくても通いやすい
+              </span>
+            </div>
+
+            <div class="trust" aria-label="信頼バッジ">
+              <div class="badge"><span class="dot" aria-hidden="true"></span>痛みほぼゼロ</div>
+              <div class="badge"><span class="dot" aria-hidden="true"></span>シェービング無料</div>
+              <div class="badge"><span class="dot" aria-hidden="true"></span>当日キャンセルも無料（1時間前まで）</div>
+              <div class="badge"><span class="dot" aria-hidden="true"></span>専用アプリで24時間予約</div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="hero_primary" data-cta-label="無料カウンセリング予約（FV）">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1 14-4-4a1 1 0 1 1 1.4-1.4l2.6 2.6 5.6-5.6a1 1 0 0 1 1.4 1.4L11 16Z"/></svg>
+                無料カウンセリング予約
+              </a>
+              <a class="btn" href="#compare" data-track="cta_click" data-cta-pos="hero_secondary" data-cta-label="比較で納得する">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H6v14a1 1 0 1 1-2 0V4Zm6 6a1 1 0 0 1 1-1h9a1 1 0 1 1 0 2h-9a1 1 0 0 1-1-1Zm0 5a1 1 0 0 1 1-1h9a1 1 0 1 1 0 2h-9a1 1 0 0 1-1-1Z"/></svg>
+                競合比較を見る
+              </a>
+              <small><span class="mini" aria-hidden="true"></span>しつこい勧誘はしないから安心</small>
+            </div>
+          </div>
+
+          <div class="hero-right" aria-label="差別化ポイントまとめ">
+            <div class="panel">
+              <h3>予約が取れる仕組み</h3>
+              <div class="row">
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M7 2a1 1 0 0 0-1 1v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v2H8V3a1 1 0 0 0-1-1Zm12 8H5v10h14V10Zm-2 2a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h9Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">当日予約OK（毎朝10時に枠開放）</p>
+                    <p class="d">「行ける日に空きがない」を減らすため、当日枠をルール化。</p>
+                  </div>
+                </div>
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v7a2 2 0 0 0 2 2h3a1 1 0 1 0 0-2H5v-7a7 7 0 0 1 14 0v7h-3a1 1 0 1 0 0 2h3a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9Zm-1 16a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2h-2Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">アプリで24時間、予約・変更が完結</p>
+                    <p class="d">空き通知もリアルタイム。通うほどラクになる設計。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="note-box">
+                <strong>回数の消化状況</strong>もアプリで一目。次回の最適なタイミングがわかるから、置いてけぼりにならない。
+              </div>
+            </div>
+
+            <div class="panel">
+              <h3>痛み＆追加料金の不安をゼロへ</h3>
+              <div class="row">
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2c4.4 0 8 3.6 8 8 0 3.8-2.7 7-6.3 7.8l-1.2 3.1a1 1 0 0 1-1.9 0l-1.2-3.1C6.7 17 4 13.8 4 10c0-4.4 3.6-8 8-8Zm0 2a6 6 0 0 0-6 6c0 2.9 2.1 5.3 4.9 5.8.3.1.6.3.7.6l.4 1 .4-1c.1-.3.4-.5.7-.6A6 6 0 0 0 18 10a6 6 0 0 0-6-6Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">最新冷却で、痛みほぼゼロ</p>
+                    <p class="d">熱さ・刺激が不安でも、続けやすい肌あたり。</p>
+                  </div>
+                </div>
+                <div class="feature">
+                  <div class="i" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.8 9 12 5.2-1.2 9-6.4 9-12V5l-9-4Zm-1 16-4-4a1 1 0 1 1 1.4-1.4l2.6 2.6 5.6-5.6a1 1 0 0 1 1.4 1.4L11 17Z"/></svg>
+                  </div>
+                  <div>
+                    <p class="t">完全定額。追加料金ゼロ保証</p>
+                    <p class="d">シェービング無料／キャンセル料なし／解約手数料なし。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem" id="problem">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>こんなお悩み、ありませんか？</h2>
+            <p>よくある“脱毛あるある”が、続けられない理由。LUMINE BEAUTYはそこから変えます。</p>
+          </div>
+          <span class="pill"><strong>首都圏</strong> 東京・神奈川・埼玉・千葉</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="お悩みリスト">
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 12a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1Zm0-8a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V7a1 1 0 0 1 1-1Z"/></svg>
+            </div>
+            <div>
+              <h4>予約が全然取れない…</h4>
+              <p>通える頻度が落ちると、完了まで遠回りになりがち。</p>
+            </div>
+          </div>
+
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5a1 1 0 1 0-2 0v5.2c0 .3.1.6.3.8l3.4 3.4a1 1 0 0 0 1.4-1.4L13 11.8V7Z"/></svg>
+            </div>
+            <div>
+              <h4>効果を実感するまでに長い</h4>
+              <p>「いつ終わるの？」が不安で、途中でやめてしまうことも。</p>
+            </div>
+          </div>
+
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v2H7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V4a3 3 0 0 0-3-3Zm-1 5V4a1 1 0 1 1 2 0v2h-2Zm-4 4h10v9H7v-9Z"/></svg>
+            </div>
+            <div>
+              <h4>追加料金で総額が膨れ上がる</h4>
+              <p>剃り残し・キャンセル・解約…。細かい不安が積もる。</p>
+            </div>
+          </div>
+
+          <div class="problem-item" role="listitem">
+            <div class="mark" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 2c3 0 5.7 1.3 7.5 3.3a1 1 0 0 1-1.5 1.3A7.9 7.9 0 0 0 12 4c-2.1 0-4 .8-5.5 2.1a1 1 0 0 1-1.3-1.5A9.9 9.9 0 0 1 12 2Zm-7 9a1 1 0 0 1 2 0 5 5 0 0 0 10 0 1 1 0 1 1 2 0 7 7 0 1 1-14 0Zm7 7a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Z"/></svg>
+            </div>
+            <div>
+              <h4>痛くて続けられなかった</h4>
+              <p>「またあの痛み？」と思うと、足が遠のきやすい。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reasons" id="reasons">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>LUMINE BEAUTYが選ばれる理由</h2>
+            <p>競合の“強み”は参考に、競合の“弱み”はまるごと潰す。だから安心が続きます。</p>
+          </div>
+          <span class="pill"><strong>首都圏特化</strong> 通いやすさ重視</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="選ばれる理由">
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 01</span></div>
+            <div class="reason-title">当日予約OK。専用アプリで24時間管理</div>
+            <p class="reason-desc">「予約が取れない」ストレスを減らす仕組みを、最初から設計しました。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>当日枠を毎朝10時に開放</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>空き状況をリアルタイム通知</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>変更もアプリで完結</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 02</span></div>
+            <div class="reason-title">SHR+IPLで、最短6ヶ月完了へ</div>
+            <p class="reason-desc">産毛から濃い毛まで対応。完了までの見通しが立つから、続けやすい。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>蓄熱式×光脱毛のハイブリッド</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>日焼け肌・敏感肌もOK</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>全身約60分で時短</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 03</span></div>
+            <div class="reason-title">追加料金ゼロ保証。完全定額で安心</div>
+            <p class="reason-desc">「結局いくら？」をなくす。お金の不安がないから、気持ちがラク。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>シェービング代無料</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>当日キャンセル無料（1時間前まで）</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>解約手数料なし</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="k"><span class="reason-num">Reason 04</span></div>
+            <div class="reason-title">最新冷却で、痛みほぼゼロ</div>
+            <p class="reason-desc">「怖い」を「これなら平気」に。初めての一歩が軽くなります。</p>
+            <ul class="reason-list">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>冷却システム搭載</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>肌への刺激を最小化</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>敏感肌も相談OK</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>料金プラン（完全定額）</h2>
+            <p>競合比較でも最安値帯を狙いながら、予約・痛み・追加料金の不安までまとめて解消。</p>
+          </div>
+          <span class="pill"><strong>分割OK</strong> 月々3,200円〜</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="料金プラン一覧">
+          <div class="card" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">全身脱毛6回（顔・VIO込み）</p>
+                <p class="price">98,000円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag">最安値帯</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>初めての“ちゃんと実感”に</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>顔・VIO込みで明朗</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>追加料金ゼロ保証</li>
+            </ul>
+          </div>
+
+          <div class="card primary" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">全身脱毛12回（顔・VIO込み）</p>
+                <p class="price">178,000円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag" style="background: rgba(246,210,123,.14); border-color: rgba(246,210,123,.26); color: rgba(255,236,184,.95);">人気No.1</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>自己処理がほぼ不要へ</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>乗り換えでも満足しやすい回数</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>当日予約枠で通いやすい</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">全身脱毛通い放題</p>
+                <p class="price">298,000円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag">満足保証</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>「納得できるまで」通える安心</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>周期管理をアプリで可視化</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>顔・VIO込み</li>
+            </ul>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="price-top">
+              <div>
+                <p class="plan-name">都度払い（1回）</p>
+                <p class="price">9,800円 <small>（税込）</small></p>
+              </div>
+              <span class="plan-tag" style="background: rgba(58,224,184,.10); border-color: rgba(58,224,184,.18); color: rgba(58,224,184,.95);">お試し</span>
+            </div>
+            <ul class="perks">
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>まずは体感から</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>痛み・肌あたりを確認</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9.2 16.2 4.9 12a1 1 0 1 1 1.4-1.4l2.9 2.9 8-8A1 1 0 1 1 18.6 7l-9.4 9.2Z"/></svg></span>無理なく始められる</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="split" role="note" aria-label="分割払いの案内">
+          <strong>分割払い対応：</strong>月々3,200円〜（分割例：全身6回 98,000円を36回分割した場合の目安。審査・手数料等は条件により異なります）
+        </div>
+
+        <div class="guarantee" aria-label="追加料金ゼロ保証の内容">
+          <span class="pill"><strong>シェービング代</strong> 無料</span>
+          <span class="pill"><strong>キャンセル料</strong> 当日でも無料（1時間前まで）</span>
+          <span class="pill"><strong>解約手数料</strong> なし</span>
+          <span class="pill"><strong>初回カウンセリング</strong> 無料</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compare" id="compare" data-track-view="compare_view">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>競合比較で“安心”が見える</h2>
+            <p>店舗数・価格・明朗会計。大手の強みは参考にしつつ、「予約」「完了まで」「追加料金」「痛み」を徹底対策。</p>
+          </div>
+          <span class="pill"><strong>首都圏10店舗</strong> 展開予定</span>
+        </div>
+
+        <div class="compare-wrap">
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-size:15px; font-weight:1000;">図解：不満が出やすいポイントを先回り</h3>
+            <table aria-label="競合比較表">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>LUMINE BEAUTY</th>
+                  <th>一般的な大手</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="brand-col">予約の取りやすさ</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>当日枠＋アプリ</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>混雑で取りづらいことも</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">完了までのスピード感</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>最短6ヶ月</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>実感まで長い場合も</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">追加料金の透明性</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>ゼロ保証</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>細かな条件で変動</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">痛みへの配慮</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>最新冷却</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>部位によって刺激</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">通いやすさ</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>首都圏特化</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>店舗は多いが分散</span></td>
+                </tr>
+                <tr>
+                  <td class="brand-col">初回の始めやすさ</td>
+                  <td><span class="meter good"><span class="chip good" aria-hidden="true"></span><strong>初回1,980円</strong></span></td>
+                  <td><span class="meter mid"><span class="chip mid" aria-hidden="true"></span>条件が複雑なことも</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="legend" aria-label="比較表の凡例">
+              <span class="key"><span class="chip good" aria-hidden="true"></span>強い</span>
+              <span class="key"><span class="chip mid" aria-hidden="true"></span>一般的</span>
+              <span class="key"><span class="chip bad" aria-hidden="true"></span>不安が残る</span>
+              <span class="key">※一般論のイメージ図です。詳細はカウンセリングでご案内します。</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-size:15px; font-weight:1000;">予約システム（専用アプリ）でできること</h3>
+            <div class="grid-2" style="gap:10px" role="list" aria-label="アプリ機能">
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7Zm0 2h10v16H7V4Zm2 13a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1Z"/></svg></div>
+                <div>
+                  <p class="t">24時間 予約・変更OK</p>
+                  <p class="d">電話待ちゼロ。思い立ったらすぐ。</p>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.5 7.5-4.2 4.2a1 1 0 0 1-1.4 0l-1.9-1.9a1 1 0 1 1 1.4-1.4l1.2 1.2 3.5-3.5a1 1 0 0 1 1.4 1.4Z"/></svg></div>
+                <div>
+                  <p class="t">当日枠が毎朝10時に出る</p>
+                  <p class="d">「急に空いた日」も活かせる。</p>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7v3a5 5 0 0 0 5 5h1v3a1 1 0 1 0 2 0v-3h1a5 5 0 0 0 5-5V9a7 7 0 0 0-7-7Zm-5 7a5 5 0 0 1 10 0v3a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3V9Z"/></svg></div>
+                <div>
+                  <p class="t">空き状況を通知</p>
+                  <p class="d">人気時間帯の取りこぼしを減らす。</p>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="i" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v2h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4Zm13 4H6v12h14V8h-3Zm-2-4H6v2h9V4Z"/></svg></div>
+                <div>
+                  <p class="t">回数の消化状況も確認</p>
+                  <p class="d">通い忘れ・迷子を防ぐ。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="note-box" style="margin-top:12px">
+              <strong>通いやすさ＝結果に近づく近道。</strong> 予約のストレスを減らして、最短ルートで“自信の素肌”へ。
+            </div>
+
+            <div class="hero-actions" style="margin-top:12px">
+              <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="compare_primary" data-cta-label="比較後の予約">
+                無料カウンセリング予約
+              </a>
+              <a class="btn" href="#pricing" data-track="cta_click" data-cta-pos="compare_secondary" data-cta-label="料金へ戻る">
+                料金を確認
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section steps" id="flow">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>施術の流れ（最短・最小ストレス）</h2>
+            <p>初めてでも安心な“迷わない導線”。無理な勧誘はしないから、相談だけでも大丈夫。</p>
+          </div>
+          <span class="pill"><strong>全身約60分</strong> 時短設計</span>
+        </div>
+
+        <div class="grid-4" role="list" aria-label="施術の流れ">
+          <div class="step" role="listitem">
+            <div class="n">1</div>
+            <div>
+              <h4>無料カウンセリング</h4>
+              <p>肌質・毛質チェック。目標と不安を“先に”すり合わせ。</p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="n">2</div>
+            <div>
+              <h4>お着替え・施術準備</h4>
+              <p>剃り残しがあっても大丈夫。シェービング無料でフォロー。</p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="n">3</div>
+            <div>
+              <h4>ハイブリッド脱毛</h4>
+              <p>SHR+IPL×最新冷却。全身の目安は約60分。</p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="n">4</div>
+            <div>
+              <h4>アフターケア・次回予約</h4>
+              <p>肌状態を見ながらケア提案。予約はアプリでいつでも調整。</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="disclaimer" role="note">
+          ※施術時間・感じ方・回数は個人差があります。肌状態や生活習慣に合わせて最適なペースをご提案します。
+        </p>
+      </div>
+    </section>
+
+    <section class="section voices" id="voices">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Before/After・お客様の声</h2>
+            <p>「痛くない」「予約が取れる」「総額が明朗」——続けられる理由が、実感につながる。</p>
+          </div>
+          <span class="pill"><strong>乗り換え</strong> 相談歓迎</span>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-weight:1000;">効果実感の目安（イメージ）</h3>
+            <div class="ba" aria-label="効果実感の目安グラフ">
+              <div class="bar" data-fill="35">
+                <div class="lbl"><span>3回目〜：自己処理がラクに</span><span>実感</span></div>
+                <div class="track"><div class="fill" aria-hidden="true"></div></div>
+              </div>
+              <div class="bar" data-fill="80">
+                <div class="lbl"><span>6回：平均で約80%減の声</span><span>大きく変化</span></div>
+                <div class="track"><div class="fill" aria-hidden="true"></div></div>
+              </div>
+              <div class="bar" data-fill="92">
+                <div class="lbl"><span>12回：満足ラインへ</span><span>安定</span></div>
+                <div class="track"><div class="fill" aria-hidden="true"></div></div>
+              </div>
+            </div>
+            <p class="disclaimer">※イメージです。毛質・部位・肌状態により個人差があります。</p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 10px; font-weight:1000;">リアルな声（抜粋）</h3>
+            <div class="grid-3" style="grid-template-columns:1fr; gap:10px">
+              <div class="card quote" style="background: rgba(255,255,255,.05)">
+                <p>他サロンから乗り換えて正解でした。<strong>予約が取れる</strong>って、こんなに気持ちがラクなんだ…！</p>
+                <div class="meta"><span>20代後半／乗り換え</span><span>首都圏</span></div>
+              </div>
+              <div class="card quote" style="background: rgba(255,255,255,.05)">
+                <p>本当に<strong>痛くなくてびっくり</strong>。冷たい感じはあるけど、怖さがなくなりました。</p>
+                <div class="meta"><span>20代前半／初めて</span><span>首都圏</span></div>
+              </div>
+              <div class="card quote" style="background: rgba(255,255,255,.05)">
+                <p>アプリで予約が取れるのが神。空き通知のおかげで、忙しくてもちゃんと通えます。</p>
+                <div class="meta"><span>30代前半／仕事忙しい</span><span>首都圏</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top: 14px">
+          <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="voices_primary" data-cta-label="口コミ後の予約">
+            無料カウンセリング予約
+          </a>
+          <a class="btn" href="#faq" data-track="cta_click" data-cta-pos="voices_secondary" data-cta-label="不安をFAQで解消">
+            FAQで不安を消す
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>よくある質問（FAQ）</h2>
+            <p>迷いやすいポイントは、最初にスッキリ。安心できる状態で、スタートを。</p>
+          </div>
+          <span class="pill"><strong>追加料金</strong> なし保証</span>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <details>
+              <summary>
+                何回で効果を実感できますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                目安として<strong>3回目あたりから「自己処理がラク」</strong>を感じる方が多いです。さらに<strong>6回で平均約80%減</strong>の声も。毛質・部位・肌状態で個人差があるため、カウンセリングで最適な回数をご提案します。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                痛みはありますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                最新冷却システムで、刺激を大幅に軽減。多くの方が<strong>「ほぼ感じない」</strong>と回答しています。部位による感じ方の差はありますが、出力は肌状態に合わせて調整するから安心です。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                日焼け肌・敏感肌でも大丈夫ですか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                SHR+IPLのハイブリッドは幅広い肌状態に対応しやすい設計です。ただし、当日の肌状態によっては安全を優先して施術を見合わせる場合があります。カウンセリングで必ず肌チェックを行います。
+              </div>
+            </details>
+          </div>
+
+          <div>
+            <details>
+              <summary>
+                予約は本当に取れますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                当日予約枠を<strong>毎朝10時に開放</strong>し、アプリで空き通知も受け取れます。さらに、予約変更も24時間できるので、通える日を逃しにくい仕組みです。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                追加料金は本当にかかりませんか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                シェービング代は無料、キャンセル料も<strong>当日でも無料（1時間前まで）</strong>、解約手数料もありません。料金が“増えない”ことを前提にした、完全定額です。
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                解約はできますか？
+                <span class="chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5a1 1 0 0 1-.7-.3l-6-6a1 1 0 1 1 1.4-1.4l5.3 5.3 5.3-5.3a1 1 0 0 1 1.4 1.4l-6 6a1 1 0 0 1-.7.3Z"/></svg></span>
+              </summary>
+              <div class="faq-a">
+                いつでも可能です。手数料はかかりません。まずはカウンセリングで、ご希望と不安を聞かせてください。
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top: 14px">
+          <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="faq_primary" data-cta-label="FAQ後の予約">
+            無料カウンセリング予約
+          </a>
+          <a class="btn" href="#stores" data-track="cta_click" data-cta-pos="faq_secondary" data-cta-label="店舗を確認する">
+            店舗一覧を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stores" id="stores">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>店舗一覧（首都圏10店舗展開予定）</h2>
+            <p>“通いやすさ”を最優先。東京・神奈川・埼玉・千葉で、日常の動線に寄り添います。</p>
+          </div>
+          <span class="pill"><strong>通いやすい</strong> 主要駅エリア</span>
+        </div>
+
+        <div class="city" aria-label="エリア別店舗">
+          <span class="key"><span class="chip good" aria-hidden="true"></span>東京</span>
+          <span class="key"><span class="chip mid" aria-hidden="true"></span>神奈川</span>
+          <span class="key"><span class="chip mid" aria-hidden="true"></span>埼玉</span>
+          <span class="key"><span class="chip mid" aria-hidden="true"></span>千葉</span>
+          <span class="key">※詳細住所・オープン日は順次公開予定</span>
+        </div>
+
+        <div class="store-grid" role="list" aria-label="店舗カード">
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">新宿</div><div class="hint">仕事帰りに寄りやすい</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">渋谷</div><div class="hint">買い物ついでに通える</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">池袋</div><div class="hint">アクセス良好</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">銀座</div><div class="hint">大人の落ち着き</div></div>
+          <div class="store" role="listitem"><span class="tag">東京</span><div class="name">立川</div><div class="hint">沿線利用に便利</div></div>
+
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">神奈川</span><div class="name">横浜</div><div class="hint">大型ターミナル</div></div>
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">神奈川</span><div class="name">川崎</div><div class="hint">都内からも近い</div></div>
+
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">埼玉</span><div class="name">大宮</div><div class="hint">乗り換え拠点</div></div>
+
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">千葉</span><div class="name">船橋</div><div class="hint">通勤動線に</div></div>
+          <div class="store" role="listitem"><span class="tag" style="background: rgba(255,203,75,.10); border-color: rgba(255,203,75,.18); color: rgba(255,203,75,.95);">千葉</span><div class="name">柏</div><div class="hint">地域密着</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-final" id="campaign">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <div class="campaign" aria-label="初回限定キャンペーン">
+              <span class="pill"><strong>今だけ</strong> 初回限定キャンペーン</span>
+              <span class="pill"><strong>通常</strong> 9,800円 →</span>
+              <span class="pill"><strong>初回</strong> 1,980円</span>
+            </div>
+            <div class="campaign">
+              <div class="big">
+                全身脱毛1回 <span style="color: rgba(255,236,184,.98);">1,980円</span>
+                <span class="off">期間限定</span>
+              </div>
+            </div>
+            <p class="campaign desc">
+              まずは痛み・肌あたり・通いやすさを<strong>体感</strong>。<br />
+              「予約が取れない」「追加料金が怖い」から卒業して、最短ルートで自信の素肌へ。
+            </p>
+
+            <div class="guarantee" aria-label="安心の約束" style="margin-top: 12px">
+              <span class="pill"><strong>しつこい勧誘</strong> なし</span>
+              <span class="pill"><strong>当日枠</strong> 毎朝10時に開放</span>
+              <span class="pill"><strong>キャンセル</strong> 当日でも無料（1時間前まで）</span>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 14px">
+              <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="final_primary" data-cta-label="最終CTA予約">
+                無料カウンセリング予約
+              </a>
+              <a class="btn" href="#pricing" data-track="cta_click" data-cta-pos="final_secondary" data-cta-label="料金確認に戻る">
+                料金をもう一度確認
+              </a>
+            </div>
+
+            <p class="disclaimer">※キャンペーンは予告なく終了する場合があります。対象条件はカウンセリング時にご案内します。</p>
+          </div>
+
+          <div class="form-card" id="reserve" data-track-view="form_view">
+            <h3 style="margin:0 0 10px; font-size: 16px; font-weight: 1000;">無料カウンセリング予約（LP内完結）</h3>
+
+            <div class="success" id="formSuccess" role="status" aria-live="polite">
+              <strong>送信完了</strong>：内容を受け付けました。担当よりご連絡します（架空デモ）。
+            </div>
+            <div class="error" id="formError" role="alert">
+              入力内容をご確認ください（必須項目・形式）。
+            </div>
+
+            <form id="leadForm" novalidate aria-describedby="formHelp">
+              <p id="formHelp" class="fineprint">
+                ※送信後は別ページへ移動しません。入力開始・送信成功は計測されます（デモ実装）。
+              </p>
+
+              <div class="two">
+                <div class="field">
+                  <label for="name">お名前（必須）</label>
+                  <input class="input" id="name" name="name" autocomplete="name" required placeholder="例）山田 花子" />
+                </div>
+                <div class="field">
+                  <label for="age">年代（任意）</label>
+                  <select id="age" name="age" aria-label="年代">
+                    <option value="">選択してください</option>
+                    <option>20代前半</option>
+                    <option>20代後半</option>
+                    <option>30代前半</option>
+                    <option>30代後半</option>
+                    <option>その他</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="two">
+                <div class="field">
+                  <label for="email">メール（必須）</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" required placeholder="例）hanako@example.com" />
+                </div>
+                <div class="field">
+                  <label for="phone">電話番号（必須）</label>
+                  <input class="input" id="phone" name="phone" inputmode="tel" autocomplete="tel" required placeholder="例）09012345678" pattern="^[0-9+\-\s]{9,15}$" />
+                </div>
+              </div>
+
+              <div class="two">
+                <div class="field">
+                  <label for="store">希望店舗（必須）</label>
+                  <select id="store" name="store" required>
+                    <option value="">選択してください</option>
+                    <option>新宿</option>
+                    <option>渋谷</option>
+                    <option>池袋</option>
+                    <option>銀座</option>
+                    <option>立川</option>
+                    <option>横浜</option>
+                    <option>川崎</option>
+                    <option>大宮</option>
+                    <option>船橋</option>
+                    <option>柏</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="interest">気になるプラン（必須）</label>
+                  <select id="interest" name="interest" required>
+                    <option value="">選択してください</option>
+                    <option>初回1,980円でお試し</option>
+                    <option>全身6回（98,000円）</option>
+                    <option>全身12回（178,000円）</option>
+                    <option>通い放題（298,000円）</option>
+                    <option>都度払い（9,800円）</option>
+                    <option>まずは相談したい</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="three">
+                <div class="field">
+                  <label for="date1">第一希望日（任意）</label>
+                  <input class="input" id="date1" name="date1" type="date" />
+                </div>
+                <div class="field">
+                  <label for="time1">時間帯（任意）</label>
+                  <select id="time1" name="time1">
+                    <option value="">選択してください</option>
+                    <option>午前</option>
+                    <option>午後</option>
+                    <option>夕方</option>
+                    <option>夜</option>
+                    <option>いつでも</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="visit">来店経験（任意）</label>
+                  <select id="visit" name="visit">
+                    <option value="">選択してください</option>
+                    <option>初めての脱毛</option>
+                    <option>他サロンから乗り換え</option>
+                    <option>過去に経験あり（再開）</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="msg">相談内容（任意）</label>
+                <textarea class="input" id="msg" name="msg" rows="3" placeholder="例）痛みが不安、予約の取りやすさを知りたい、敏感肌の相談など"></textarea>
+              </div>
+
+              <div class="consent">
+                <input id="agree" name="agree" type="checkbox" required aria-required="true" />
+                <label for="agree" style="margin:0; font-weight:800; color: rgba(255,255,255,.82)">
+                  送信内容の確認と、連絡のための利用に同意します（必須）
+                  <div class="fineprint">※個人情報の取り扱いは、運営（株式会社ルミネビューティー）の社内規定に準拠（架空）。</div>
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" data-track="form_submit_click" data-cta-pos="form_primary" data-cta-label="フォーム送信">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12a10 10 0 1 0 20 0A10 10 0 0 0 2 12Zm14.7-2.3-5.2 5.2a1 1 0 0 1-1.4 0l-2-2a1 1 0 1 1 1.4-1.4l1.3 1.3 4.5-4.5a1 1 0 1 1 1.4 1.4Z"/></svg>
+                  送信して予約する
+                </button>
+                <p class="fineprint">※送信はデモです。実運用時はAPI連携してください。</p>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="gap:12px">
+            <div class="logo" aria-hidden="true"></div>
+            <div class="brand-text">
+              <div class="brand-name">LUMINE BEAUTY</div>
+              <div class="brand-sub">「最短6ヶ月で、自信の素肌へ」</div>
+            </div>
+          </div>
+          <p class="footer-note">
+            運営：株式会社ルミネビューティー（架空）<br />
+            公式URL：<span class="mono">https://lumine-beauty.example.com/</span><br />
+            対象エリア：東京・神奈川・埼玉・千葉（首都圏10店舗展開予定）
+          </p>
+          <p class="footer-note">
+            ※本LPはデモ用の架空ページです。効果・回数・痛みの感じ方には個人差があります。安全のため、肌状態によって施術を見合わせる場合があります。
+          </p>
+        </div>
+
+        <div>
+          <div class="card" style="background: rgba(255,255,255,.05)">
+            <h3 style="margin:0 0 8px; font-size: 14px; font-weight:1000;">計測（実装済み / デモ）</h3>
+            <p style="margin:0; color: var(--muted); font-size: 12.5px; line-height: 1.7;">
+              CTAクリック（位置別）／フォーム表示・入力開始・送信成功／スクロール深度（25/50/75/90%）／比較表の閲覧率をイベント送信します。
+            </p>
+            <div class="footer-links" style="margin-top: 10px">
+              <a href="#top" data-track="cta_click" data-cta-pos="footer" data-cta-label="トップへ">トップへ</a>
+              <a href="#pricing" data-track="cta_click" data-cta-pos="footer" data-cta-label="料金へ">料金</a>
+              <a href="#reserve" data-track="cta_click" data-cta-pos="footer" data-cta-label="予約へ">予約</a>
+              <a href="#faq" data-track="cta_click" data-cta-pos="footer" data-cta-label="FAQへ">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" role="region" aria-label="追従CTA（モバイル）">
+    <div class="inner">
+      <div class="mini">
+        <b>無料カウンセリング受付中</b>
+        <span>全身6回 98,000円｜初回1,980円も</span>
+      </div>
+      <a class="btn btn-primary" href="#reserve" data-track="cta_click" data-cta-pos="sticky_mobile" data-cta-label="追従CTA予約">
+        予約する
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      window.dataLayer = window.dataLayer || [];
+
+      function uuid(){
+        try{
+          return crypto.randomUUID();
+        }catch(e){
+          return "id-" + Math.random().toString(16).slice(2) + "-" + Date.now().toString(16);
+        }
+      }
+
+      var sessionId = sessionStorage.getItem("lb_session_id");
+      if(!sessionId){
+        sessionId = uuid();
+        sessionStorage.setItem("lb_session_id", sessionId);
+      }
+
+      var pageId = uuid();
+      var startTs = Date.now();
+
+      function track(eventName, params){
+        var payload = Object.assign({
+          event: eventName,
+          session_id: sessionId,
+          page_id: pageId,
+          page_url: location.href,
+          page_path: location.pathname + location.search + location.hash,
+          ts: new Date().toISOString(),
+          ms_since_load: Date.now() - startTs
+        }, params || {});
+        window.dataLayer.push(payload);
+
+        if(typeof window.gtag === "function"){
+          window.gtag("event", eventName, payload);
+        }
+
+        if(typeof window.fbq === "function"){
+          window.fbq("trackCustom", eventName, payload);
+        }
+
+        if(window.__LB_DEBUG === true){
+          console.log("[LUMINE BEAUTY track]", eventName, payload);
+        }
+      }
+
+      track("lp_view", {title: document.title});
+
+      function bindCtas(){
+        var nodes = document.querySelectorAll("[data-track='cta_click']");
+        nodes.forEach(function(el){
+          el.addEventListener("click", function(){
+            var pos = el.getAttribute("data-cta-pos") || "unknown";
+            var label = el.getAttribute("data-cta-label") || (el.textContent || "").trim().slice(0, 50);
+            track("cta_click", {cta_pos: pos, cta_label: label});
+          }, {passive:true});
+        });
+      }
+
+      function scrollDepth(){
+        var fired = new Set();
+        var thresholds = [25,50,75,90];
+
+        function percent(){
+          var doc = document.documentElement;
+          var scrollTop = window.scrollY || doc.scrollTop || 0;
+          var height = (doc.scrollHeight || 0) - (window.innerHeight || 0);
+          if(height <= 0) return 100;
+          return Math.round((scrollTop / height) * 100);
+        }
+
+        function onScroll(){
+          var p = percent();
+          thresholds.forEach(function(t){
+            if(p >= t && !fired.has(t)){
+              fired.add(t);
+              track("scroll_depth", {depth: t});
+            }
+          });
+        }
+
+        window.addEventListener("scroll", onScroll, {passive:true});
+        onScroll();
+      }
+
+      function observeViews(){
+        if(!("IntersectionObserver" in window)){
+          return;
+        }
+
+        var viewTargets = document.querySelectorAll("[data-track-view]");
+        if(viewTargets.length === 0) return;
+
+        var seen = new Set();
+
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              var name = entry.target.getAttribute("data-track-view");
+              if(name && !seen.has(name)){
+                seen.add(name);
+                track(name, {ratio: entry.intersectionRatio});
+              }
+            }
+          });
+        }, {threshold: [0.25, 0.5, 0.75]});
+
+        viewTargets.forEach(function(el){ io.observe(el); });
+      }
+
+      function animateBars(){
+        if(!("IntersectionObserver" in window)){
+          document.querySelectorAll(".bar[data-fill] .fill").forEach(function(f){
+            var v = f.closest(".bar").getAttribute("data-fill");
+            f.style.width = v + "%";
+          });
+          return;
+        }
+        var bars = document.querySelectorAll(".bar[data-fill]");
+        if(bars.length === 0) return;
+
+        var done = false;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting && !done){
+              done = true;
+              bars.forEach(function(b){
+                var v = b.getAttribute("data-fill") || "0";
+                var fill = b.querySelector(".fill");
+                if(fill) fill.style.width = v + "%";
+              });
+              io.disconnect();
+            }
+          });
+        }, {threshold: 0.35});
+
+        io.observe(bars[0]);
+      }
+
+      function formTracking(){
+        var formCard = document.getElementById("reserve");
+        var form = document.getElementById("leadForm");
+        var formSuccess = document.getElementById("formSuccess");
+        var formError = document.getElementById("formError");
+        if(!form) return;
+
+        var started = false;
+
+        function markStart(field){
+          if(started) return;
+          started = true;
+          track("form_start", {field: field || "unknown"});
+        }
+
+        form.addEventListener("focusin", function(e){
+          var t = e.target;
+          if(!t) return;
+          if(t.matches("input, select, textarea")){
+            markStart(t.name || t.id || t.type || "field");
+          }
+        });
+
+        form.addEventListener("input", function(e){
+          var t = e.target;
+          if(!t) return;
+          if(t.matches("input, select, textarea")){
+            markStart(t.name || t.id || t.type || "field");
+          }
+        });
+
+        function show(el){
+          if(!el) return;
+          el.style.display = "block";
+        }
+        function hide(el){
+          if(!el) return;
+          el.style.display = "none";
+        }
+
+        function validate(){
+          hide(formError);
+          hide(formSuccess);
+
+          var name = document.getElementById("name");
+          var email = document.getElementById("email");
+          var phone = document.getElementById("phone");
+          var store = document.getElementById("store");
+          var interest = document.getElementById("interest");
+          var agree = document.getElementById("agree");
+
+          var ok = true;
+
+          function invalid(el){
+            ok = false;
+            if(el){
+              el.setAttribute("aria-invalid", "true");
+            }
+          }
+          function valid(el){
+            if(el){
+              el.removeAttribute("aria-invalid");
+            }
+          }
+
+          if(!name.value.trim()) invalid(name); else valid(name);
+
+          if(!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) invalid(email); else valid(email);
+
+          var p = phone.value.trim();
+          if(!p || !/^[0-9+\-\s]{9,15}$/.test(p)) invalid(phone); else valid(phone);
+
+          if(!store.value) invalid(store); else valid(store);
+
+          if(!interest.value) invalid(interest); else valid(interest);
+
+          if(!agree.checked) invalid(agree); else valid(agree);
+
+          if(!ok){
+            show(formError);
+            track("form_error", {reason: "validation_failed"});
+            return false;
+          }
+          return true;
+        }
+
+        form.addEventListener("submit", function(e){
+          e.preventDefault();
+          track("form_submit_attempt", {});
+          if(!validate()){
+            return;
+          }
+
+          var payload = {
+            name: (document.getElementById("name").value || "").trim(),
+            age: document.getElementById("age").value || "",
+            email: (document.getElementById("email").value || "").trim(),
+            phone: (document.getElementById("phone").value || "").trim(),
+            store: document.getElementById("store").value || "",
+            interest: document.getElementById("interest").value || "",
+            date1: document.getElementById("date1").value || "",
+            time1: document.getElementById("time1").value || "",
+            visit: document.getElementById("visit").value || "",
+            msg_len: (document.getElementById("msg").value || "").trim().length
+          };
+
+          setTimeout(function(){
+            show(formSuccess);
+            hide(formError);
+            track("form_submit_success", payload);
+            form.reset();
+            started = false;
+
+            if(formCard){
+              formCard.scrollIntoView({behavior: "smooth", block: "center"});
+            }
+          }, 450);
+        });
+
+        if("IntersectionObserver" in window && formCard){
+          var seen = false;
+          var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+              if(entry.isIntersecting && !seen){
+                seen = true;
+                track("form_view", {ratio: entry.intersectionRatio});
+              }
+            });
+          }, {threshold: [0.3, 0.6]});
+          io.observe(formCard);
+        }
+      }
+
+      bindCtas();
+      scrollDepth();
+      observeViews();
+      animateBars();
+      formTracking();
+
+      var compareEl = document.getElementById("compare");
+      if(compareEl && "IntersectionObserver" in window){
+        var fired = false;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting && !fired){
+              fired = true;
+              track("compare_view", {ratio: entry.intersectionRatio});
+              io.disconnect();
+            }
+          });
+        }, {threshold: [0.35]});
+        io.observe(compareEl);
+      }
+    })();
+  </script>
+</body>
+</html>

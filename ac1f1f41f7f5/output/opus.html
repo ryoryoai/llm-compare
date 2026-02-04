@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINE BEAUTY | 最短6ヶ月で、自信の素肌へ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #9B7BB8;
+      --primary-light: #C4A8D8;
+      --primary-dark: #7A5A99;
+      --gold: #C9A55A;
+      --gold-light: #E5D4A8;
+      --white: #FFFFFF;
+      --bg-light: #FAF8FC;
+      --bg-section: #F5F0F8;
+      --text-dark: #2D2D2D;
+      --text-muted: #666666;
+      --text-light: #888888;
+      --border: #E8E0ED;
+      --success: #4CAF50;
+      --shadow: 0 4px 20px rgba(155, 123, 184, 0.15);
+      --shadow-lg: 0 8px 40px rgba(155, 123, 184, 0.2);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.8;
+      background: var(--white);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* ヘッダー */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .header-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: var(--white);
+        padding: 10px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .header-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    }
+
+    /* ファーストビュー */
+    .hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-section) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 70%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(155, 123, 184, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    .badge i { color: var(--gold); }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .hero-price {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+      display: inline-block;
+    }
+
+    .hero-price-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-price-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .hero-price-value small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .hero-price-note {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 8px;
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), #D4B56A);
+      color: var(--white);
+      padding: 18px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 50px rgba(201, 165, 90, 0.35);
+    }
+
+    /* セクション共通 */
+    section { padding: 80px 0; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* 課題提起 */
+    .problems { background: var(--bg-section); }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .problem-card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 16px;
+      border-left: 4px solid var(--primary-light);
+      box-shadow: var(--shadow);
+    }
+
+    .problem-card i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .problem-card p {
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    /* 選ばれる理由 */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .reason-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .reason-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .reason-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .reason-icon i {
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+
+    .reason-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    .reason-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* 料金プラン */
+    .pricing { background: var(--bg-section); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .price-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      border: 2px solid var(--border);
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+    }
+
+    .price-card.popular {
+      border-color: var(--gold);
+      transform: scale(1.03);
+    }
+
+    .price-card.popular::before {
+      content: '人気No.1';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--white);
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .price-card h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .price-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .price-value small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .price-note {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .price-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .price-features li {
+      padding: 8px 0;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price-features li i {
+      color: var(--success);
+      font-size: 0.85rem;
+    }
+
+    .cta-secondary {
+      display: inline-block;
+      width: 100%;
+      padding: 14px;
+      background: var(--bg-section);
+      color: var(--primary);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta-secondary:hover { background: var(--primary-light); color: var(--white); }
+
+    .price-card.popular .cta-secondary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--white);
+    }
+
+    .pricing-guarantee {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .guarantee-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .guarantee-item i {
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+
+    .guarantee-item span {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* 比較表 */
+    .comparison { overflow-x: auto; }
+
+    .comparison-table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table thead th {
+      background: var(--bg-section);
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .comparison-table thead th:first-child {
+      text-align: left;
+    }
+
+    .comparison-table tbody td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    .comparison-table .highlight {
+      background: rgba(155, 123, 184, 0.08);
+    }
+
+    .comparison-table .highlight td {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .check { color: var(--success); }
+    .cross { color: var(--text-light); }
+
+    /* 施術の流れ */
+    .flow { background: var(--bg-section); }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .flow-step {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-step::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -24px;
+      width: 24px;
+      height: 2px;
+      background: var(--border);
+    }
+
+    .flow-step:last-child::after { display: none; }
+
+    @media (max-width: 767px) {
+      .flow-step::after { display: none; }
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 auto 16px;
+    }
+
+    .flow-step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .flow-step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* お客様の声 */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-avatar {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary-light), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+
+    .testimonial-info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .testimonial-info span {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* FAQ */
+    .faq { background: var(--bg-section); }
+
+    .faq-list { max-width: 800px; margin: 0 auto; }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: inherit;
+    }
+
+    .faq-question i {
+      color: var(--primary);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer p {
+      padding: 0 24px 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* 店舗一覧 */
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .store-area {
+      background: var(--bg-section);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .store-area h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .store-area ul {
+      list-style: none;
+    }
+
+    .store-area li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 4px 0;
+    }
+
+    /* 最終CTA */
+    .final-cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 16px;
+    }
+
+    .final-cta-price {
+      background: rgba(255, 255, 255, 0.15);
+      display: inline-block;
+      padding: 16px 32px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .final-cta-price .original {
+      text-decoration: line-through;
+      opacity: 0.7;
+      font-size: 1rem;
+    }
+
+    .final-cta-price .sale {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .final-cta .cta-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      font-size: 1.2rem;
+      padding: 20px 56px;
+    }
+
+    .final-cta-note {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* フォーム */
+    .form-section {
+      background: var(--bg-section);
+      padding: 80px 20px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .form-container > p {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .form-group label .required {
+      color: #E53935;
+      margin-left: 4px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(155, 123, 184, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-family: inherit;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-note {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* フッター */
+    footer {
+      background: var(--text-dark);
+      color: var(--white);
+      padding: 48px 20px 24px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand .logo {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .footer-links h4 {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    /* 固定CTA（モバイル） */
+    .fixed-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      padding: 12px 16px;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
+
+    @media (max-width: 767px) {
+      .fixed-cta { display: block; }
+    }
+
+    .fixed-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--white);
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* アニメーション */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">LUMINE BEAUTY</div>
+        <a href="#form" class="header-cta">
+          <i class="fas fa-calendar-check"></i>
+          無料カウンセリング予約
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ファーストビュー -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badges">
+          <span class="badge"><i class="fas fa-check-circle"></i> 痛みほぼゼロ</span>
+          <span class="badge"><i class="fas fa-check-circle"></i> 追加料金なし</span>
+          <span class="badge"><i class="fas fa-check-circle"></i> 当日予約OK</span>
+        </div>
+        <h1>「予約が取れない」にサヨナラ。<br><span>最短6ヶ月で、自信の素肌へ。</span></h1>
+        <p class="hero-sub">SHR+IPLハイブリッド脱毛 × 24時間アプリ予約</p>
+        <div class="hero-price">
+          <p class="hero-price-label">全身脱毛 6回（顔・VIO込み）</p>
+          <p class="hero-price-value">98,000<small>円（税込）</small></p>
+          <p class="hero-price-note">月々 3,200円〜 / 分割払いOK</p>
+        </div>
+        <a href="#form" class="cta-primary" data-cta="hero">
+          <i class="fas fa-calendar-check"></i>
+          無料カウンセリングを予約する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 課題提起 -->
+  <section class="problems">
+    <div class="container">
+      <div class="section-title">
+        <h2>こんなお悩み、ありませんか？</h2>
+      </div>
+      <div class="problems-grid">
+        <div class="problem-card">
+          <i class="fas fa-calendar-times"></i>
+          <p>予約が全然取れなくて、通えない…</p>
+        </div>
+        <div class="problem-card">
+          <i class="fas fa-hourglass-half"></i>
+          <p>効果を実感するまでに何年もかかる</p>
+        </div>
+        <div class="problem-card">
+          <i class="fas fa-yen-sign"></i>
+          <p>追加料金で総額が膨れ上がった</p>
+        </div>
+        <div class="problem-card">
+          <i class="fas fa-bolt"></i>
+          <p>痛くて続けられなかった</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section class="reasons">
+    <div class="container">
+      <div class="section-title">
+        <h2>LUMINE BEAUTYが選ばれる4つの理由</h2>
+        <p>脱毛サロンの「よくある不満」をすべて解決</p>
+      </div>
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>当日予約OK！24時間アプリ管理</h3>
+          <p>専用アプリで24時間予約・変更OK。毎朝10時に当日枠を開放。空き状況はリアルタイム通知で、予約の取りにくさとはサヨナラ。</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>最短6ヶ月完了のハイブリッド脱毛</h3>
+          <p>SHR（蓄熱式）とIPL（光脱毛）のW効果で、産毛から濃い毛まで対応。日焼け肌・敏感肌もOKだから安心。</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <h3>追加料金ゼロ保証</h3>
+          <p>シェービング代無料、当日キャンセル無料（1時間前まで）、解約手数料なし。見積もり通りの金額だから安心。</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <h3>最新冷却システムで痛みほぼゼロ</h3>
+          <p>照射と同時に肌を冷却する最新マシンを導入。痛みに弱い方も安心して通えると好評です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金プラン -->
+  <section class="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>料金プラン</h2>
+        <p>すべて顔・VIO込みの明朗会計</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>全身脱毛 6回</h3>
+          <p class="price-value">98,000<small>円</small></p>
+          <p class="price-note">月々 3,200円〜</p>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> 顔・VIO込み</li>
+            <li><i class="fas fa-check"></i> シェービング無料</li>
+            <li><i class="fas fa-check"></i> キャンセル料なし</li>
+          </ul>
+          <a href="#form" class="cta-secondary" data-cta="price-6">詳細を見る</a>
+        </div>
+        <div class="price-card popular">
+          <h3>全身脱毛 12回</h3>
+          <p class="price-value">178,000<small>円</small></p>
+          <p class="price-note">月々 5,800円〜</p>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> 顔・VIO込み</li>
+            <li><i class="fas fa-check"></i> シェービング無料</li>
+            <li><i class="fas fa-check"></i> キャンセル料なし</li>
+            <li><i class="fas fa-check"></i> 効果保証付き</li>
+          </ul>
+          <a href="#form" class="cta-secondary" data-cta="price-12">詳細を見る</a>
+        </div>
+        <div class="price-card">
+          <h3>全身脱毛 通い放題</h3>
+          <p class="price-value">298,000<small>円</small></p>
+          <p class="price-note">月々 9,800円〜</p>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> 顔・VIO込み</li>
+            <li><i class="fas fa-check"></i> シェービング無料</li>
+            <li><i class="fas fa-check"></i> キャンセル料なし</li>
+            <li><i class="fas fa-check"></i> 満足保証付き</li>
+          </ul>
+          <a href="#form" class="cta-secondary" data-cta="price-unlimited">詳細を見る</a>
+        </div>
+        <div class="price-card">
+          <h3>都度払い（1回）</h3>
+          <p class="price-value">9,800<small>円</small></p>
+          <p class="price-note">お試しに最適</p>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> 顔・VIO込み</li>
+            <li><i class="fas fa-check"></i> シェービング無料</li>
+            <li><i class="fas fa-check"></i> 契約不要</li>
+          </ul>
+          <a href="#form" class="cta-secondary" data-cta="price-once">詳細を見る</a>
+        </div>
+      </div>
+      <div class="pricing-guarantee">
+        <div class="guarantee-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>シェービング代 無料</span>
+        </div>
+        <div class="guarantee-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>キャンセル料 無料</span>
+        </div>
+        <div class="guarantee-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>解約手数料 なし</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 競合比較 -->
+  <section class="comparison" id="comparison">
+    <div class="container">
+      <div class="section-title">
+        <h2>他サロンとの比較</h2>
+        <p>主要サロンとの違いを一目で確認</p>
+      </div>
+      <div style="overflow-x: auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>LUMINE BEAUTY</th>
+              <th>A社</th>
+              <th>B社</th>
+              <th>C社</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td>全身6回（顔・VIO込み）</td>
+              <td>98,000円</td>
+              <td>125,400円</td>
+              <td>150,400円</td>
+              <td>102,300円</td>
+            </tr>
+            <tr class="highlight">
+              <td>当日予約</td>
+              <td><i class="fas fa-check-circle check"></i> OK</td>
+              <td><i class="fas fa-times-circle cross"></i> 不可</td>
+              <td><i class="fas fa-times-circle cross"></i> 不可</td>
+              <td><i class="fas fa-times-circle cross"></i> 不可</td>
+            </tr>
+            <tr class="highlight">
+              <td>シェービング代</td>
+              <td><i class="fas fa-check-circle check"></i> 無料</td>
+              <td>有料</td>
+              <td>一部有料</td>
+              <td>有料</td>
+            </tr>
+            <tr class="highlight">
+              <td>キャンセル料</td>
+              <td><i class="fas fa-check-circle check"></i> 無料</td>
+              <td>有料</td>
+              <td>有料</td>
+              <td>有料</td>
+            </tr>
+            <tr>
+              <td>脱毛方式</td>
+              <td>SHR+IPL</td>
+              <td>SSC</td>
+              <td>SHR</td>
+              <td>IPL</td>
+            </tr>
+            <tr>
+              <td>完了目安</td>
+              <td>最短6ヶ月</td>
+              <td>約1〜2年</td>
+              <td>約1年</td>
+              <td>約1〜2年</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 施術の流れ -->
+  <section class="flow">
+    <div class="container">
+      <div class="section-title">
+        <h2>施術の流れ</h2>
+        <p>初めての方も安心のステップ</p>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-number">1</div>
+          <h3>無料カウンセリング</h3>
+          <p>肌質・毛質をチェックし、最適なプランをご提案</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-number">2</div>
+          <h3>お着替え・施術準備</h3>
+          <p>専用ガウンにお着替え、施術箇所のマーキング</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-number">3</div>
+          <h3>ハイブリッド脱毛</h3>
+          <p>全身約60分。冷却しながら照射で痛みを軽減</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-number">4</div>
+          <h3>アフターケア</h3>
+          <p>保湿ケア後、次回予約をアプリで簡単に</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>お客様の声</h2>
+        <p>実際にご利用いただいたお客様からの声</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+            <div class="testimonial-info">
+              <h4>A.K さん</h4>
+              <span>28歳・会社員</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>他サロンから乗り換えて正解でした。以前は2ヶ月先まで予約が取れなかったのに、ここはアプリで当日予約できて本当に助かっています。仕事終わりに通えるのが最高！</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+            <div class="testimonial-info">
+              <h4>M.S さん</h4>
+              <span>24歳・学生</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>本当に痛くなくてびっくり！以前のサロンでは毎回涙目だったのに、ここは冷却がしっかりしていて、施術中寝ちゃうくらい快適です。</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+            <div class="testimonial-info">
+              <h4>Y.T さん</h4>
+              <span>32歳・主婦</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>アプリで予約が取れるのが神！空き状況が一目でわかるし、急な予定変更も1時間前まで無料でキャンセルできるので、子育て中でも通いやすいです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>よくあるご質問</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            何回で効果を実感できますか？
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>個人差はありますが、3回目から効果を実感される方が多いです。6回で約80%の毛が減少し、12回でほぼ完了される方がほとんどです。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            痛みはありますか？
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>最新の冷却システムを搭載しているため、痛みはほぼ感じません。「温かい」程度の感覚とおっしゃる方がほとんどです。痛みに弱い方もご安心ください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            予約は本当に取れますか？
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>はい。毎朝10時に当日枠を開放し、専用アプリでリアルタイム通知。24時間いつでも予約・変更ができるので、お仕事帰りやスキマ時間にも通いやすいです。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            解約はできますか？
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>いつでも解約可能です。解約手数料は一切かかりません。残回数分は返金いたしますので、ご安心ください。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            敏感肌でも大丈夫ですか？
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>SHR方式は低温で照射するため、敏感肌の方にも対応しています。カウンセリングで肌質をチェックし、最適な出力で施術いたします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗一覧 -->
+  <section class="stores">
+    <div class="container">
+      <div class="section-title">
+        <h2>店舗一覧</h2>
+        <p>首都圏10店舗展開</p>
+      </div>
+      <div class="stores-grid">
+        <div class="store-area">
+          <h3><i class="fas fa-map-marker-alt"></i> 東京</h3>
+          <ul>
+            <li>新宿店</li>
+            <li>渋谷店</li>
+            <li>池袋店</li>
+            <li>銀座店</li>
+            <li>立川店</li>
+          </ul>
+        </div>
+        <div class="store-area">
+          <h3><i class="fas fa-map-marker-alt"></i> 神奈川</h3>
+          <ul>
+            <li>横浜店</li>
+            <li>川崎店</li>
+          </ul>
+        </div>
+        <div class="store-area">
+          <h3><i class="fas fa-map-marker-alt"></i> 埼玉</h3>
+          <ul>
+            <li>大宮店</li>
+          </ul>
+        </div>
+        <div class="store-area">
+          <h3><i class="fas fa-map-marker-alt"></i> 千葉</h3>
+          <ul>
+            <li>船橋店</li>
+            <li>柏店</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>今だけ初回限定キャンペーン</h2>
+      <div class="final-cta-price">
+        <p class="original">通常 9,800円</p>
+        <p class="sale">全身脱毛1回 1,980円</p>
+      </div>
+      <a href="#form" class="cta-primary" data-cta="final">
+        <i class="fas fa-calendar-check"></i>
+        無料カウンセリングを予約する
+      </a>
+      <p class="final-cta-note">※ 初回限定・お一人様1回限り</p>
+    </div>
+  </section>
+
+  <!-- フォーム -->
+  <section class="form-section" id="form">
+    <div class="form-container">
+      <h2>無料カウンセリング予約</h2>
+      <p>まずはお気軽にご相談ください</p>
+      <form id="reservation-form">
+        <div class="form-group">
+          <label>お名前<span class="required">*</span></label>
+          <input type="text" name="name" required placeholder="例：山田 花子">
+        </div>
+        <div class="form-group">
+          <label>フリガナ<span class="required">*</span></label>
+          <input type="text" name="kana" required placeholder="例：ヤマダ ハナコ">
+        </div>
+        <div class="form-group">
+          <label>電話番号<span class="required">*</span></label>
+          <input type="tel" name="phone" required placeholder="例：090-1234-5678">
+        </div>
+        <div class="form-group">
+          <label>メールアドレス<span class="required">*</span></label>
+          <input type="email" name="email" required placeholder="例：example@email.com">
+        </div>
+        <div class="form-group">
+          <label>ご希望の店舗<span class="required">*</span></label>
+          <select name="store" required>
+            <option value="">選択してください</option>
+            <option value="shinjuku">新宿店</option>
+            <option value="shibuya">渋谷店</option>
+            <option value="ikebukuro">池袋店</option>
+            <option value="ginza">銀座店</option>
+            <option value="tachikawa">立川店</option>
+            <option value="yokohama">横浜店</option>
+            <option value="kawasaki">川崎店</option>
+            <option value="omiya">大宮店</option>
+            <option value="funabashi">船橋店</option>
+            <option value="kashiwa">柏店</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>ご希望の日時</label>
+          <input type="text" name="datetime" placeholder="例：2月10日 14:00〜">
+        </div>
+        <div class="form-group">
+          <label>ご質問・ご要望</label>
+          <textarea name="message" placeholder="気になることがあればお気軽にどうぞ"></textarea>
+        </div>
+        <button type="submit" class="form-submit">無料カウンセリングを予約する</button>
+        <p class="form-note">※ 24時間以内にご連絡いたします</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">LUMINE BEAUTY</div>
+          <p>最短6ヶ月で、自信の素肌へ</p>
+        </div>
+        <div class="footer-links">
+          <h4>サービス</h4>
+          <ul>
+            <li><a href="#pricing">料金プラン</a></li>
+            <li><a href="#flow">施術の流れ</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>店舗</h4>
+          <ul>
+            <li><a href="#stores">店舗一覧</a></li>
+            <li><a href="#form">予約</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="#">会社概要</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社ルミネビューティー All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 固定CTA（モバイル） -->
+  <div class="fixed-cta">
+    <a href="#form" data-cta="fixed">
+      <i class="fas fa-calendar-check"></i>
+      無料カウンセリング予約
+    </a>
+  </div>
+
+  <script>
+    // FAQ アコーディオン
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    // フォーム送信
+    document.getElementById('reservation-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('ご予約ありがとうございます。24時間以内にご連絡いたします。');
+      this.reset();
+    });
+
+    // スクロール追跡（計測用）
+    (function() {
+      var tracked = {};
+      var depths = [25, 50, 75, 90];
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.pageYOffset;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPercent = Math.round((scrollTop / docHeight) * 100);
+        depths.forEach(function(d) {
+          if (scrollPercent >= d && !tracked[d]) {
+            tracked[d] = true;
+            console.log('Scroll depth: ' + d + '%');
+          }
+        });
+      });
+    })();
+
+    // CTA クリック追跡
+    document.querySelectorAll('[data-cta]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        console.log('CTA clicked: ' + this.getAttribute('data-cta'));
+      });
+    });
+
+    // 比較表閲覧追跡
+    (function() {
+      var comparisonTracked = false;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !comparisonTracked) {
+            comparisonTracked = true;
+            console.log('Comparison table viewed');
+          }
+        });
+      }, { threshold: 0.5 });
+      var table = document.getElementById('comparison');
+      if (table) observer.observe(table);
+    })();
+
+    // フォームイベント追跡
+    (function() {
+      var formDisplayed = false;
+      var formStarted = false;
+      var formObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !formDisplayed) {
+            formDisplayed = true;
+            console.log('Form displayed');
+          }
+        });
+      }, { threshold: 0.3 });
+      var formSection = document.getElementById('form');
+      if (formSection) formObserver.observe(formSection);
+
+      document.querySelectorAll('#reservation-form input, #reservation-form select, #reservation-form textarea').forEach(function(el) {
+        el.addEventListener('focus', function() {
+          if (!formStarted) {
+            formStarted = true;
+            console.log('Form input started');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

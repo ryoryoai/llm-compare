@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINE BEAUTY（ルミネビューティー）| 最短6ヶ月で自信の素肌へ</title>
+    <meta name="description" content="関東・首都圏で展開する脱毛サロンLUMINE BEAUTY。SHR+IPLハイブリッド脱毛で最短6ヶ月完了。月額3,200円〜、当日予約OK。無料カウンセリング予約受付中。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #9D76C1;
+            --primary-light: #F3E5F5;
+            --primary-dark: #7B5AA6;
+            --accent: #C5A059;
+            --accent-hover: #B08D3E;
+            --text: #333333;
+            --text-light: #666666;
+            --bg-light: #F9F7FB;
+            --white: #ffffff;
+            --max-width: 1000px;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+            padding-bottom: 80px; /* Space for sticky CTA */
+        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        img { max-width: 100%; height: auto; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+        .text-center { text-align: center; }
+        .text-primary { color: var(--primary); }
+        .text-accent { color: var(--accent); }
+        .bold { font-weight: 700; }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #E5C579 0%, #C5A059 100%);
+            color: white;
+            border: none;
+        }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(197, 160, 89, 0.4); opacity: 0.95; }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); letter-spacing: 0.1em; }
+        .header-btn { padding: 8px 20px; font-size: 0.9rem; max-width: auto; }
+        
+        /* Hero */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(to bottom, #F8F0FF 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            position: relative;
+            text-align: center;
+        }
+        .hero-tag {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        .hero h1 span {
+            background: linear-gradient(transparent 70%, var(--primary-light) 70%);
+        }
+        .price-anchor {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin: 20px 0;
+            background: white;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 2px solid var(--accent);
+        }
+        .price-anchor .price { font-size: 2.5rem; line-height: 1; }
+        .badges { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px; }
+        .badge { background: white; padding: 8px 15px; border-radius: 20px; border: 1px solid var(--primary); font-size: 0.9rem; color: var(--primary); font-weight: 700; display: flex; align-items: center; gap: 5px; }
+        
+        /* Section Common */
+        section { padding: 60px 0; }
+        .bg-gray { background-color: #f9f9f9; }
+        .section-title { font-size: 1.8rem; margin-bottom: 50px; position: relative; display: inline-block; text-align: center; width: 100%; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin: 15px auto 0; }
+        .section-subtitle { text-align: center; margin-top: -30px; margin-bottom: 50px; color: var(--text-light); }
+
+        /* Problems */
+        .problem-list { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .problem-item {
+            background: white; padding: 20px 30px; border-radius: 10px; 
+            width: 100%; max-width: 500px; 
+            display: flex; align-items: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid #ccc;
+        }
+        .problem-item i { color: #888; font-size: 1.5rem; margin-right: 20px; }
+        
+        /* Solutions */
+        .solutions { background: var(--white); }
+        .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .solution-card { text-align: center; padding: 30px; border: 1px solid var(--primary-light); border-radius: 15px; transition: 0.3s; background: white; }
+        .solution-card:hover { box-shadow: 0 10px 30px rgba(157, 118, 193, 0.15); transform: translateY(-5px); border-color: var(--primary); }
+        .solution-icon-box { 
+            width: 80px; height: 80px; background: var(--primary-light); 
+            border-radius: 50%; margin: 0 auto 20px; 
+            display: flex; align-items: center; justify-content: center;
+        }
+        .solution-icon { font-size: 2.5rem; color: var(--primary); }
+        .solution-card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+
+        /* Comparison */
+        .comparison { background: #fff; }
+        .comp-wrapper { overflow-x: auto; }
+        .comp-table { width: 100%; border-collapse: collapse; text-align: center; min-width: 600px; }
+        .comp-table th { background: #eee; padding: 15px; color: #555; }
+        .comp-table th.our-salon { background: var(--primary); color: white; border-radius: 10px 10px 0 0; position: relative; box-shadow: 0 -5px 10px rgba(0,0,0,0.1); font-size: 1.1rem; }
+        .comp-table td { padding: 15px; border-bottom: 1px solid #eee; vertical-align: middle; }
+        .comp-table td.our-salon { background: var(--primary-light); font-weight: 700; color: var(--primary); border-bottom: 1px solid white; border-left: 1px solid #e1d1eb; border-right: 1px solid #e1d1eb; }
+        .comp-table tr:last-child td.our-salon { border-bottom: 1px solid #e1d1eb; border-radius: 0 0 10px 10px; }
+        
+        /* Pricing */
+        .pricing { background: var(--bg-light); }
+        .price-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: center; border: 1px solid #eee; transition: 0.3s; }
+        .price-card.featured { border: 2px solid var(--accent); transform: scale(1.02); }
+        .price-header { background: #333; color: white; padding: 15px; font-weight: bold; }
+        .price-card.featured .price-header { background: var(--accent); }
+        .price-body { padding: 30px 20px; }
+        .price-amt { font-size: 2rem; font-weight: 700; color: var(--text); margin: 10px 0; }
+        .price-desc { color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px; }
+        .price-note { font-size: 0.8rem; color: #888; }
+        
+        /* Flow */
+        .flow-steps { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
+        .step { display: flex; align-items: flex-start; background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 10px; position: relative; }
+        .step-num { background: var(--primary); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 20px; flex-shrink: 0; margin-top: 3px; }
+        .step-content h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .step-content p { margin: 0; font-size: 0.95rem; color: var(--text-light); }
+        
+        /* FAQ */
+        .faq { max-width: 800px; margin: 0 auto; }
+        details { margin-bottom: 15px; border-bottom: 1px solid #eee; background: white; border-radius: 5px; }
+        summary { cursor: pointer; font-weight: 700; padding: 20px; outline: none; list-style: none; position: relative; padding-right: 40px; transition: 0.3s; }
+        summary:hover { background: #f9f9f9; }
+        summary::after { content: '+'; position: absolute; right: 20px; color: var(--primary); font-size: 1.5rem; top: 50%; transform: translateY(-50%); }
+        details[open] summary::after { content: '-'; }
+        details[open] summary { color: var(--primary); border-bottom: 1px solid #f0f0f0; }
+        .answer { padding: 20px; color: var(--text-light); font-size: 0.95rem; background: #fff; line-height: 1.8; }
+        
+        /* Shops */
+        .shops { background: #333; color: white; }
+        .shop-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .shop-area h3 { color: var(--accent); margin-bottom: 15px; border-bottom: 1px solid #555; padding-bottom: 5px; font-size: 1.1rem; }
+        .shop-area ul li { margin-bottom: 8px; font-size: 0.9rem; color: #ccc; }
+        
+        /* Final Form */
+        .final-cta { background: linear-gradient(135deg, #F8F0FF 0%, #FFFFFF 100%); padding-bottom: 100px; }
+        .campaign-box { text-align: center; margin-bottom: 40px; background: var(--primary); color: white; padding: 30px; border-radius: 10px; }
+        .campaign-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+        .campaign-price { font-size: 2.5rem; font-weight: bold; color: var(--accent); text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .campaign-price small { font-size: 1rem; color: white; font-weight: normal; }
+        
+        .form-box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(157, 118, 193, 0.2); max-width: 600px; margin: 0 auto; border-top: 5px solid var(--accent); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 0.9rem; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+        .required { color: #e74c3c; margin-left: 5px; }
+        
+        /* Footer */
+        footer { background: #222; color: #888; padding: 30px 0; text-align: center; font-size: 0.8rem; }
+        
+        /* Sticky CTA */
+        .sticky-footer {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(255,255,255,0.98);
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 999;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        .sticky-footer.visible { transform: translateY(0); }
+        
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .problem-list { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+            .problem-item { width: 45%; }
+            .price-container { display: flex; gap: 20px; justify-content: center; align-items: flex-end; }
+            .price-card { flex: 1; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">LUMINE BEAUTY</div>
+            <a href="#offer" class="btn btn-gold header-btn">無料カウンセリング</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-tag">2026年 新規オープン</div>
+            <h1>「予約が取れない」にサヨナラ。<br>最短6ヶ月で、<span>自信の素肌へ。</span></h1>
+            
+            <div class="badges">
+                <div class="badge"><i class="fas fa-snowflake"></i> 痛みほぼゼロ</div>
+                <div class="badge"><i class="fas fa-check"></i> 追加料金なし</div>
+                <div class="badge"><i class="fas fa-clock"></i> 当日予約OK</div>
+            </div>
+
+            <div class="price-anchor">
+                全身脱毛6回（顔・VIO込）<br>
+                <span class="price">98,000円</span><span style="font-size: 1rem; color: #666;">（税込）</span>
+            </div>
+
+            <div>
+                <a href="#offer" class="btn btn-gold">無料カウンセリングを予約</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="problems bg-gray">
+        <div class="container">
+            <h2 class="section-title">こんなお悩みありませんか？</h2>
+            <div class="problem-list">
+                <div class="problem-item"><i class="fas fa-calendar-times"></i> 予約が全然取れなくて通えない…</div>
+                <div class="problem-item"><i class="fas fa-hourglass-half"></i> 効果を実感するまで何年もかかる</div>
+                <div class="problem-item"><i class="fas fa-file-invoice-dollar"></i> シェービング代などで総額が膨らんだ</div>
+                <div class="problem-item"><i class="fas fa-tired"></i> 痛みが強くて続けられなかった</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solutions">
+        <div class="container">
+            <h2 class="section-title">LUMINE BEAUTYが選ばれる理由</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon-box"><i class="fas fa-mobile-alt solution-icon"></i></div>
+                    <h3>当日予約OK！専用アプリ</h3>
+                    <p>専用アプリで24時間いつでも予約・変更が可能。キャンセル枠のリアルタイム通知機能で、「通いたい時に通える」を実現します。</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon-box"><i class="fas fa-shipping-fast solution-icon"></i></div>
+                    <h3>最短6ヶ月で完了</h3>
+                    <p>SHR（蓄熱式）+ IPL（光脱毛）のハイブリッド脱毛を採用。毛周期に関係なく施術できるため、最短2週間に1回通えます。</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon-box"><i class="fas fa-hand-holding-heart solution-icon"></i></div>
+                    <h3>追加料金ゼロ保証</h3>
+                    <p>シェービング代、当日キャンセル料（1時間前まで）、解約手数料は一切かかりません。表示価格のみの明朗会計です。</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon-box"><i class="fas fa-snowflake solution-icon"></i></div>
+                    <h3>痛みほぼゼロ</h3>
+                    <p>最新の冷却システムを搭載したマシンを使用。−10℃で肌を冷やしながら照射するため、痛みはほとんど感じません。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison bg-gray">
+        <div class="container">
+            <h2 class="section-title">他社サロンとの比較</h2>
+            <div class="comp-wrapper">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th class="our-salon">LUMINE BEAUTY</th>
+                            <th>A社（大手サロン）</th>
+                            <th>B社（格安サロン）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>予約の取りやすさ</td>
+                            <td class="our-salon">◎ 当日予約OK</td>
+                            <td>△ 3ヶ月待ち</td>
+                            <td>○ 取りやすい</td>
+                        </tr>
+                        <tr>
+                            <td>完了までの期間</td>
+                            <td class="our-salon">最短6ヶ月</td>
+                            <td>2〜3年</td>
+                            <td>1〜2年</td>
+                        </tr>
+                        <tr>
+                            <td>全身脱毛料金</td>
+                            <td class="our-salon">98,000円</td>
+                            <td>約180,000円</td>
+                            <td>約120,000円</td>
+                        </tr>
+                        <tr>
+                            <td>追加料金</td>
+                            <td class="our-salon">なし</td>
+                            <td>シェービング代有料</td>
+                            <td>キャンセル料あり</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">料金プラン</h2>
+            <div class="section-subtitle">顔・VIOを含む全身脱毛プラン</div>
+            
+            <div class="price-container">
+                <div class="price-card">
+                    <div class="price-header">都度払い</div>
+                    <div class="price-body">
+                        <div class="price-desc">まずはお試ししたい方に</div>
+                        <div class="price-amt">9,800円<span style="font-size:1rem">/回</span></div>
+                        <p class="price-note">いつでもやめられる安心プラン</p>
+                    </div>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="price-header">全身脱毛6回</div>
+                    <div class="price-body">
+                        <div class="price-desc">業界最安値帯を実現</div>
+                        <div class="price-amt">98,000円</div>
+                        <p class="price-note">月々3,200円〜 分割払いOK</p>
+                    </div>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-header">全身脱毛12回</div>
+                    <div class="price-body">
+                        <div class="price-desc">しっかり効果を出したい方へ</div>
+                        <div class="price-amt">178,000円</div>
+                        <p class="price-note">人気No.1プラン</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <p>※料金はすべて税込です。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="flow">
+        <div class="container">
+            <h2 class="section-title">施術の流れ</h2>
+            <div class="flow-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>無料カウンセリング</h3>
+                        <p>専門スタッフが肌質や毛質をチェックし、最適なプランをご提案します。無理な勧誘は一切ありません。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>お着替え・施術準備</h3>
+                        <p>清潔な個室でガウンにお着替えいただきます。シェービング（無料）の仕上げを行います。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>ハイブリッド脱毛照射</h3>
+                        <p>冷たいジェルを塗り、スライドさせながら照射します。全身で約60分で終了します。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>アフターケア</h3>
+                        <p>保湿ローションで肌を整えます。メイクルームも完備しているので、そのままお出かけも可能です。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="voice bg-gray">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <div class="solution-grid">
+                <div class="voice-card">
+                    <div class="stars">★★★★★</div>
+                    <p><strong>「本当に痛くなくてびっくり」</strong><br>
+                    以前通っていたサロンは痛くて断念しましたが、ルミネビューティーは温かさを感じる程度で全く痛くありませんでした。これなら続けられそうです。</p>
+                    <small>20代 女性</small>
+                </div>
+                <div class="voice-card">
+                    <div class="stars">★★★★★</div>
+                    <p><strong>「アプリで予約が取れるのが神」</strong><br>
+                    仕事が不規則なので、当日予約ができるのが本当に助かります。アプリで空き状況を見てサッと予約できるので、無駄なく通えています。</p>
+                    <small>30代 女性</small>
+                </div>
+                <div class="voice-card">
+                    <div class="stars">★★★★★</div>
+                    <p><strong>「他サロンから乗り換えて正解」</strong><br>
+                    予約が取れずに乗り換えましたが、ここはスムーズに通えています。6回終了時点で自己処理がほぼ不要になり、効果にも満足です。</p>
+                    <small>20代 女性</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <details>
+                <summary>何回で効果を実感できますか？</summary>
+                <div class="answer">個人差はありますが、3回目あたりから毛が薄くなるのを実感される方が多いです。6回で自己処理が楽になり、12回でほぼツルツルの状態を目指せます。</div>
+            </details>
+            <details>
+                <summary>本当に痛みはありませんか？</summary>
+                <div class="answer">最新の冷却機能を搭載しており、熱さを感じにくく痛みを最小限に抑えています。痛みに弱い方やVIOなどデリケートな部分も安心して受けていただけます。</div>
+            </details>
+            <details>
+                <summary>予約は取りやすいですか？</summary>
+                <div class="answer">はい。当サロンでは店舗数に対する会員数を制限し、さらに毎朝10時に当日予約枠を開放しています。専用アプリでキャンセル待ち通知も受け取れるため、予約が取りやすい環境を整えています。</div>
+            </details>
+            <details>
+                <summary>途中で解約することはできますか？</summary>
+                <div class="answer">はい、可能です。やむを得ない事情で通えなくなった場合でも、解約手数料なしで残回数分を返金いたします。</div>
+            </details>
+        </div>
+    </section>
+
+    <section class="shops">
+        <div class="container">
+            <h2 class="section-title" style="color:white; margin-bottom: 30px;">店舗一覧</h2>
+            <div class="shop-list">
+                <div class="shop-area">
+                    <h3>東京</h3>
+                    <ul>
+                        <li>新宿店</li>
+                        <li>渋谷店</li>
+                        <li>池袋店</li>
+                        <li>銀座店</li>
+                        <li>立川店</li>
+                    </ul>
+                </div>
+                <div class="shop-area">
+                    <h3>神奈川</h3>
+                    <ul>
+                        <li>横浜店</li>
+                        <li>川崎店</li>
+                    </ul>
+                </div>
+                <div class="shop-area">
+                    <h3>埼玉</h3>
+                    <ul>
+                        <li>大宮店</li>
+                    </ul>
+                </div>
+                <div class="shop-area">
+                    <h3>千葉</h3>
+                    <ul>
+                        <li>船橋店</li>
+                        <li>柏店</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offer" class="final-cta">
+        <div class="container">
+            <div class="campaign-box">
+                <div class="campaign-title">＼ 今だけ初回限定キャンペーン ／</div>
+                <div class="campaign-price"><small>通常9,800円 →</small> 1,980円<small>（税込）</small></div>
+                <p>全身脱毛1回体験（顔・VIO込み）</p>
+            </div>
+
+            <div class="form-box">
+                <h3 class="text-center" style="margin-bottom: 30px;">無料カウンセリング予約</h3>
+                <form id="reservationForm" onsubmit="event.preventDefault(); alert('ご予約ありがとうございます。担当者よりご連絡いたします。');">
+                    <div class="form-group">
+                        <label class="form-label">お名前<span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="例）山田 花子" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">電話番号<span class="required">*</span></label>
+                        <input type="tel" class="form-control" placeholder="例）090-1234-5678" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">メールアドレス<span class="required">*</span></label>
+                        <input type="email" class="form-control" placeholder="例）hanako@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">希望店舗<span class="required">*</span></label>
+                        <select class="form-control" required>
+                            <option value="">選択してください</option>
+                            <option value="shinjuku">新宿店</option>
+                            <option value="shibuya">渋谷店</option>
+                            <option value="ikebukuro">池袋店</option>
+                            <option value="ginza">銀座店</option>
+                            <option value="yokohama">横浜店</option>
+                            <option value="omiya">大宮店</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-gold" style="width: 100%;">予約を確定する</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LUMINE BEAUTY. All Rights Reserved.</p>
+            <p><a href="#">プライバシーポリシー</a> | <a href="#">特定商取引法に基づく表記</a></p>
+        </div>
+    </footer>
+
+    <div class="sticky-footer" id="stickyCta">
+        <a href="#offer" class="btn btn-gold" style="padding: 10px 30px; font-size: 1rem;">まずは無料カウンセリング</a>
+    </div>
+
+    <script>
+        // Sticky CTA visibility
+        const stickyCta = document.getElementById('stickyCta');
+        const offerSection = document.getElementById('offer');
+        
+        window.addEventListener('scroll', () => {
+            const offerRect = offerSection.getBoundingClientRect();
+            // Show sticky CTA if scrolled past hero (approx 500px) AND not reached the offer section
+            if (window.scrollY > 500 && offerRect.top > window.innerHeight) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

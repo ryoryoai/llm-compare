@@ -1,0 +1,21 @@
+{
+  "session_id": "session-1770195567",
+  "started_at": "2026-02-04T08:59:27Z",
+  "cwd": "/tmp/llm-compare-work/ac1f1f41f7f5/output",
+  "project_name": "output",
+  "prompt_seq": 0,
+  "git": {
+    "branch": "(no git)",
+    "uncommitted_changes": 0,
+    "last_commit": "none"
+  },
+  "plans": {
+    "exists": false,
+    "last_modified": 0,
+    "wip_tasks": 0,
+    "todo_tasks": 0,
+    "pending_tasks": 0,
+    "completed_tasks": 0
+  },
+  "changes_this_session": []
+}
