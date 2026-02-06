@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STILLNESS｜春日部 ドライヘッドスパ｜完全予約制・個室</title>
+<meta name="description" content="春日部駅東口徒歩3分。完全予約制のドライヘッドスパSTILLNESS。仕事帰りの40〜50代男女に。静かな個室で30分¥4,400〜。最終受付20:00。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#0D0D0D;--charcoal:#1A1A1A;--graphite:#222222;
+  --warm-ivory:#FAF8F5;--pure-white:#FFFFFF;
+  --gold:#C4A96A;--gold-deep:#B09455;--gold-mist:rgba(196,169,106,0.10);
+  --parchment:#F0ECE6;--deep-charcoal:#2C2C2C;
+  --muted-beige:rgba(240,236,230,0.55);--slate:#6B6B6B;
+  --sand:#E8E4DE;--night-border:rgba(240,236,230,0.12);
+  --serif:'Noto Serif JP','Yu Mincho',serif;
+  --sans:'Noto Sans JP','Hiragino Sans',sans-serif;
+  --max-w:960px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--deep-charcoal);background:var(--warm-ivory);line-height:1.8;-webkit-font-smoothing:antialiased;padding-bottom:80px}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a1a 0%,#2d2520 50%,#1a1a1a 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(196,169,106,0.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(196,169,106,0.08) 0%,transparent 50%)}
+.hero__inner{position:relative;z-index:1;text-align:center;padding:60px 24px;max-width:700px}
+.hero__label{display:inline-block;font-size:.7rem;letter-spacing:.3em;color:var(--gold);border:1px solid rgba(196,169,106,0.4);padding:6px 20px;margin-bottom:40px}
+.hero h1{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:400;color:var(--parchment);line-height:1.7;letter-spacing:.08em;margin-bottom:24px}
+.hero__sub{font-size:.85rem;font-weight:300;color:var(--muted-beige);line-height:2;margin-bottom:48px;letter-spacing:.04em}
+.hero__badges{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:48px}
+.hero__badge{font-size:.72rem;color:rgba(240,236,230,0.7);border:1px solid rgba(240,236,230,0.2);padding:6px 16px;letter-spacing:.06em}
+.cta-group{display:flex;flex-direction:column;align-items:center;gap:12px}
+.btn-p{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#1a1a1a;font-family:var(--sans);font-size:.92rem;font-weight:600;padding:16px 48px;border:none;letter-spacing:.08em;cursor:pointer;transition:all .3s;min-width:280px}
+.btn-p:hover{background:var(--gold-deep);transform:translateY(-1px)}
+.btn-s{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:rgba(240,236,230,0.7);font-size:.78rem;padding:10px 32px;border:1px solid rgba(240,236,230,0.25);letter-spacing:.06em;cursor:pointer;transition:all .3s}
+.btn-s:hover{border-color:rgba(240,236,230,0.5);color:rgba(240,236,230,0.9)}
+.cta-note{font-size:.72rem;color:rgba(240,236,230,0.4);margin-top:16px}
+
+/* Sections */
+.section{padding:100px 0}
+.section--alt{background:var(--pure-white)}
+.section__header{text-align:center;margin-bottom:64px}
+.section__label{display:inline-block;font-size:.65rem;letter-spacing:.25em;color:var(--slate);text-transform:uppercase;margin-bottom:16px}
+.section__title{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);font-weight:400;letter-spacing:.06em;line-height:1.6;color:var(--deep-charcoal)}
+.section__divider{width:40px;height:1px;background:var(--gold);margin:24px auto 0}
+
+/* Concerns */
+.concerns{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:800px;margin:0 auto}
+.concern-card{background:var(--pure-white);border:1px solid var(--sand);padding:32px 28px;position:relative}
+.concern-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--gold),transparent)}
+.concern-card p{font-size:.88rem;line-height:1.8}
+.concerns__bridge{text-align:center;margin-top:48px;font-size:.85rem;color:var(--slate);line-height:2}
+
+/* Benefits */
+.benefits__content{max-width:680px;margin:0 auto;text-align:center}
+.benefits__text{font-size:.9rem;line-height:2.2;color:var(--slate)}
+
+/* Reasons */
+.reasons{max-width:800px;margin:0 auto}
+.reason{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:40px 0;border-bottom:1px solid var(--sand);align-items:start}
+.reason:last-child{border-bottom:none}
+.reason__num{font-family:var(--serif);font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;padding-top:4px}
+.reason h3{font-family:var(--serif);font-size:1rem;font-weight:500;margin-bottom:12px;letter-spacing:.04em}
+.reason p{font-size:.85rem;color:var(--slate);line-height:1.9}
+
+/* Menu */
+.menu-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:860px;margin:0 auto}
+.menu-card{background:var(--pure-white);border:1px solid var(--sand);padding:40px 32px;text-align:center;position:relative;transition:border-color .3s}
+.menu-card:hover{border-color:var(--gold)}
+.menu-card--pop{border-color:var(--gold)}
+.menu-card--pop::after{content:'\3044\3061\3070\3093\4eba\6c17';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:#1a1a1a;font-size:.65rem;font-weight:600;padding:4px 16px;letter-spacing:.1em}
+.menu-card h3{font-family:var(--serif);font-size:1.1rem;font-weight:500;margin-bottom:4px}
+.menu-card__time{font-size:.8rem;color:var(--slate);margin-bottom:16px}
+.menu-card__price{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--gold);margin-bottom:4px}
+.menu-card__tax{font-size:.65rem;color:var(--slate);margin-bottom:16px}
+.menu-card__desc{font-size:.8rem;color:var(--slate);line-height:1.7}
+.menu-note{text-align:center;margin-top:40px;font-size:.8rem;color:var(--slate);line-height:1.9}
+.menu-disc{text-align:center;margin-top:16px;font-size:.7rem;color:var(--slate)}
+
+/* Flow */
+.flow{max-width:640px;margin:0 auto}
+.flow-step{display:grid;grid-template-columns:48px 1fr;gap:20px;padding:32px 0;border-bottom:1px solid var(--sand);align-items:start}
+.flow-step:last-child{border-bottom:none}
+.flow-step__num{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);font-family:var(--serif);font-size:.85rem;color:var(--gold)}
+.flow-step h4{font-family:var(--serif);font-size:.95rem;font-weight:500;margin-bottom:8px}
+.flow-step p{font-size:.82rem;color:var(--slate);line-height:1.8}
+
+/* Testimonials */
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:860px;margin:0 auto}
+.testimonial{background:var(--warm-ivory);border:1px solid var(--sand);padding:36px 32px}
+.testimonial p{font-size:.85rem;line-height:2;font-style:italic;margin-bottom:20px}
+.testimonial__author{font-size:.75rem;color:var(--slate);letter-spacing:.06em}
+
+/* FAQ */
+.faq-list{max-width:680px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--sand);padding:28px 0}
+.faq-item__q{font-family:var(--serif);font-size:.92rem;font-weight:500;margin-bottom:12px;display:flex;align-items:baseline;gap:12px}
+.faq-item__q span{color:var(--gold);font-size:.8rem;flex-shrink:0}
+.faq-item__a{font-size:.82rem;color:var(--slate);line-height:1.9;padding-left:32px}
+
+/* Access */
+.access-info{max-width:640px;margin:0 auto}
+.access-table{width:100%;border-collapse:collapse}
+.access-table tr{border-bottom:1px solid var(--sand)}
+.access-table th{text-align:left;font-weight:500;font-size:.82rem;color:var(--slate);padding:16px 16px 16px 0;width:120px;vertical-align:top;letter-spacing:.04em}
+.access-table td{font-size:.85rem;padding:16px 0}
+
+/* Final CTA */
+.final-cta{background:linear-gradient(135deg,#1a1a1a 0%,#2d2520 50%,#1a1a1a 100%);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(196,169,106,0.1) 0%,transparent 60%)}
+.final-cta__inner{position:relative;z-index:1}
+.final-cta h2{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);font-weight:400;color:var(--parchment);letter-spacing:.08em;line-height:1.7;margin-bottom:16px}
+.final-cta__sub{font-size:.8rem;color:var(--muted-beige);margin-bottom:40px;letter-spacing:.04em}
+
+/* Sticky CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:rgba(26,26,26,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:12px 24px;display:flex;justify-content:center;align-items:center;gap:12px;z-index:100;border-top:1px solid rgba(196,169,106,0.2)}
+.sticky-cta .btn-p{padding:12px 36px;font-size:.82rem;min-width:auto}
+.sticky-cta__links{display:flex;gap:16px}
+.sticky-cta__link{font-size:.72rem;color:rgba(240,236,230,0.6);letter-spacing:.04em;transition:color .3s}
+.sticky-cta__link:hover{color:var(--gold)}
+
+/* Footer */
+.footer{background:#111;padding:32px 24px 100px;text-align:center}
+.footer p{font-size:.7rem;color:rgba(240,236,230,0.3);letter-spacing:.06em}
+
+/* Animations */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* Responsive */
+@media(max-width:768px){
+  .section{padding:72px 0}
+  .hero{min-height:100svh}
+  .hero__inner{padding:48px 20px}
+  .hero__badges{gap:8px}
+  .reason{grid-template-columns:1fr;gap:12px}
+  .reason__num{font-size:1.2rem}
+  .menu-cards{grid-template-columns:1fr}
+  .testimonials{grid-template-columns:1fr}
+  .sticky-cta{flex-direction:column;gap:8px;padding:10px 16px}
+  .sticky-cta .btn-p{width:100%;padding:14px}
+  .sticky-cta__links{display:none}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero__inner">
+    <span class="hero__label">STILLNESS &mdash; Dry Head Spa</span>
+    <h1>仕事帰りの頭と目の重さに。<br>上質なドライヘッドスパを、春日部で</h1>
+    <p class="hero__sub">静かな個室空間で受ける、完全予約制のヘッドケア。<br>男女問わず通いやすく、短時間でも深い休息を目指します。</p>
+    <div class="hero__badges">
+      <span class="hero__badge">完全予約制</span>
+      <span class="hero__badge">個室</span>
+      <span class="hero__badge">男女OK</span>
+      <span class="hero__badge">最終受付 20:00</span>
+      <span class="hero__badge">キャッシュレス対応</span>
+    </div>
+    <div class="cta-group">
+      <a href="#" class="btn-p">空き状況を見て Web予約</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="#" class="btn-s">電話で予約する</a>
+        <a href="#" class="btn-s">LINEで相談する</a>
+      </div>
+      <p class="cta-note">当日予約も空きがあればご案内いたします</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="concerns">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">Your Concerns</span><h2 class="section__title">このような状態で、帰宅していませんか</h2><div class="section__divider"></div></div>
+    <div class="concerns fade-in">
+      <div class="concern-card"><p>夕方になると頭が重く、思考がまとまりにくい</p></div>
+      <div class="concern-card"><p>目の疲れが抜けず、首や肩まで張る感じがする</p></div>
+      <div class="concern-card"><p>眠りが浅く、朝のすっきり感が少ない</p></div>
+      <div class="concern-card"><p>休日は寝て終わり、整える時間が足りない</p></div>
+    </div>
+    <p class="concerns__bridge fade-in">ドライヘッドスパは、髪を濡らさずに受けられるため、<br>仕事帰りの気分転換としても選ばれています。</p>
+  </div>
+</section>
+
+<section class="section section--alt" id="benefits">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">Experience</span><h2 class="section__title">短時間でも、深く休めた感じを</h2><div class="section__divider"></div></div>
+    <div class="benefits__content fade-in">
+      <p class="benefits__text">頭皮を丁寧にゆるめ、こわばりやすい側頭部・後頭部・首まわりまで心地よく整えていきます。<br><br>施術後は、視界が明るく感じたり、頭が軽く感じたり、呼吸がしやすくなるように感じる方もいらっしゃいます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reasons">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">Why Choose Us</span><h2 class="section__title">上質さは、細部に宿ると考えています</h2><div class="section__divider"></div></div>
+    <div class="reasons fade-in">
+      <div class="reason"><span class="reason__num">01</span><div><h3>静かな個室設計</h3><p>余計な音や視線が入りにくい空間で、施術に集中できる環境を整えています。照明は間接光のみ、BGMは環境音を控えめに。</p></div></div>
+      <div class="reason"><span class="reason__num">02</span><div><h3>最初に整える、カウンセリング</h3><p>その日の疲れの出方を伺い、触れる強さ・重点部位・施術配分を調整します。初回はお身体の状態や日常のお疲れ具合を丁寧にヒアリングします。</p></div></div>
+      <div class="reason"><span class="reason__num">03</span><div><h3>清潔感と所作</h3><p>タオルや備品、手指衛生、動線まで含めて、安心して身を預けられる状態を保ちます。使い捨てのフェイスシートを毎回交換。</p></div></div>
+      <div class="reason"><span class="reason__num">04</span><div><h3>仕事帰りに通いやすい運用</h3><p>最終受付20:00、施術後の身支度スペース完備。短時間メニューもご用意しています。春日部駅東口から徒歩3分。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="menu">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">Menu</span><h2 class="section__title">メニュー</h2><div class="section__divider"></div></div>
+    <div class="menu-cards fade-in">
+      <div class="menu-card">
+        <h3>クイック</h3><div class="menu-card__time">30分</div>
+        <div class="menu-card__price">&yen;4,400</div><div class="menu-card__tax">（税込）</div>
+        <p class="menu-card__desc">仕事帰りに、まずは一度。</p>
+      </div>
+      <div class="menu-card menu-card--pop">
+        <h3>スタンダード</h3><div class="menu-card__time">50分</div>
+        <div class="menu-card__price">&yen;7,700</div><div class="menu-card__tax">（税込）</div>
+        <p class="menu-card__desc">頭〜首まわりまでバランスよく。</p>
+      </div>
+      <div class="menu-card">
+        <h3>ディープ</h3><div class="menu-card__time">70分</div>
+        <div class="menu-card__price">&yen;11,000</div><div class="menu-card__tax">（税込）</div>
+        <p class="menu-card__desc">より丁寧に受けたい日に。</p>
+      </div>
+    </div>
+    <p class="menu-note fade-in">初めての方は、スタンダードから選ばれる方が多いです。<br>迷われた場合は、ご来店後にご相談いただけます。</p>
+    <p class="menu-disc">当店の施術はリラクゼーションを目的としております。</p>
+  </div>
+</section>
+
+<section class="section" id="flow">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">Flow</span><h2 class="section__title">施術の流れ</h2><div class="section__divider"></div></div>
+    <div class="flow fade-in">
+      <div class="flow-step"><div class="flow-step__num">1</div><div><h4>ご来店・カウンセリング</h4><p>当日の状態を確認し、施術の方向性を丁寧にすり合わせます。所要約10分。</p></div></div>
+      <div class="flow-step"><div class="flow-step__num">2</div><div><h4>施術</h4><p>完全個室にて施術を行います。力加減は随時調整いたします。お気軽にお声がけください。</p></div></div>
+      <div class="flow-step"><div class="flow-step__num">3</div><div><h4>施術後</h4><p>お身体の状態を共有し、お会計・身支度のお時間をお取りします。ドリンクをお出しする場合もございます。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="voice">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">Voice</span><h2 class="section__title">お客様の声</h2><div class="section__divider"></div></div>
+    <div class="testimonials fade-in">
+      <div class="testimonial"><p>仕事終わりに寄れるのが助かります。静かな空間で、頭が休まる感じがありました。翌朝の目覚めがいつもより軽かったです。</p><div class="testimonial__author">&mdash; 50代 男性・会社員</div></div>
+      <div class="testimonial"><p>目の疲れが強い日に選びました。施術後は気持ちがほどけて、よく眠れた気がします。月に2回のペースで通っています。</p><div class="testimonial__author">&mdash; 40代 女性・事務職</div></div>
+      <div class="testimonial"><p>男性でも入りやすい雰囲気でした。強さの確認が丁寧で安心できました。個室なので周りを気にせずリラックスできます。</p><div class="testimonial__author">&mdash; 40代 男性・営業職</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">FAQ</span><h2 class="section__title">よくある質問</h2><div class="section__divider"></div></div>
+    <div class="faq-list fade-in">
+      <div class="faq-item"><div class="faq-item__q"><span>Q</span>髪は濡れますか</div><p class="faq-item__a">濡らしません。ドライ施術のため、スタイリングが崩れにくいのが特長です。整髪料が多い場合は、軽く整えてからご来店ください。</p></div>
+      <div class="faq-item"><div class="faq-item__q"><span>Q</span>着替えは必要ですか</div><p class="faq-item__a">基本は不要です。首まわりが締まる服の場合は、ゆとりのある服装がおすすめです。施術着のご用意もございます。</p></div>
+      <div class="faq-item"><div class="faq-item__q"><span>Q</span>男性も利用できますか</div><p class="faq-item__a">はい。男女問わずご利用いただけます。お客様の約4割は男性です。</p></div>
+      <div class="faq-item"><div class="faq-item__q"><span>Q</span>当日予約はできますか</div><p class="faq-item__a">空きがあれば可能です。Web予約で空き状況をリアルタイムにご確認いただけます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="access">
+  <div class="container">
+    <div class="section__header fade-in"><span class="section__label">Access</span><h2 class="section__title">アクセス</h2><div class="section__divider"></div></div>
+    <div class="access-info fade-in">
+      <table class="access-table">
+        <tr><th>サロン名</th><td>STILLNESS（スティルネス）</td></tr>
+        <tr><th>最寄り駅</th><td>春日部駅東口より徒歩3分</td></tr>
+        <tr><th>住所</th><td>埼玉県春日部市粕壁東1丁目2-3 サンライズビル 3F</td></tr>
+        <tr><th>営業時間</th><td>11:00〜21:00（最終受付 20:00）</td></tr>
+        <tr><th>定休日</th><td>毎週火曜日</td></tr>
+        <tr><th>お支払い</th><td>現金 / クレジットカード / 電子マネー（交通系IC・QRコード決済対応）</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta__inner">
+    <h2>まずは一度、<br>頭を休める時間を。</h2>
+    <p class="final-cta__sub">ご予約はWebから簡単にお取りいただけます</p>
+    <div class="cta-group">
+      <a href="#" class="btn-p">空き状況を見て Web予約</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="#" class="btn-s">電話で予約する</a>
+        <a href="#" class="btn-s">LINEで相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><p>&copy; 2026 STILLNESS. All rights reserved.</p></footer>
+
+<div class="sticky-cta">
+  <a href="#" class="btn-p">空き状況を見て Web予約</a>
+  <div class="sticky-cta__links">
+    <a href="#" class="sticky-cta__link">電話予約</a>
+    <a href="#" class="sticky-cta__link">LINE相談</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
+})();
+</script>
+</body>
+</html>

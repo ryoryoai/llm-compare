@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STILLNESS ドライヘッドスパ | 春日部</title>
+  <meta name="description" content="仕事帰りの頭と目の重さに。上質なドライヘッドスパを、春日部で。静かな個室空間で受ける、完全予約制のヘッドケア。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --obsidian:#0D0D0D;
+      --charcoal:#1A1A1A;
+      --graphite:#222222;
+      --warm-ivory:#FAF8F5;
+      --white:#FFFFFF;
+      --antique-gold:#C4A96A;
+      --deep-gold:#B09455;
+      --gold-mist:rgba(196,169,106,0.10);
+      --parchment:#F0ECE6;
+      --deep-charcoal:#2C2C2C;
+      --muted-beige:rgba(240,236,230,0.55);
+      --slate:#6B6B6B;
+      --sand:#E8E4DE;
+      --night-border:rgba(240,236,230,0.12);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ font-size:16px; }
+    body{
+      margin:0;
+      font-family:"Noto Sans JP", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-weight:400;
+      color:var(--deep-charcoal);
+      background:var(--warm-ivory);
+      letter-spacing:0.02em;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:80px;
+    }
+    img{ max-width:100%; height:auto; }
+    a{ color:inherit; text-decoration:none; }
+    p{ margin:0; }
+
+    .container{
+      max-width:960px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    .section{
+      padding:100px 0;
+    }
+    .section--ivory{ background:var(--warm-ivory); }
+    .section--white{ background:var(--white); }
+    .dark-gradient-bg{
+      background:
+        radial-gradient(800px 600px at 30% 20%, rgba(196,169,106,0.14) 0%, rgba(196,169,106,0.04) 35%, rgba(13,13,13,0) 70%),
+        radial-gradient(700px 520px at 70% 80%, rgba(196,169,106,0.08) 0%, rgba(13,13,13,0) 60%),
+        linear-gradient(135deg, #1a1a1a 0%, #2d2520 50%, #1a1a1a 100%);
+      background-color:var(--obsidian);
+      color:var(--parchment);
+    }
+
+    .section-header{
+      text-align:center;
+      margin-bottom:64px;
+    }
+
+    .section-label{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:500;
+      font-size:0.68rem;
+      line-height:1;
+      letter-spacing:0.25em;
+      text-transform:uppercase;
+      color:var(--antique-gold);
+      margin:0 0 18px;
+    }
+
+    .section-title{
+      font-family:"Noto Serif JP", serif;
+      font-weight:400;
+      font-size:1.7rem;
+      line-height:1.6;
+      letter-spacing:0.06em;
+      color:var(--deep-charcoal);
+      margin:0;
+    }
+    .dark-gradient-bg .section-title{ color:var(--parchment); }
+
+    .body-text{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.88rem;
+      line-height:2.0;
+      letter-spacing:0.02em;
+    }
+
+    .aux-text{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.8rem;
+      line-height:1.8;
+      letter-spacing:0.02em;
+    }
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity 0.8s ease, transform 0.8s ease;
+      will-change:opacity, transform;
+    }
+    .fade-in.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:0 24px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero__inner{
+      width:100%;
+      max-width:960px;
+      margin:0 auto;
+    }
+
+    .hero-label{
+      display:inline-block;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:500;
+      font-size:0.7rem;
+      letter-spacing:0.3em;
+      color:var(--antique-gold);
+      border:1px solid var(--antique-gold);
+      padding:6px 20px;
+      margin-bottom:40px;
+    }
+
+    .hero-title{
+      font-family:"Noto Serif JP", serif;
+      font-weight:400;
+      font-size:2.4rem;
+      line-height:1.7;
+      letter-spacing:0.08em;
+      color:var(--parchment);
+      margin:0 0 24px;
+    }
+
+    .hero-subcopy{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.9rem;
+      line-height:2.0;
+      letter-spacing:0.02em;
+      color:var(--muted-beige);
+      margin:0 0 48px;
+    }
+
+    .hero-badges{
+      list-style:none;
+      padding:0;
+      margin:0 0 48px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+    }
+    .hero-badges li{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.72rem;
+      line-height:1;
+      letter-spacing:0.02em;
+      color:rgba(240,236,230,0.7);
+      border:1px solid rgba(240,236,230,0.2);
+      padding:6px 16px;
+      white-space:nowrap;
+    }
+
+    .cta-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+    }
+    .cta-secondary{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:0;
+      border:1px solid transparent;
+      cursor:pointer;
+      user-select:none;
+      text-decoration:none;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:600;
+      font-size:0.92rem;
+      line-height:1;
+      letter-spacing:0.08em;
+      transition:transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    .btn:focus-visible{
+      outline:2px solid rgba(196,169,106,0.65);
+      outline-offset:3px;
+    }
+
+    .btn--primary{
+      background:var(--antique-gold);
+      color:#1a1a1a;
+      padding:16px 48px;
+      min-width:280px;
+      border-color:var(--antique-gold);
+    }
+    .btn--primary:hover{
+      background:var(--deep-gold);
+      transform:translateY(-1px);
+    }
+
+    .btn--secondary{
+      background:transparent;
+      color:rgba(240,236,230,0.85);
+      border-color:rgba(240,236,230,0.25);
+      padding:10px 32px;
+      min-width:0;
+    }
+    .btn--secondary:hover{
+      color:rgba(240,236,230,0.95);
+      border-color:rgba(240,236,230,0.5);
+    }
+
+    .cta-note{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.72rem;
+      line-height:1.8;
+      letter-spacing:0.02em;
+      color:rgba(240,236,230,0.4);
+      margin-top:14px;
+      text-align:center;
+    }
+
+    .grid{
+      display:grid;
+      gap:24px;
+    }
+
+    .concerns-grid{
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .concern-card{
+      background:var(--white);
+      border:1px solid var(--sand);
+      padding:32px 28px;
+      position:relative;
+    }
+    .concern-card::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:linear-gradient(to bottom, var(--antique-gold), rgba(196,169,106,0));
+    }
+    .concern-card p{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.88rem;
+      line-height:2.0;
+      letter-spacing:0.02em;
+      color:var(--deep-charcoal);
+    }
+
+    .bridge-text{
+      margin-top:48px;
+      text-align:center;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.85rem;
+      line-height:2.0;
+      letter-spacing:0.02em;
+      color:var(--slate);
+    }
+
+    .experience-copy{
+      max-width:680px;
+      margin:0 auto;
+      text-align:center;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.9rem;
+      line-height:2.2;
+      letter-spacing:0.02em;
+      color:var(--slate);
+    }
+    .experience-copy p + p{ margin-top:18px; }
+
+    .reasons-wrap{
+      max-width:800px;
+      margin:0 auto;
+    }
+    .reason-item{
+      display:grid;
+      grid-template-columns:64px 1fr;
+      gap:24px;
+      padding:40px 0;
+      border-bottom:1px solid var(--sand);
+    }
+    .reason-number{
+      align-self:stretch;
+      position:relative;
+      padding-left:16px;
+      font-family:"Noto Serif JP", serif;
+      font-weight:300;
+      font-size:1.8rem;
+      line-height:1;
+      letter-spacing:0.02em;
+      color:var(--antique-gold);
+      display:flex;
+      align-items:flex-start;
+    }
+    .reason-number::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:linear-gradient(to bottom, var(--antique-gold), rgba(196,169,106,0));
+    }
+    .reason-title{
+      font-family:"Noto Serif JP", serif;
+      font-weight:500;
+      font-size:1.0rem;
+      line-height:1.5;
+      letter-spacing:0.04em;
+      color:var(--deep-charcoal);
+      margin:0 0 12px;
+    }
+    .reason-desc{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.85rem;
+      line-height:1.9;
+      letter-spacing:0.02em;
+      color:var(--slate);
+      margin:0;
+    }
+
+    .menu-wrap{
+      max-width:860px;
+      margin:0 auto;
+    }
+    .menu-grid{
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .menu-card{
+      background:var(--white);
+      border:1px solid var(--sand);
+      padding:40px 32px;
+      text-align:center;
+      position:relative;
+      transition:border-color 0.3s ease;
+    }
+    .menu-card:hover{
+      border-color:var(--antique-gold);
+    }
+    .menu-card--popular{
+      border-color:var(--antique-gold);
+    }
+    .popular-badge{
+      position:absolute;
+      top:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--antique-gold);
+      color:#1a1a1a;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:600;
+      font-size:0.65rem;
+      letter-spacing:0.25em;
+      line-height:1;
+      padding:4px 16px;
+      white-space:nowrap;
+    }
+    .menu-name{
+      font-family:"Noto Serif JP", serif;
+      font-weight:500;
+      font-size:1.1rem;
+      line-height:1.5;
+      letter-spacing:0.04em;
+      margin:0 0 10px;
+      color:var(--deep-charcoal);
+    }
+    .menu-time{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.8rem;
+      line-height:1.8;
+      letter-spacing:0.02em;
+      color:var(--slate);
+      margin:0 0 14px;
+    }
+    .menu-price{
+      margin:0 0 14px;
+    }
+    .menu-price .price{
+      font-family:"Noto Serif JP", serif;
+      font-weight:400;
+      font-size:1.5rem;
+      line-height:1;
+      letter-spacing:0.02em;
+      color:var(--antique-gold);
+    }
+    .menu-price .tax{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.65rem;
+      line-height:1;
+      letter-spacing:0.02em;
+      color:var(--slate);
+      margin-left:6px;
+    }
+    .menu-catch{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.8rem;
+      line-height:1.9;
+      letter-spacing:0.02em;
+      color:var(--slate);
+      margin:0;
+    }
+    .menu-help{
+      margin-top:40px;
+      text-align:center;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.8rem;
+      line-height:1.9;
+      letter-spacing:0.02em;
+      color:var(--slate);
+    }
+    .menu-note{
+      margin-top:14px;
+      text-align:center;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.7rem;
+      line-height:1.8;
+      letter-spacing:0.02em;
+      color:var(--slate);
+    }
+
+    .flow-wrap{
+      max-width:640px;
+      margin:0 auto;
+    }
+    .flow-step{
+      display:grid;
+      grid-template-columns:40px 1fr;
+      gap:20px;
+      padding:28px 0;
+      border-bottom:1px solid var(--sand);
+    }
+    .step-num{
+      width:40px;
+      height:40px;
+      border:1px solid var(--antique-gold);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:"Noto Serif JP", serif;
+      font-weight:400;
+      font-size:0.85rem;
+      line-height:1;
+      letter-spacing:0.02em;
+      color:var(--deep-charcoal);
+      background:transparent;
+    }
+    .step-title{
+      font-family:"Noto Serif JP", serif;
+      font-weight:500;
+      font-size:0.95rem;
+      line-height:1.6;
+      letter-spacing:0.04em;
+      color:var(--deep-charcoal);
+      margin:0 0 8px;
+    }
+    .step-desc{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.85rem;
+      line-height:1.9;
+      letter-spacing:0.02em;
+      color:var(--slate);
+      margin:0;
+    }
+
+    .voice-wrap{
+      max-width:860px;
+      margin:0 auto;
+    }
+    .voice-grid{
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .voice-card{
+      background:var(--warm-ivory);
+      border:1px solid var(--sand);
+      padding:36px 32px;
+    }
+    .voice-comment{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.85rem;
+      line-height:2.0;
+      letter-spacing:0.02em;
+      color:var(--deep-charcoal);
+      font-style:italic;
+      margin:0;
+    }
+    .voice-meta{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.75rem;
+      line-height:1.8;
+      letter-spacing:0.06em;
+      color:var(--slate);
+      margin:20px 0 0;
+    }
+
+    .faq-wrap{
+      max-width:680px;
+      margin:0 auto;
+    }
+    .faq-item{
+      padding:26px 0;
+      border-bottom:1px solid var(--sand);
+    }
+    .faq-q{
+      display:flex;
+      gap:12px;
+      align-items:baseline;
+      font-family:"Noto Serif JP", serif;
+      font-weight:500;
+      font-size:0.92rem;
+      line-height:1.7;
+      letter-spacing:0.04em;
+      color:var(--deep-charcoal);
+    }
+    .faq-q-label{
+      color:var(--antique-gold);
+      font-family:"Noto Serif JP", serif;
+      font-weight:500;
+      font-size:0.92rem;
+      line-height:1;
+    }
+    .faq-a{
+      margin-top:10px;
+      padding-left:32px;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.82rem;
+      line-height:1.9;
+      letter-spacing:0.02em;
+      color:var(--slate);
+    }
+
+    .access-wrap{
+      max-width:640px;
+      margin:0 auto;
+    }
+    .access-table{
+      width:100%;
+      border-collapse:collapse;
+      border-spacing:0;
+    }
+    .access-table tr{
+      border-bottom:1px solid var(--sand);
+    }
+    .access-table th,
+    .access-table td{
+      padding:16px 0;
+      vertical-align:top;
+    }
+    .access-table th{
+      width:120px;
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.82rem;
+      line-height:1.8;
+      letter-spacing:0.02em;
+      color:var(--slate);
+      text-align:left;
+    }
+    .access-table td{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:400;
+      font-size:0.85rem;
+      line-height:1.9;
+      letter-spacing:0.02em;
+      color:var(--deep-charcoal);
+      padding-left:18px;
+    }
+
+    .final-cta{
+      text-align:center;
+    }
+    .final-cta__title{
+      font-family:"Noto Serif JP", serif;
+      font-weight:400;
+      font-size:1.7rem;
+      line-height:1.7;
+      letter-spacing:0.06em;
+      margin:0 0 18px;
+      color:var(--parchment);
+    }
+    .final-cta__sub{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:300;
+      font-size:0.8rem;
+      line-height:1.9;
+      letter-spacing:0.02em;
+      color:var(--muted-beige);
+      margin:0 0 36px;
+    }
+
+    .sticky-cta{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:999;
+      background:rgba(26,26,26,0.95);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border-top:1px solid rgba(196,169,106,0.2);
+      padding:12px 24px;
+    }
+    .sticky-cta__inner{
+      max-width:960px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+    }
+    .sticky-cta__inner .btn--primary{
+      padding:14px 24px;
+      min-width:0;
+    }
+    .sticky-cta__links{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      white-space:nowrap;
+    }
+    .sticky-cta__link{
+      font-family:"Noto Sans JP", sans-serif;
+      font-weight:500;
+      font-size:0.8rem;
+      line-height:1;
+      letter-spacing:0.08em;
+      color:rgba(240,236,230,0.75);
+      transition:color 0.3s ease;
+      padding:10px 0;
+    }
+    .sticky-cta__link:hover{
+      color:rgba(240,236,230,0.92);
+    }
+
+    @media (max-width:768px){
+      .container{ padding:0 20px; }
+      .section{ padding:72px 0; }
+      .section-header{ margin-bottom:48px; }
+
+      .section-label{ font-size:0.65rem; }
+      .section-title{ font-size:1.3rem; }
+
+      .hero{
+        min-height:100svh;
+        padding:48px 20px;
+      }
+      .hero-title{ font-size:1.6rem; }
+      .hero-subcopy{ font-size:0.85rem; }
+
+      .hero-badges{ gap:8px; }
+
+      .grid{ gap:16px; }
+
+      .reason-item{
+        grid-template-columns:1fr;
+        gap:16px;
+      }
+      .reason-number{
+        font-size:1.2rem;
+      }
+
+      .menu-grid{
+        grid-template-columns:1fr;
+      }
+      .voice-grid{
+        grid-template-columns:1fr;
+      }
+
+      .final-cta__title{ font-size:1.3rem; }
+
+      .sticky-cta__inner{
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .sticky-cta__links{ display:none; }
+      .sticky-cta__inner .btn--primary{
+        width:100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .fade-in{ opacity:1; transform:none; transition:none; }
+      .btn{ transition:none; }
+      .sticky-cta__link{ transition:none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero dark-gradient-bg" id="top">
+      <div class="hero__inner">
+        <div class="hero-label">STILLNESS — Dry Head Spa</div>
+        <h1 class="hero-title">仕事帰りの頭と目の重さに。<br />上質なドライヘッドスパを、春日部で</h1>
+        <p class="hero-subcopy">静かな個室空間で受ける、完全予約制のヘッドケア。<br />男女問わず通いやすく、短時間でも深い休息を目指します。</p>
+
+        <ul class="hero-badges" aria-label="特徴">
+          <li>完全予約制</li>
+          <li>個室</li>
+          <li>男女OK</li>
+          <li>最終受付 20:00</li>
+          <li>キャッシュレス対応</li>
+        </ul>
+
+        <div class="cta-actions" aria-label="予約導線">
+          <a class="btn btn--primary" href="#reservation">空き状況を見て Web予約</a>
+          <div class="cta-secondary">
+            <a class="btn btn--secondary" href="tel:0000000000">電話で予約する</a>
+            <a class="btn btn--secondary" href="https://line.me/" target="_blank" rel="noopener">LINEで相談する</a>
+          </div>
+          <div class="cta-note">当日予約も空きがあればご案内いたします</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" id="concerns">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">YOUR CONCERNS</div>
+          <h2 class="section-title">このような状態で、帰宅していませんか</h2>
+        </div>
+
+        <div class="grid concerns-grid" aria-label="悩み">
+          <div class="concern-card fade-in"><p>夕方になると頭が重く、思考がまとまりにくい</p></div>
+          <div class="concern-card fade-in"><p>目の疲れが抜けず、首や肩まで張る感じがする</p></div>
+          <div class="concern-card fade-in"><p>眠りが浅く、朝のすっきり感が少ない</p></div>
+          <div class="concern-card fade-in"><p>休日は寝て終わり、整える時間が足りない</p></div>
+        </div>
+
+        <p class="bridge-text fade-in">ドライヘッドスパは、髪を濡らさずに受けられるため、<br />仕事帰りの気分転換としても選ばれています。</p>
+      </div>
+    </section>
+
+    <section class="section section--white" id="experience">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">EXPERIENCE</div>
+          <h2 class="section-title">短時間でも、深く休めた感じを</h2>
+        </div>
+
+        <div class="experience-copy fade-in">
+          <p>頭皮を丁寧にゆるめ、こわばりやすい側頭部・後頭部・首まわりまで心地よく整えていきます。</p>
+          <p>施術後は、視界が明るく感じたり、頭が軽く感じたり、呼吸がしやすくなるように感じる方もいらっしゃいます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" id="reasons">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">WHY CHOOSE US</div>
+          <h2 class="section-title">上質さは、細部に宿ると考えています</h2>
+        </div>
+
+        <div class="reasons-wrap" role="list" aria-label="選ばれる理由">
+          <div class="reason-item fade-in" role="listitem">
+            <div class="reason-number">01</div>
+            <div>
+              <h3 class="reason-title">静かな個室設計</h3>
+              <p class="reason-desc">余計な音や視線が入りにくい空間で、施術に集中できる環境を整えています。照明は間接光のみ、BGMは環境音を控えめに。</p>
+            </div>
+          </div>
+
+          <div class="reason-item fade-in" role="listitem">
+            <div class="reason-number">02</div>
+            <div>
+              <h3 class="reason-title">最初に整える、カウンセリング</h3>
+              <p class="reason-desc">その日の疲れの出方を伺い、触れる強さ・重点部位・施術配分を調整します。初回はお身体の状態や日常のお疲れ具合を丁寧にヒアリングします。</p>
+            </div>
+          </div>
+
+          <div class="reason-item fade-in" role="listitem">
+            <div class="reason-number">03</div>
+            <div>
+              <h3 class="reason-title">清潔感と所作</h3>
+              <p class="reason-desc">タオルや備品、手指衛生、動線まで含めて、安心して身を預けられる状態を保ちます。使い捨てのフェイスシートを毎回交換。</p>
+            </div>
+          </div>
+
+          <div class="reason-item fade-in" role="listitem">
+            <div class="reason-number">04</div>
+            <div>
+              <h3 class="reason-title">仕事帰りに通いやすい運用</h3>
+              <p class="reason-desc">最終受付20:00、施術後の身支度スペース完備。短時間メニューもご用意しています。春日部駅東口から徒歩3分。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="menu">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">MENU</div>
+          <h2 class="section-title">メニュー</h2>
+        </div>
+
+        <div class="menu-wrap">
+          <div class="grid menu-grid" aria-label="メニュー一覧">
+            <div class="menu-card fade-in">
+              <h3 class="menu-name">クイック</h3>
+              <p class="menu-time">30分</p>
+              <p class="menu-price"><span class="price">¥4,400</span><span class="tax">（税込）</span></p>
+              <p class="menu-catch">仕事帰りに、まずは一度。</p>
+            </div>
+
+            <div class="menu-card menu-card--popular fade-in">
+              <div class="popular-badge">いちばん人気</div>
+              <h3 class="menu-name">スタンダード</h3>
+              <p class="menu-time">50分</p>
+              <p class="menu-price"><span class="price">¥7,700</span><span class="tax">（税込）</span></p>
+              <p class="menu-catch">頭〜首まわりまでバランスよく。</p>
+            </div>
+
+            <div class="menu-card fade-in">
+              <h3 class="menu-name">ディープ</h3>
+              <p class="menu-time">70分</p>
+              <p class="menu-price"><span class="price">¥11,000</span><span class="tax">（税込）</span></p>
+              <p class="menu-catch">より丁寧に受けたい日に。</p>
+            </div>
+          </div>
+
+          <p class="menu-help fade-in">初めての方は、スタンダードから選ばれる方が多いです。迷われた場合は、ご来店後にご相談いただけます。</p>
+          <p class="menu-note fade-in">当店の施術はリラクゼーションを目的としております。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" id="flow">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">FLOW</div>
+          <h2 class="section-title">施術の流れ</h2>
+        </div>
+
+        <div class="flow-wrap" aria-label="施術の流れ">
+          <div class="flow-step fade-in">
+            <div class="step-num">1</div>
+            <div>
+              <h3 class="step-title">ご来店・カウンセリング</h3>
+              <p class="step-desc">当日の状態を確認し、施術の方向性を丁寧にすり合わせます。所要約10分。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-in">
+            <div class="step-num">2</div>
+            <div>
+              <h3 class="step-title">施術</h3>
+              <p class="step-desc">完全個室にて施術を行います。力加減は随時調整いたします。お気軽にお声がけください。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-in">
+            <div class="step-num">3</div>
+            <div>
+              <h3 class="step-title">施術後</h3>
+              <p class="step-desc">お身体の状態を共有し、お会計・身支度のお時間をお取りします。ドリンクをお出しする場合もございます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="voice">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">VOICE</div>
+          <h2 class="section-title">お客様の声</h2>
+        </div>
+
+        <div class="voice-wrap">
+          <div class="grid voice-grid" aria-label="お客様の声">
+            <div class="voice-card fade-in">
+              <p class="voice-comment">仕事終わりに寄れるのが助かります。静かな空間で、頭が休まる感じがありました。翌朝の目覚めがいつもより軽かったです。</p>
+              <p class="voice-meta">— 50代 男性・会社員</p>
+            </div>
+
+            <div class="voice-card fade-in">
+              <p class="voice-comment">目の疲れが強い日に選びました。施術後は気持ちがほどけて、よく眠れた気がします。月に2回のペースで通っています。</p>
+              <p class="voice-meta">— 40代 女性・事務職</p>
+            </div>
+
+            <div class="voice-card fade-in">
+              <p class="voice-comment">男性でも入りやすい雰囲気でした。強さの確認が丁寧で安心できました。個室なので周りを気にせずリラックスできます。</p>
+              <p class="voice-meta">— 40代 男性・営業職</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" id="faq">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">よくある質問</h2>
+        </div>
+
+        <div class="faq-wrap" aria-label="よくある質問">
+          <div class="faq-item fade-in">
+            <div class="faq-q"><span class="faq-q-label">Q</span><span>髪は濡れますか</span></div>
+            <div class="faq-a">濡らしません。ドライ（水を使わない）施術のため、スタイリングが崩れにくいのが特長です。整髪料が多い場合は、軽く整えてからご来店ください。</div>
+          </div>
+
+          <div class="faq-item fade-in">
+            <div class="faq-q"><span class="faq-q-label">Q</span><span>着替えは必要ですか</span></div>
+            <div class="faq-a">基本は不要です。首まわりが締まる服の場合は、ゆとりのある服装がおすすめです。施術着のご用意もございます。</div>
+          </div>
+
+          <div class="faq-item fade-in">
+            <div class="faq-q"><span class="faq-q-label">Q</span><span>男性も利用できますか</span></div>
+            <div class="faq-a">はい。男女問わずご利用いただけます。お客様の約4割は男性です。</div>
+          </div>
+
+          <div class="faq-item fade-in">
+            <div class="faq-q"><span class="faq-q-label">Q</span><span>当日予約はできますか</span></div>
+            <div class="faq-a">空きがあれば可能です。Web予約で空き状況をリアルタイムにご確認いただけます。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="access">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">ACCESS</div>
+          <h2 class="section-title">アクセス</h2>
+        </div>
+
+        <div class="access-wrap fade-in" aria-label="アクセス情報">
+          <table class="access-table">
+            <tr>
+              <th scope="row">サロン名</th>
+              <td>STILLNESS（スティルネス）</td>
+            </tr>
+            <tr>
+              <th scope="row">最寄り駅</th>
+              <td>春日部駅東口より徒歩3分</td>
+            </tr>
+            <tr>
+              <th scope="row">住所</th>
+              <td>埼玉県春日部市粕壁東1丁目2-3 サンライズビル 3F</td>
+            </tr>
+            <tr>
+              <th scope="row">営業時間</th>
+              <td>11:00〜21:00（最終受付 20:00）</td>
+            </tr>
+            <tr>
+              <th scope="row">定休日</th>
+              <td>毎週火曜日</td>
+            </tr>
+            <tr>
+              <th scope="row">お支払い</th>
+              <td>現金 / クレジットカード / 電子マネー（交通系IC・QRコード決済対応）</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-gradient-bg" id="reservation">
+      <div class="container final-cta">
+        <h2 class="final-cta__title">まずは一度、<br />頭を休める時間を。</h2>
+        <p class="final-cta__sub">ご予約はWebから簡単にお取りいただけます</p>
+
+        <div class="cta-actions" aria-label="最終予約導線">
+          <a class="btn btn--primary" href="#reservation">空き状況を見て Web予約</a>
+          <div class="cta-secondary">
+            <a class="btn btn--secondary" href="tel:0000000000">電話で予約する</a>
+            <a class="btn btn--secondary" href="https://line.me/" target="_blank" rel="noopener">LINEで相談する</a>
+          </div>
+          <div class="cta-note">当日予約も空きがあればご案内いたします</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-cta" aria-label="固定CTAバー">
+    <div class="sticky-cta__inner">
+      <a class="btn btn--primary sticky-cta__btn" href="#reservation">空き状況を見て Web予約</a>
+      <div class="sticky-cta__links" aria-label="連絡手段">
+        <a class="sticky-cta__link" href="tel:0000000000">電話予約</a>
+        <a class="sticky-cta__link" href="https://line.me/" target="_blank" rel="noopener">LINE相談</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var els = document.querySelectorAll(".fade-in");
+      if (!els.length) return;
+      if (!("IntersectionObserver" in window)) {
+        for (var i = 0; i < els.length; i++) els[i].classList.add("is-visible");
+        return;
+      }
+      var io = new IntersectionObserver(function(entries, obs){
+        for (var i = 0; i < entries.length; i++) {
+          var e = entries[i];
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            obs.unobserve(e.target);
+          }
+        }
+      }, { threshold: 0.1 });
+      for (var j = 0; j < els.length; j++) io.observe(els[j]);
+    })();
+  </script>
+</body>
+</html>

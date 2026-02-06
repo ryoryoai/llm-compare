@@ -1,5 +1,12 @@
 [
   {
+    "id": "6d52fda13e4d",
+    "title": "STILLNESS ヘッドスパ LP - Spec x Generator マトリクス比較",
+    "description": "仕様策定(Opus4.6/Codex5.3) x HTML生成(Opus4.6/Codex5.3)の2x2マトリクス比較。仕様の質がLPの質にどう影響するかを検証。",
+    "models": ["opus46-opus46", "opus46-codex53", "codex53-opus46", "codex53-codex53"],
+    "date": "2026-02-07"
+  },
+  {
     "id": "0c3692d58901",
     "title": "春日部ドライヘッドスパサロン LP",
     "description": "仕事帰りの40〜50代男女向け、上質・ラグジュアリー感のドライヘッドスパLP。Opus 4.6 vs Codex 5.3比較。",

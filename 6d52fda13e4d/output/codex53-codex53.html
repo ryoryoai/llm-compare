@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STILLNESS | ドライヘッドスパ 春日部</title>
+  <meta name="description" content="仕事帰りの頭と目の重さに。春日部の完全予約制・個室ドライヘッドスパ STILLNESS（スティルネス）。短時間でも深い休息を目指し、明日のパフォーマンスまで整えます。" />
+  <meta name="theme-color" content="#141311" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --c-charcoal:#141311;
+      --c-gold:#C7A36B;
+      --c-teal:#0F2F2B;
+
+      --c-ivory:#F6F1E8;
+      --c-white:#FFFFFF;
+      --c-soft:#FBF6EE;
+
+      --c-text:#141311;
+      --c-muted:#5E5A55;
+      --c-on-dark:#F7F1E7;
+
+      --c-border:#E5D9C7;
+      --shadow-card:0 14px 40px rgba(20,19,17,0.12);
+      --shadow-card-hover:0 18px 48px rgba(20,19,17,0.16);
+
+      --focus-ring:rgba(199, 163, 107, 0.55);
+      --hover-overlay:rgba(247, 241, 231, 0.10);
+
+      --shadow-btn:0 10px 22px rgba(20,19,17,0.14);
+      --shadow-btn-hover:0 16px 34px rgba(20,19,17,0.18);
+
+      --radius-card:16px;
+      --radius-pill:999px;
+
+      --container:1120px;
+      --pad-x:24px;
+      --pad-x-sp:16px;
+
+      --gap:24px;
+      --gap-sp:16px;
+
+      --section-pc:96px;
+      --section-tab:72px;
+      --section-sp:56px;
+
+      --ease-lux:cubic-bezier(0.22, 1, 0.36, 1);
+      --dur-reveal:700ms;
+
+      --font-serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+      --font-sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,-apple-system,sans-serif;
+
+      --header-h:72px;
+
+      --hero-overlay:linear-gradient(90deg, rgba(20,19,17,0.92) 0%, rgba(20,19,17,0.78) 52%, rgba(20,19,17,0.30) 100%);
+      --hero-img:url("https://images.unsplash.com/photo-1528310176708-5db0c7a0a2a7?auto=format&fit=crop&w=2200&q=75");
+      --worries-img:url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=70");
+      --flow-img:url("https://images.unsplash.com/photo-1556228724-4b8b3a3a6a3d?auto=format&fit=crop&w=1800&q=75");
+      --last-img:url("https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2200&q=75");
+    }
+
+    @media (max-width: 767px){
+      :root{ --header-h:64px; }
+    }
+
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:var(--font-sans);
+      font-size:16px;
+      line-height:1.9;
+      color:var(--c-text);
+      background:var(--c-ivory);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; text-decoration:none; }
+    button{ font:inherit; color:inherit; background:transparent; border:0; padding:0; }
+
+    .container{
+      width:100%;
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 var(--pad-x);
+    }
+    @media (max-width: 767px){
+      .container{ padding:0 var(--pad-x-sp); }
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12, minmax(0, 1fr));
+      gap:var(--gap);
+      align-items:start;
+    }
+    @media (max-width: 767px){
+      .grid{
+        grid-template-columns:repeat(4, minmax(0, 1fr));
+        gap:var(--gap-sp);
+      }
+    }
+
+    .span-12{ grid-column:span 12; }
+    .span-11{ grid-column:span 11; }
+    .span-10{ grid-column:span 10; }
+    .span-9{ grid-column:span 9; }
+    .span-8{ grid-column:span 8; }
+    .span-7{ grid-column:span 7; }
+    .span-6{ grid-column:span 6; }
+    .span-5{ grid-column:span 5; }
+    .span-4{ grid-column:span 4; }
+    .span-3{ grid-column:span 3; }
+
+    @media (max-width: 767px){
+      .span-12,.span-11,.span-10,.span-9,.span-8,.span-7,.span-6,.span-5,.span-4,.span-3{ grid-column:span 4; }
+    }
+
+    section{ scroll-margin-top:calc(var(--header-h) + 18px); }
+
+    h1,h2,h3{
+      font-family:var(--font-serif);
+      font-weight:600;
+      margin:0;
+      color:inherit;
+    }
+    h1{
+      font-size:48px;
+      line-height:1.15;
+      letter-spacing:-0.02em;
+      max-width:560px;
+    }
+    h2{
+      font-size:36px;
+      line-height:1.25;
+      letter-spacing:-0.01em;
+    }
+    h3{
+      font-size:24px;
+      line-height:1.35;
+    }
+
+    @media (max-width: 767px){
+      h1{ font-size:34px; }
+      h2{ font-size:26px; }
+      h3{ font-size:20px; }
+    }
+
+    .lead{
+      font-size:18px;
+      line-height:1.9;
+      font-weight:400;
+      color:inherit;
+      max-width:680px;
+      margin:0;
+    }
+    @media (max-width: 767px){
+      .lead{ font-size:16px; }
+    }
+
+    .body{
+      font-size:16px;
+      line-height:1.9;
+      font-weight:400;
+      color:inherit;
+      max-width:680px;
+      margin:0;
+    }
+    @media (max-width: 767px){
+      .body{ font-size:15px; }
+    }
+
+    .muted{ color:var(--c-muted); }
+    .caption{
+      font-size:14px;
+      line-height:1.7;
+      font-weight:400;
+      margin:0;
+    }
+    @media (max-width: 767px){
+      .caption{ font-size:13px; }
+    }
+
+    .section{
+      padding:var(--section-pc) 0;
+      position:relative;
+    }
+    @media (min-width: 768px) and (max-width: 1023px){
+      .section{ padding:var(--section-tab) 0; }
+    }
+    @media (max-width: 767px){
+      .section{ padding:var(--section-sp) 0; }
+    }
+
+    .section-head{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-bottom:24px;
+    }
+    @media (max-width: 767px){
+      .section-head{ margin-bottom:18px; }
+    }
+    .center{ text-align:center; align-items:center; }
+    .max-680{ max-width:680px; }
+    .max-720{ max-width:720px; }
+    .on-dark{ color:var(--c-on-dark); }
+    .nowrap{ white-space:nowrap; }
+
+    .header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--header-h);
+      z-index:50;
+      background:transparent;
+      color:var(--c-on-dark);
+      transition:background-color 180ms var(--ease-lux), color 180ms var(--ease-lux), box-shadow 180ms var(--ease-lux), backdrop-filter 180ms var(--ease-lux);
+      backdrop-filter:none;
+    }
+    .header.is-scrolled{
+      background:rgba(246,241,232,0.82);
+      color:var(--c-text);
+      backdrop-filter:blur(10px);
+      box-shadow:0 10px 28px rgba(20,19,17,0.06);
+    }
+    .header-inner{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .logo{
+      font-family:var(--font-serif);
+      letter-spacing:0.08em;
+      font-weight:600;
+      font-size:18px;
+      line-height:1;
+      padding:10px 0;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .nav-link{
+      font-size:14px;
+      letter-spacing:0.02em;
+      padding:10px 14px;
+      border-radius:var(--radius-pill);
+      transition:background-color 150ms ease, color 150ms ease;
+    }
+    .header:not(.is-scrolled) .nav-link:hover{
+      background:var(--hover-overlay);
+    }
+    .header.is-scrolled .nav-link:hover{
+      background:rgba(20,19,17,0.06);
+    }
+    .header-cta{ display:flex; align-items:center; gap:12px; }
+
+    @media (max-width: 767px){
+      .nav{ display:none; }
+    }
+
+    .btn{
+      height:56px;
+      padding:0 22px;
+      border-radius:var(--radius-pill);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:16px;
+      font-weight:600;
+      letter-spacing:0.02em;
+      box-shadow:var(--shadow-btn);
+      transition:transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:focus-visible{
+      outline:2px solid var(--focus-ring);
+      outline-offset:3px;
+    }
+
+    .btn-primary{
+      background:var(--c-gold);
+      color:var(--c-charcoal);
+      border:1px solid transparent;
+    }
+    .btn-primary:hover{
+      background:#B08A52;
+      transform:translateY(-1px);
+      box-shadow:var(--shadow-btn-hover);
+    }
+    .btn-primary:active{
+      background:#9A7746;
+      transform:translateY(0px);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:var(--c-gold);
+      border:1px solid var(--c-gold);
+      box-shadow:none;
+    }
+    .btn-secondary:hover{
+      background:rgba(199,163,107,0.12);
+      box-shadow:none;
+    }
+
+    .btn-tertiary{
+      background:rgba(247,241,231,0.10);
+      color:var(--c-on-dark);
+      border:1px solid rgba(247,241,231,0.22);
+      box-shadow:none;
+    }
+    .btn-tertiary:hover{
+      background:rgba(247,241,231,0.16);
+      box-shadow:none;
+    }
+
+    .btn-full{ width:100%; }
+
+    .text-link{
+      color:var(--c-teal);
+      font-weight:600;
+      letter-spacing:0.01em;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 0;
+      border-radius:8px;
+    }
+    .text-link:hover{ text-decoration:underline; text-underline-offset:4px; }
+
+    .card{
+      background:var(--c-white);
+      border:1px solid var(--c-border);
+      border-radius:var(--radius-card);
+      box-shadow:var(--shadow-card);
+      padding:28px;
+      transition:transform 160ms ease, box-shadow 160ms ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-card-hover);
+    }
+    @media (max-width: 767px){
+      .card{ padding:22px; }
+    }
+
+    .card-dark{
+      background:rgba(247,241,231,0.06);
+      border:1px solid rgba(247,241,231,0.16);
+      box-shadow:none;
+    }
+    .card-dark:hover{
+      box-shadow:0 18px 48px rgba(0,0,0,0.22);
+    }
+
+    .media-frame{
+      border:1px solid var(--c-border);
+      border-radius:var(--radius-card);
+      overflow:hidden;
+      background:var(--c-soft);
+      box-shadow:0 12px 34px rgba(20,19,17,0.10);
+    }
+    .media-frame img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      filter:blur(3px);
+      transition:opacity var(--dur-reveal) var(--ease-lux), transform var(--dur-reveal) var(--ease-lux), filter var(--dur-reveal) var(--ease-lux);
+      transition-delay:var(--d, 0ms);
+    }
+    .reveal.in-view{
+      opacity:1;
+      transform:translateY(0);
+      filter:blur(0);
+    }
+
+    .hero{
+      position:relative;
+      min-height:720px;
+      color:var(--c-on-dark);
+      background-image:var(--hero-overlay), var(--hero-img);
+      background-size:cover, cover;
+      background-position:center, center;
+      background-repeat:no-repeat, no-repeat;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:0.06;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.35'%3E%3Ccircle cx='10' cy='18' r='1'/%3E%3Ccircle cx='34' cy='22' r='1'/%3E%3Ccircle cx='62' cy='14' r='1'/%3E%3Ccircle cx='88' cy='26' r='1'/%3E%3Ccircle cx='118' cy='16' r='1'/%3E%3Ccircle cx='24' cy='58' r='1'/%3E%3Ccircle cx='52' cy='44' r='1'/%3E%3Ccircle cx='76' cy='62' r='1'/%3E%3Ccircle cx='104' cy='52' r='1'/%3E%3Ccircle cx='130' cy='64' r='1'/%3E%3Ccircle cx='16' cy='92' r='1'/%3E%3Ccircle cx='44' cy='104' r='1'/%3E%3Ccircle cx='70' cy='90' r='1'/%3E%3Ccircle cx='96' cy='112' r='1'/%3E%3Ccircle cx='124' cy='98' r='1'/%3E%3Ccircle cx='22' cy='126' r='1'/%3E%3Ccircle cx='58' cy='130' r='1'/%3E%3Ccircle cx='92' cy='136' r='1'/%3E%3Ccircle cx='132' cy='124' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      background-size:220px 220px;
+      mix-blend-mode:overlay;
+    }
+    .hero-inner{
+      min-height:720px;
+      padding-top:calc(var(--header-h) + 74px);
+      padding-bottom:84px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .hero-content{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .hero h1{ max-width:560px; }
+    .badges{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      max-width:680px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:30px;
+      padding:0 14px;
+      border-radius:var(--radius-pill);
+      border:1px solid rgba(247,241,231,0.18);
+      background:rgba(247,241,231,0.08);
+      color:var(--c-on-dark);
+      font-size:13px;
+      letter-spacing:0.02em;
+      white-space:nowrap;
+    }
+    .hero-note{
+      color:rgba(247,241,231,0.84);
+      max-width:680px;
+    }
+    .cta-group{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+
+    @media (max-width: 767px){
+      .hero{ min-height:640px; }
+      .hero-inner{
+        min-height:640px;
+        padding-top:calc(var(--header-h) + 64px);
+        padding-bottom:72px;
+      }
+      .hero-content{ text-align:center; align-items:center; }
+      .hero h1{ max-width:560px; }
+      .badges{ justify-content:center; }
+      .cta-group{ width:100%; flex-direction:column; align-items:stretch; }
+      .cta-group .btn{ width:100%; }
+    }
+    @media (max-width: 390px){
+      .badge{ height:28px; padding:0 12px; }
+      .btn{ padding:0 18px; }
+    }
+
+    .list-icon{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      max-width:680px;
+    }
+    .li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:var(--c-text);
+    }
+    .li svg{
+      width:18px;
+      height:18px;
+      flex:0 0 18px;
+      margin-top:6px;
+      color:var(--c-teal);
+      opacity:0.9;
+    }
+
+    .section-teal{
+      background:var(--c-teal);
+      color:var(--c-on-dark);
+    }
+    .section-white{
+      background:var(--c-white);
+    }
+
+    .reason-icon{
+      width:28px;
+      height:28px;
+      color:var(--c-teal);
+      margin-bottom:10px;
+    }
+
+    .menu-grid .card{ display:flex; flex-direction:column; gap:14px; }
+    .menu-meta{ display:flex; flex-direction:column; gap:6px; }
+    .menu-time{ font-size:14px; line-height:1.7; color:var(--c-muted); }
+    .price-wrap{ display:flex; align-items:flex-end; gap:10px; }
+    .price{
+      font-family:var(--font-serif);
+      font-weight:700;
+      font-size:40px;
+      line-height:1.1;
+      letter-spacing:-0.01em;
+      font-variant-numeric:tabular-nums;
+      color:var(--c-text);
+    }
+    .tax{ font-size:14px; line-height:1.7; color:var(--c-muted); margin-bottom:4px; }
+    @media (max-width: 767px){
+      .price{ font-size:34px; }
+    }
+
+    .card-popular{
+      background:var(--c-soft);
+      border:1.5px solid var(--c-gold);
+      box-shadow:0 16px 46px rgba(20,19,17,0.14);
+    }
+    .popular-badge{
+      position:absolute;
+      top:16px;
+      right:16px;
+      height:26px;
+      padding:0 12px;
+      border-radius:var(--radius-pill);
+      background:linear-gradient(180deg, #D8B57C 0%, #B88E54 100%);
+      color:var(--c-charcoal);
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:0.02em;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 18px rgba(20,19,17,0.18);
+    }
+
+    @media (max-width: 767px){
+      .menu-grid{ display:flex; flex-direction:column; gap:var(--gap-sp); }
+      .menu-grid .card{ order:1; }
+      .menu-grid .card-popular{ order:0; }
+    }
+
+    .steps{
+      list-style:none;
+      padding:0;
+      margin:0;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      max-width:680px;
+    }
+    .steps::before{
+      content:"";
+      position:absolute;
+      left:12px;
+      top:8px;
+      bottom:8px;
+      width:2px;
+      background:var(--c-border);
+    }
+    .step{
+      display:grid;
+      grid-template-columns:28px 1fr;
+      gap:14px;
+      align-items:flex-start;
+      position:relative;
+    }
+    .dot{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:var(--c-gold);
+      margin-left:6px;
+      margin-top:6px;
+      box-shadow:0 10px 18px rgba(20,19,17,0.10);
+    }
+    .step-title{
+      font-family:var(--font-serif);
+      font-weight:600;
+      font-size:18px;
+      line-height:1.35;
+      margin:0;
+      letter-spacing:-0.01em;
+      color:var(--c-text);
+    }
+    .step-desc{
+      margin:6px 0 0;
+      color:var(--c-muted);
+      font-size:16px;
+      line-height:1.9;
+    }
+    @media (max-width: 767px){
+      .step-desc{ font-size:15px; }
+    }
+
+    .voice-card{
+      padding-top:34px;
+    }
+    .quote-mark{
+      position:absolute;
+      top:14px;
+      left:18px;
+      font-family:var(--font-serif);
+      font-weight:700;
+      font-size:64px;
+      line-height:1;
+      color:rgba(199,163,107,0.38);
+      z-index:0;
+      pointer-events:none;
+    }
+    .voice-inner{ position:relative; z-index:1; display:flex; flex-direction:column; gap:12px; }
+    .avatar-row{ display:flex; align-items:center; gap:12px; }
+    .avatar{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      background:var(--c-soft);
+      color:var(--c-teal);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:var(--font-serif);
+      font-weight:700;
+      font-variant-numeric:tabular-nums;
+    }
+    .voice-meta{
+      font-size:14px;
+      line-height:1.7;
+      color:var(--c-muted);
+      margin:0;
+    }
+    .voice-text{
+      margin:0;
+      color:var(--c-text);
+      font-size:16px;
+      line-height:1.9;
+    }
+    @media (max-width: 767px){
+      .voice-text{ font-size:15px; }
+    }
+
+    .faq-wrap{
+      max-width:860px;
+      margin:0 auto;
+    }
+    .faq-item{
+      border-bottom:1px solid var(--c-border);
+    }
+    .faq-toggle{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      padding:18px 0;
+      text-align:left;
+      cursor:pointer;
+    }
+    .faq-q{
+      font-family:var(--font-serif);
+      font-weight:600;
+      font-size:18px;
+      line-height:1.35;
+      letter-spacing:-0.01em;
+      margin:0;
+      color:var(--c-text);
+    }
+    .faq-icon{
+      width:18px;
+      height:18px;
+      flex:0 0 18px;
+      position:relative;
+      color:var(--c-teal);
+      transition:color 150ms ease, transform 240ms ease;
+    }
+    .faq-icon::before,
+    .faq-icon::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:18px;
+      height:2px;
+      background:currentColor;
+      border-radius:2px;
+      transform:translate(-50%, -50%);
+    }
+    .faq-icon::after{
+      width:2px;
+      height:18px;
+    }
+    .faq-toggle:hover .faq-icon{ color:var(--c-gold); }
+    .faq-toggle:focus-visible{
+      outline:2px solid var(--focus-ring);
+      outline-offset:3px;
+      border-radius:10px;
+    }
+
+    .faq-panel{
+      height:0px;
+      overflow:hidden;
+      transition:height 240ms ease;
+    }
+    .faq-a{
+      padding:0 0 18px;
+      color:var(--c-muted);
+      font-size:16px;
+      line-height:1.9;
+      margin:0;
+      max-width:860px;
+    }
+    @media (max-width: 767px){
+      .faq-a{ font-size:15px; }
+    }
+    .faq-item.is-open .faq-icon{ transform:rotate(0deg); }
+    .faq-item.is-open .faq-icon::after{
+      transform:translate(-50%, -50%) scaleY(0);
+    }
+
+    .access{
+      background:var(--c-charcoal);
+      color:var(--c-on-dark);
+    }
+    .access .muted{ color:rgba(247,241,231,0.78); }
+    .info-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      max-width:680px;
+    }
+    .info{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:baseline;
+      padding:10px 0;
+      border-bottom:1px solid rgba(247,241,231,0.12);
+    }
+    .info:last-child{ border-bottom:0; }
+    .info dt{
+      min-width:92px;
+      color:rgba(247,241,231,0.78);
+      font-size:14px;
+      line-height:1.7;
+      margin:0;
+    }
+    .info dd{
+      margin:0;
+      color:var(--c-on-dark);
+      font-size:16px;
+      line-height:1.9;
+    }
+    @media (max-width: 767px){
+      .info dd{ font-size:15px; }
+    }
+
+    .map{
+      border-radius:var(--radius-card);
+      border:1px solid rgba(247,241,231,0.16);
+      overflow:hidden;
+      background:rgba(247,241,231,0.06);
+      height:360px;
+    }
+    .map iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+      filter:saturate(0.92) contrast(1.02);
+    }
+    @media (max-width: 767px){
+      .map{ height:280px; }
+    }
+
+    .last-cta{
+      position:relative;
+      color:var(--c-on-dark);
+      background-image:linear-gradient(0deg, rgba(20,19,17,0.78), rgba(20,19,17,0.78)), var(--last-img);
+      background-size:cover, cover;
+      background-position:center, center;
+      background-repeat:no-repeat, no-repeat;
+      overflow:hidden;
+    }
+    .last-cta .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin-top:20px;
+    }
+    .phone-link{
+      color:rgba(247,241,231,0.86);
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:14px;
+    }
+    .phone-link:hover{ text-decoration:underline; text-underline-offset:4px; }
+
+    .footer{
+      padding:28px 0;
+      background:var(--c-soft);
+      color:var(--c-muted);
+    }
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .fine{
+      font-size:14px;
+      line-height:1.7;
+      margin:0;
+    }
+    @media (max-width: 767px){
+      .fine{ font-size:13px; }
+    }
+
+    .fixed-cta{
+      position:fixed;
+      left:50%;
+      bottom:12px;
+      transform:translateX(-50%) translateY(14px);
+      width:calc(100% - 32px);
+      max-width:560px;
+      height:72px;
+      padding:12px;
+      border-radius:18px;
+      background:rgba(20,19,17,0.72);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(247,241,231,0.12);
+      box-shadow:0 18px 60px rgba(20,19,17,0.22);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      opacity:0;
+      visibility:hidden;
+      filter:blur(3px);
+      transition:opacity var(--dur-reveal) var(--ease-lux), transform var(--dur-reveal) var(--ease-lux), filter var(--dur-reveal) var(--ease-lux), visibility 0ms linear var(--dur-reveal);
+      z-index:60;
+    }
+    .fixed-cta.is-visible{
+      opacity:1;
+      visibility:visible;
+      transform:translateX(-50%) translateY(0);
+      filter:blur(0);
+      transition:opacity var(--dur-reveal) var(--ease-lux), transform var(--dur-reveal) var(--ease-lux), filter var(--dur-reveal) var(--ease-lux);
+    }
+    .fixed-cta .btn{
+      height:48px;
+      padding:0 16px;
+      box-shadow:none;
+      font-size:14px;
+      letter-spacing:0.02em;
+    }
+    .fixed-cta .btn:focus-visible{
+      outline:2px solid var(--focus-ring);
+      outline-offset:3px;
+    }
+    .fixed-cta .fixed-phone{
+      flex:0 0 25%;
+      min-width:0;
+    }
+    .fixed-cta .fixed-web{
+      flex:1 1 75%;
+      min-width:0;
+    }
+    .fixed-cta .fixed-phone .btn{ width:100%; justify-content:center; }
+    .fixed-cta .fixed-web .btn{ width:100%; justify-content:center; }
+
+    @media (min-width: 768px){
+      .fixed-cta{ display:none; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .reveal{ opacity:1; transform:none; filter:none; transition:none; }
+      .card,.btn{ transition:none; }
+      .faq-panel{ transition:none; }
+      .faq-icon{ transition:none; }
+      .fixed-cta{ transition:none; }
+      .fixed-cta{ transform:translateX(-50%) translateY(0); filter:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="STILLNESS トップへ">STILLNESS</a>
+      <nav class="nav" aria-label="ページ内メニュー">
+        <a class="nav-link" href="#menu">メニュー</a>
+        <a class="nav-link" href="#flow">流れ</a>
+        <a class="nav-link" href="#voice">声</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="#access">アクセス</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="#menu">Web予約</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero" aria-label="ファーストビュー">
+      <div class="container grid hero-inner">
+        <div class="span-6 hero-content reveal in-view">
+          <h1>仕事帰りの頭と目の重さに。上質なドライヘッドスパを、春日部で</h1>
+          <p class="lead">静かな個室で受ける、完全予約制のヘッドケア。短時間でも深い休息を目指し、明日のパフォーマンスまで整えます。男女問わず通いやすい設計です。</p>
+
+          <ul class="badges" aria-label="特徴">
+            <li class="badge">完全予約制</li>
+            <li class="badge">個室</li>
+            <li class="badge">男女OK</li>
+            <li class="badge">最終受付 20:00</li>
+            <li class="badge">キャッシュレス対応</li>
+          </ul>
+
+          <p class="caption hero-note">※ リラクゼーションを目的とした施術です。感じ方には個人差があります。</p>
+
+          <div class="cta-group" aria-label="予約・相談">
+            <a class="btn btn-primary" href="#menu">空き状況を見てWeb予約（所要30秒）</a>
+            <a class="btn btn-secondary" href="https://line.me/R/ti/p/@stillness" target="_blank" rel="noopener">LINEで相談（質問だけでもOK）</a>
+            <a class="btn btn-tertiary" href="tel:0000000000">電話で予約（11:00〜21:00）</a>
+          </div>
+        </div>
+
+        <div class="span-6" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="section" id="worries" aria-label="悩み訴求">
+      <div class="container grid">
+        <div class="span-7 reveal">
+          <div class="section-head">
+            <h2>夕方からの不調を、明日に持ち越さない。</h2>
+            <p class="body">パソコンやスマホ、会議、運転。気づかないうちに“上のほう”が張りつめて、思考まで重くなることがあります。STILLNESSは、仕事帰りの時間で整えるためのドライヘッドスパです。</p>
+          </div>
+
+          <ul class="list-icon" aria-label="よくあるお悩み">
+            <li class="li">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                <path d="M6 12l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"></path>
+              </svg>
+              <span class="body">夕方になると頭が重く、思考がまとまりにくい</span>
+            </li>
+            <li class="li">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                <path d="M6 12l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"></path>
+              </svg>
+              <span class="body">目の疲れが抜けず、首や肩まで張る感じがする</span>
+            </li>
+            <li class="li">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                <path d="M6 12l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"></path>
+              </svg>
+              <span class="body">眠りが浅く、朝のすっきり感が少ない</span>
+            </li>
+            <li class="li">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                <path d="M6 12l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"></path>
+              </svg>
+              <span class="body">休日は寝て終わりで、整える時間が足りない</span>
+            </li>
+          </ul>
+
+          <div style="margin-top:16px;">
+            <a class="text-link" href="#menu">今日の空きを確認する →</a>
+          </div>
+        </div>
+
+        <div class="span-5 reveal" style="--d:60ms;">
+          <div class="media-frame" style="aspect-ratio: 4 / 5;">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=70" alt="夕方のオフィス帰り、目元やこめかみを押さえる手元のイメージ" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-teal" id="benefits" aria-label="施術で得られる体感">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2>触れた瞬間から、呼吸が深くなる。</h2>
+          <p class="body on-dark max-680">頭部の筋緊張に丁寧にアプローチし、目まわり・首まわりまでの“詰まり感”をゆるめていきます。施術中は会話を最小限にし、静かな没入感を大切にします。</p>
+        </div>
+
+        <div class="grid" aria-label="体感カード">
+          <article class="card card-dark span-4 reveal" style="--d:0ms;">
+            <h3>頭が軽くなる感覚</h3>
+            <p class="body on-dark" style="margin-top:10px; color:rgba(247,241,231,0.88);">考えごとの“ノイズ”が減り、輪郭が戻るようなスッキリ感へ。</p>
+          </article>
+
+          <article class="card card-dark span-4 reveal" style="--d:60ms;">
+            <h3>目まわりの緊張がほどける</h3>
+            <p class="body on-dark" style="margin-top:10px; color:rgba(247,241,231,0.88);">画面疲れの重さがやわらぎ、視界がひらける感覚を目指します。</p>
+          </article>
+
+          <article class="card card-dark span-4 reveal" style="--d:120ms;">
+            <h3>首肩まで、上品にゆるむ</h3>
+            <p class="body on-dark" style="margin-top:10px; color:rgba(247,241,231,0.88);">強さを確認しながら、無理に押さず丁寧に整えます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reasons" aria-label="選ばれる理由">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2>通う理由は、派手さより“確かさ”。</h2>
+        </div>
+
+        <div class="grid" aria-label="理由カード">
+          <article class="card span-6 reveal" style="--d:0ms;">
+            <svg class="reason-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 10.5V20h16v-9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M3.5 11L12 4l8.5 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"></path>
+            </svg>
+            <h3>静かな個室設計</h3>
+            <p class="body muted" style="margin-top:10px;">照明・音・距離感。外の情報を遮断し、短時間でも深い休息に入りやすい空間です。</p>
+          </article>
+
+          <article class="card span-6 reveal" style="--d:60ms;">
+            <svg class="reason-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 12a7 7 0 0 1-7 7H7l-3 3v-6a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.9"></path>
+            </svg>
+            <h3>最初に整える、カウンセリング</h3>
+            <p class="body muted" style="margin-top:10px;">その日の状態（目・頭・首肩・睡眠）を確認し、強さと重点をすり合わせてから始めます。</p>
+          </article>
+
+          <article class="card span-6 reveal" style="--d:120ms;">
+            <svg class="reason-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 4h10v6H7V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+              <path d="M6.5 10h11L16 20H8L6.5 10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+              <path d="M10 13.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.9"></path>
+            </svg>
+            <h3>清潔感と所作</h3>
+            <p class="body muted" style="margin-top:10px;">タオル類は肌あたりまで選定。手指・備品・導線まで、心地よさが崩れない運用です。</p>
+          </article>
+
+          <article class="card span-6 reveal" style="--d:180ms;">
+            <svg class="reason-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 7v4l2.5 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"></path>
+            </svg>
+            <h3>仕事帰りに通いやすい運用</h3>
+            <p class="body muted" style="margin-top:10px;">春日部駅東口から徒歩3分。最終受付20:00で、予定の合間にも通いやすくしています。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="menu" aria-label="メニュー・料金">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2>その日の疲れに合わせて、30〜70分。</h2>
+        </div>
+
+        <div class="grid menu-grid" aria-label="メニュー一覧">
+          <article class="card span-4 reveal" style="--d:60ms;">
+            <div class="menu-meta">
+              <h3>クイック</h3>
+              <p class="menu-time">所要時間 30分</p>
+            </div>
+            <div class="price-wrap" aria-label="価格">
+              <div class="price">¥4,400</div>
+              <div class="tax">（税込）</div>
+            </div>
+            <p class="body muted">仕事帰りに、まずは一度。頭の重さをリセットしたい日に。</p>
+            <ul class="list-icon" style="margin-top:2px;">
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">短時間で切り替えたい日</span>
+              </li>
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">頭の重さを軽くしたい</span>
+              </li>
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">はじめての一回に</span>
+              </li>
+            </ul>
+            <a class="btn btn-secondary btn-full" href="#access" aria-label="クイックをWeb予約">このコースで予約</a>
+          </article>
+
+          <article class="card card-popular span-4 reveal" style="--d:0ms;">
+            <span class="popular-badge" aria-label="人気No.1">人気No.1</span>
+            <div class="menu-meta">
+              <h3>スタンダード</h3>
+              <p class="menu-time">所要時間 50分</p>
+            </div>
+            <div class="price-wrap" aria-label="価格">
+              <div class="price">¥7,700</div>
+              <div class="tax">（税込）</div>
+            </div>
+            <p class="body muted">頭〜首まわりまでバランスよく。迷ったらこのコース。</p>
+            <ul class="list-icon" style="margin-top:2px;">
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">目の疲れが気になる日</span>
+              </li>
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">頭と首の“詰まり感”</span>
+              </li>
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">迷ったらこれ</span>
+              </li>
+            </ul>
+            <a class="btn btn-primary btn-full" href="#access" aria-label="スタンダードをWeb予約">このコースで予約</a>
+          </article>
+
+          <article class="card span-4 reveal" style="--d:120ms;">
+            <div class="menu-meta">
+              <h3>ディープ</h3>
+              <p class="menu-time">所要時間 70分</p>
+            </div>
+            <div class="price-wrap" aria-label="価格">
+              <div class="price">¥11,000</div>
+              <div class="tax">（税込）</div>
+            </div>
+            <p class="body muted">より丁寧に受けたい日に。目の疲れ・首肩の張りが強い方へ。</p>
+            <ul class="list-icon" style="margin-top:2px;">
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">深く整えたい日</span>
+              </li>
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">首肩の張りが強い</span>
+              </li>
+              <li class="li">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5.5 12h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                </svg>
+                <span class="body">余韻まで楽しみたい</span>
+              </li>
+            </ul>
+            <a class="btn btn-secondary btn-full" href="#access" aria-label="ディープをWeb予約">このコースで予約</a>
+          </article>
+        </div>
+
+        <div class="reveal" style="--d:180ms; margin-top:18px;">
+          <p class="caption muted">※ 施術時間は目安です。状態により配分を調整します。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flow" aria-label="施術の流れ">
+      <div class="container grid">
+        <div class="span-7 reveal">
+          <div class="section-head">
+            <h2>はじめてでも、迷わない。</h2>
+          </div>
+
+          <ol class="steps" aria-label="5ステップ">
+            <li class="step">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <p class="step-title">ご予約</p>
+                <p class="step-desc">Webで空き状況を確認し、そのまま予約。相談はLINEでも受け付けています。</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <p class="step-title">ご来店・お迎え</p>
+                <p class="step-desc">完全予約制のため、待ち時間は最小限。落ち着いた導線でご案内します。</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <p class="step-title">カウンセリング</p>
+                <p class="step-desc">目・頭・首肩・睡眠の状態を確認し、強さと重点をすり合わせます。</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <p class="step-title">施術</p>
+                <p class="step-desc">会話は最小限に。静かな没入感の中で、丁寧に整えます。</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <p class="step-title">アフター</p>
+                <p class="step-desc">余韻を保ったままお帰りいただけます。次回の目安も必要に応じてご提案します。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="span-5 reveal" style="--d:60ms;">
+          <div class="media-frame" style="aspect-ratio: 4 / 5;">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1400&q=75" alt="個室の椅子と間接照明、リネンの上質さが伝わるイメージ" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="voice" aria-label="お客様の声">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2>静かに整う、という贅沢。</h2>
+        </div>
+
+        <div class="grid" aria-label="口コミ">
+          <article class="card voice-card span-4 reveal" style="--d:0ms;">
+            <div class="quote-mark" aria-hidden="true">“</div>
+            <div class="voice-inner">
+              <div class="avatar-row">
+                <div class="avatar" aria-hidden="true">K</div>
+                <p class="voice-meta">50代男性（会社員）</p>
+              </div>
+              <p class="voice-text">仕事終わりに寄れるのが助かります。静かな空間で、頭が休まる感じがありました。終わった後の軽さがちょうどよくて、また来たいと思えました。</p>
+            </div>
+          </article>
+
+          <article class="card voice-card span-4 reveal" style="--d:60ms;">
+            <div class="quote-mark" aria-hidden="true">“</div>
+            <div class="voice-inner">
+              <div class="avatar-row">
+                <div class="avatar" aria-hidden="true">M</div>
+                <p class="voice-meta">40代女性（事務職）</p>
+              </div>
+              <p class="voice-text">目の疲れが強い日に選びました。施術後は気持ちがほどけて、夜の寝つきが良かった気がします。強さが優しく確認されるので安心でした。</p>
+            </div>
+          </article>
+
+          <article class="card voice-card span-4 reveal" style="--d:120ms;">
+            <div class="quote-mark" aria-hidden="true">“</div>
+            <div class="voice-inner">
+              <div class="avatar-row">
+                <div class="avatar" aria-hidden="true">S</div>
+                <p class="voice-meta">40代男性（営業職）</p>
+              </div>
+              <p class="voice-text">男性でも入りやすい雰囲気でした。強さの確認が丁寧で、押されて痛い感じがなく、静かに整う感じが良かったです。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-label="よくある質問">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2>ご来店前の確認</h2>
+        </div>
+
+        <div class="faq-wrap reveal" style="--d:60ms;">
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              <span class="faq-q">髪は濡れますか？</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-a1" role="region" aria-labelledby="faq-q1">
+              <p class="faq-a">濡らしません。整髪料が多い場合は、軽く整えてからご来店ください。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              <span class="faq-q">着替えは必要ですか？</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <p class="faq-a">基本は不要です。首まわりが締まる服の場合は、ゆとりのある服装がおすすめです。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              <span class="faq-q">男性も利用できますか？</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <p class="faq-a">はい。男女問わずご利用いただけます。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              <span class="faq-q">当日予約はできますか？</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-a4" role="region" aria-labelledby="faq-q4">
+              <p class="faq-a">空きがあれば可能です。Web予約で空き状況をご確認ください。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section access" id="access" aria-label="アクセス・営業時間">
+      <div class="container grid">
+        <div class="span-6 reveal">
+          <div class="section-head">
+            <h2>春日部駅 東口から徒歩3分。</h2>
+          </div>
+
+          <dl class="info-list" aria-label="店舗情報">
+            <div class="info">
+              <dt>店名</dt>
+              <dd>STILLNESS（スティルネス）</dd>
+            </div>
+            <div class="info">
+              <dt>住所</dt>
+              <dd>埼玉県春日部市粕壁東1丁目（春日部駅東口 徒歩3分）</dd>
+            </div>
+            <div class="info">
+              <dt>営業</dt>
+              <dd>11:00〜21:00（最終受付 20:00）</dd>
+            </div>
+            <div class="info">
+              <dt>定休</dt>
+              <dd>毎週火曜</dd>
+            </div>
+            <div class="info">
+              <dt>形態</dt>
+              <dd>完全予約制 / 個室 / 男女OK / キャッシュレス対応</dd>
+            </div>
+            <div class="info">
+              <dt>支払い</dt>
+              <dd>クレジットカード・交通系IC・主要QR決済</dd>
+            </div>
+            <div class="info">
+              <dt>交通メモ</dt>
+              <dd>お車の方は近隣コインパーキングをご利用ください（提携なし）。</dd>
+            </div>
+          </dl>
+
+          <div class="cta-group" style="margin-top:22px;">
+            <a class="btn btn-primary" href="#menu">空き状況を見てWeb予約</a>
+            <a class="btn btn-secondary" href="https://line.me/R/ti/p/@stillness" target="_blank" rel="noopener">LINEで相談</a>
+          </div>
+
+          <p class="caption muted" style="margin-top:14px;">電話予約をご希望の方は「電話で予約」からどうぞ（11:00〜21:00）</p>
+        </div>
+
+        <div class="span-6 reveal" style="--d:60ms;">
+          <div class="map" aria-label="地図">
+            <iframe
+              title="STILLNESS 地図（春日部駅 東口）"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=%E6%98%A5%E6%97%A5%E9%83%A8%E9%A7%85%20%E6%9D%B1%E5%8F%A3&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section last-cta" id="last" aria-label="追いCTA">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2>今日の疲れは、今日のうちに。</h2>
+          <p class="body on-dark max-720">30分でも、整う感覚はつくれます。静かな個室で、頭と目を休ませてから帰りませんか。春日部で、仕事帰りの習慣に。</p>
+        </div>
+
+        <div class="cta-row reveal" style="--d:60ms;">
+          <a class="btn btn-primary" href="#menu">空き状況を見てWeb予約</a>
+          <a class="btn btn-secondary" href="https://line.me/R/ti/p/@stillness" target="_blank" rel="noopener">LINEで相談</a>
+        </div>
+
+        <div class="center reveal" style="--d:120ms;">
+          <a class="phone-link" href="tel:0000000000">電話で予約（11:00〜21:00）</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="フッター">
+      <div class="container footer-inner">
+        <p class="fine">© STILLNESS</p>
+        <p class="fine">※ 本ページはリラクゼーションを目的とした内容です。</p>
+      </div>
+    </footer>
+  </main>
+
+  <div class="fixed-cta" id="fixedCta" aria-label="固定CTA（スマホ用）">
+    <div class="fixed-phone">
+      <a class="btn btn-tertiary" href="tel:0000000000" aria-label="電話で予約">電話</a>
+    </div>
+    <div class="fixed-web">
+      <a class="btn btn-primary" href="#menu" aria-label="空き状況を見てWeb予約">空き状況を見てWeb予約</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var header = document.getElementById("siteHeader");
+      var fixedCta = document.getElementById("fixedCta");
+      var hero = document.getElementById("hero");
+      var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function setHeaderState() {
+        if (!header) return;
+        if (window.scrollY > 8) header.classList.add("is-scrolled");
+        else header.classList.remove("is-scrolled");
+      }
+
+      function isMobile() {
+        return window.matchMedia && window.matchMedia("(max-width: 767px)").matches;
+      }
+
+      function setFixedCtaVisible(visible) {
+        if (!fixedCta) return;
+        if (!isMobile()) {
+          fixedCta.classList.remove("is-visible");
+          return;
+        }
+        if (visible) fixedCta.classList.add("is-visible");
+        else fixedCta.classList.remove("is-visible");
+      }
+
+      setHeaderState();
+      window.addEventListener("scroll", setHeaderState, { passive: true });
+
+      var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+      if (!prefersReduced && "IntersectionObserver" in window) {
+        var revealObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              revealObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.14, rootMargin: "0px 0px -10% 0px" });
+
+        reveals.forEach(function (el) {
+          if (!el.classList.contains("in-view")) revealObs.observe(el);
+        });
+      } else {
+        reveals.forEach(function (el) { el.classList.add("in-view"); });
+      }
+
+      if ("IntersectionObserver" in window && hero) {
+        var heroObs = new IntersectionObserver(function (entries) {
+          var entry = entries[0];
+          setFixedCtaVisible(!entry.isIntersecting);
+        }, { threshold: 0 });
+
+        heroObs.observe(hero);
+      } else {
+        function fallbackFixed() {
+          if (!hero) return;
+          var rect = hero.getBoundingClientRect();
+          setFixedCtaVisible(rect.bottom <= 0);
+        }
+        window.addEventListener("scroll", fallbackFixed, { passive: true });
+        fallbackFixed();
+      }
+
+      window.addEventListener("resize", function () {
+        setFixedCtaVisible(false);
+      });
+
+      var faqItems = Array.prototype.slice.call(document.querySelectorAll(".faq-item"));
+      function closeItem(item) {
+        var btn = item.querySelector(".faq-toggle");
+        var panel = item.querySelector(".faq-panel");
+        if (!btn || !panel) return;
+
+        item.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+
+        if (prefersReduced) {
+          panel.style.height = "0px";
+          return;
+        }
+
+        var current = panel.getBoundingClientRect().height;
+        panel.style.height = current + "px";
+        panel.offsetHeight;
+        panel.style.height = "0px";
+      }
+
+      function openItem(item) {
+        var btn = item.querySelector(".faq-toggle");
+        var panel = item.querySelector(".faq-panel");
+        if (!btn || !panel) return;
+
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+
+        if (prefersReduced) {
+          panel.style.height = "auto";
+          return;
+        }
+
+        panel.style.height = "0px";
+        panel.offsetHeight;
+        var target = panel.scrollHeight;
+        panel.style.height = target + "px";
+
+        var onEnd = function (e) {
+          if (e.propertyName !== "height") return;
+          panel.style.height = "auto";
+          panel.removeEventListener("transitionend", onEnd);
+        };
+        panel.addEventListener("transitionend", onEnd);
+      }
+
+      faqItems.forEach(function (item) {
+        var btn = item.querySelector(".faq-toggle");
+        var panel = item.querySelector(".faq-panel");
+        if (!btn || !panel) return;
+
+        panel.style.height = "0px";
+        btn.addEventListener("click", function () {
+          var isOpen = item.classList.contains("is-open");
+          faqItems.forEach(function (it) { if (it !== item) closeItem(it); });
+          if (isOpen) closeItem(item);
+          else openItem(item);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
