@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LLM Compare - Multi-AI LP Comparison</title>
+  <title>LP Compare - Multi-AI LP Comparison</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -167,7 +167,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo">LLM COMPARE</div>
+      <div class="logo">LP COMPARE</div>
       <div class="subtitle">Multi-AI Model LP Comparison Viewer</div>
       <div class="models">
         <span class="model-tag">Codex GPT-5.2 / 5.3</span>
@@ -184,7 +184,7 @@
     <div class="how-to">
       <h3>使い方</h3>
       <p>
-        Claude Code で <code>/llm-compare</code> を実行すると、<br>
+        Claude Code で <code>/lp-compare</code> を実行すると、<br>
         LP設計プロンプトから3つのAIモデルが並列でHTMLを生成し、<br>
         タブ切替式の比較ビューアがここにデプロイされます。
       </p>
@@ -203,7 +203,7 @@
       .then(function(entries){
         var container = document.getElementById('entries');
         if (!entries || entries.length === 0) {
-          container.innerHTML = '<div class="empty">まだ比較結果がありません。<br><code>/llm-compare</code> で生成してください。</div>';
+          container.innerHTML = '<div class="empty">まだ比較結果がありません。<br><code>/lp-compare</code> で生成してください。</div>';
           return;
         }
         // 新しい順にソート
@@ -227,7 +227,7 @@
       })
       .catch(function(){
         document.getElementById('entries').innerHTML =
-          '<div class="empty">まだ比較結果がありません。<br><code>/llm-compare</code> で生成してください。</div>';
+          '<div class="empty">まだ比較結果がありません。<br><code>/lp-compare</code> で生成してください。</div>';
       });
 
     function escapeHtml(s){
